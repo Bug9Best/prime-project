@@ -1,0 +1,65 @@
+{
+  "LANGUAGE": "English",
+  "SEARCH_TEXT": "Search",
+
+  "TITLE_PLANNING": "Planning",
+  "MENU_DASHBOARD": "Dashboard",
+  "TITLE_DASHBOARD": "Dashboard",
+
+  "MENU_GANTT": "Gantt Chart",
+  "TITLE_GANTT": "Gantt Chart",
+
+  "MENU_WORK_BREAK_DOWN": "Work Break Down",
+  "TITLE_WORK_BREAK_DOWN": "Work Break Down",
+
+  "MENU_SPRINT": "Sprint",
+  "TITLE_SPRINT": "Sprint",
+
+  "MENU_BACKLOG": "Backlog",
+  "TITLE_BACKLOG": "Backlog",
+  "TITLE_ISSUE": "Issue",
+  "LABEL_NO_SPRINT": "No Sprint",
+  "DESCRIPTION_NO_SPRINT": "There is no sprint in this project. Please create a new sprint.",
+  "BUTTON_CREATE_SPRINT": "Create new sprint",
+  "LABEL_NO_ISSUE": "No Issue",
+  "DESCRIPTION_NO_ISSUE": "There is no issue in this project. Please create a new issue.",
+  "BUTTON_CREATE_ISSUE": "Create new issue",
+
+  "MENU_TIMELINE": "Timeline",
+  "TITLE_TIMELINE": "Timeline",
+
+  "MENU_LIST": "List",
+  "TITLE_LIST": "List",
+  
+  "MENU_BOARD": "Board",
+  "TITLE_BOARD": "Board",
+
+  "MENU_DOCUMENT": "Document",
+  "TITLE_DOCUMENT": "Document",
+
+  "TITLE_CONFIG": "Configuration",
+  "MENU_PROJECT_MEMBER": "Project Member",
+  "MENU_PROJECT_SETTING": "Project Setting",
+
+  "BUTTON_CREATE": "Create",
+  "BUTTON_SAVE": "Save",
+  "BUTTON_CANCEL": "Cancel",
+  "BUTTON_CLOSE": "Close",
+
+  "FOOTER_UNIVERSITY_NAME": "King Mongkut's Institute of Technology Ladkrabang",
+  "FOOTER_UNIVERSITY_LOCATE": "1 Chalong Krung 1 Alley, Lat Krabang, Khet Lat Krabang, Krung Thep Maha Nakhon 10520, Thailand",
+  "FOOTER_CONTACT": "Contact Us",
+
+  "DEVELOPER_TEAM_TITLE": "Developers Team",
+  "DEVELOPER_TEAM_DESCRIPTION": "We take pride in our diverse and dedicated development team. Every member plays a crucial role in the creation and success of the Prime Project Manager. Get to know the team members who are ready to work hard and are committed to bringing your project to success.",
+  "ADVISER_PORNSUREE": "Asst.Prof.Dr. Pornsuree Jamsri",
+  "ADVISER_PORNSUREE_POSITION": "Project Adviser",
+  "ADVISER_TARAVICHET": "Asst.Prof.Dr. Taravichet Titijaroonroj",
+  "ADVISER_TARAVICHET_POSITION": "Project Adviser",
+  "DEVELOPER_NATTHAPHON": "Mr. Natthaphon Ditthaviboon",
+  "DEVELOPER_NATTHAPHON_POSITION": "Software Developer",
+  "DEVELOPER_PHURI": "Mr. Phuri Siripool",
+  "DEVELOPER_PHURI_POSITION": "Software Developer",
+
+  "TITLE_GANTT_CHART": "Task Title"
+}
