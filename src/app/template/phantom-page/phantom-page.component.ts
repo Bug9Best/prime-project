@@ -21,7 +21,6 @@ import { Subscription } from 'rxjs';
 })
 export class PhantomPage {
 
-  overlayMenuOpenSubscription: Subscription;
   menuOutsideClickListener: any;
 
   profileMenuOutsideClickListener: any;
@@ -31,58 +30,7 @@ export class PhantomPage {
 
   constructor(
     public layoutService: PhantomPageService,
-    public renderer: Renderer2,
     public router: Router) {
-    this.overlayMenuOpenSubscription = this.layoutService.overlayOpen$.subscribe(() => {
-      if (!this.menuOutsideClickListener) {
-        this.menuOutsideClickListener = this.renderer.listen('document', 'click', event => {
-          const isOutsideClicked = !(this.appSidebar.el.nativeElement.isSameNode(event.target) || this.appSidebar.el.nativeElement.contains(event.target));
-          if (isOutsideClicked) {
-            this.hideMenu();
-          }
-        });
-      }
-
-      if (this.layoutService.state.staticMenuMobileActive) {
-        this.blockBodyScroll();
-      }
-    });
-
-    // this.router.events.pipe(filter(event => event instanceof NavigationEnd))
-    //   .subscribe(() => {
-    //     this.hideMenu();
-    //     this.hideProfileMenu();
-    //   });
-  }
-
-  hideMenu() {
-    this.layoutService.state.overlayMenuActive = false;
-    this.layoutService.state.staticMenuMobileActive = false;
-    this.layoutService.state.menuHoverActive = false;
-    if (this.menuOutsideClickListener) {
-      this.menuOutsideClickListener();
-      this.menuOutsideClickListener = null;
-    }
-    this.unblockBodyScroll();
-  }
-
-  blockBodyScroll(): void {
-    if (document.body.classList) {
-      document.body.classList.add('blocked-scroll');
-    }
-    else {
-      document.body.className += ' blocked-scroll';
-    }
-  }
-
-  unblockBodyScroll(): void {
-    if (document.body.classList) {
-      document.body.classList.remove('blocked-scroll');
-    }
-    else {
-      document.body.className = document.body.className.replace(new RegExp('(^|\\b)' +
-        'blocked-scroll'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
-    }
   }
 
   get containerClass() {
