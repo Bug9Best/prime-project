@@ -14,7 +14,6 @@ import { MessagesModule } from 'primeng/messages';
 import { MessageModule } from 'primeng/message';
 import { ToolbarModule } from 'primeng/toolbar';
 import { AutoCompleteModule } from 'primeng/autocomplete';
-import { TableModule } from 'primeng/table';
 import { CardModule } from 'primeng/card';
 import { AccordionModule } from 'primeng/accordion';
 import { PanelModule } from 'primeng/panel';
@@ -78,7 +77,6 @@ let modules = [
   MessageModule,
   ToolbarModule,
   AutoCompleteModule,
-  TableModule,
   AccordionModule,
   CardModule,
   PanelModule,

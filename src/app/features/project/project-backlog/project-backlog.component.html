@@ -1,1 +1,76 @@
-<p>project-backlog works!</p>
+<!-- <div class="h-full">
+  <div class="p-3 surface-overlay border-1 surface-border border-round">
+    <backlog-control> </backlog-control>
+  </div>
+
+  <div class="grid mt-2">
+    <div class="col-6">
+      <div
+        class="p-3 content-container surface-overlay border-1 surface-border border-round"
+      >
+        <div class="flex flex-column align-items-center justify-content-center">
+          <div class="w-full flex justify-content-between align-items-center">
+            <div class="text-xl text-500 text-primary-500">
+              {{ "TITLE_SPRINT" | translate }}
+            </div>
+            <backlog-sprint-create> </backlog-sprint-create>
+          </div>
+          <p-divider class="w-full -mt-2"></p-divider>
+          <div class="w-full">
+            <p-table
+              [value]="value"
+              [scrollable]="true"
+              scrollHeight="600px"
+              [(selection)]="selectedProducts"
+              dataKey="id"
+              [tableStyle]="{ 'min-width': '50rem' }"
+            >
+              <ng-template pTemplate="body" let-item let-index="rowIndex">
+                <tr [pReorderableRow]="index">
+                  <td>
+                    <span class="pi pi-bars" pReorderableRowHandle></span>
+                </td>
+                  <td class="">{{ item.type }}</td>
+                </tr>
+              </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-6">
+      <div
+        class="p-3 content-container surface-overlay border-1 surface-border border-round"
+      >
+        <div class="flex flex-column align-items-center justify-content-center">
+          <div class="w-full flex justify-content-between align-items-center">
+            <div class="text-xl text-500 text-orange-400">
+              {{ "TITLE_ISSUE" | translate }}
+            </div>
+            <backlog-issue-create> </backlog-issue-create>
+          </div>
+          <p-divider class="w-full -mt-2"></p-divider>
+          <div class="w-full">
+            <p-table
+              [value]="value"
+              [scrollable]="true"
+              scrollHeight="600px"
+              [(selection)]="selectedIssue"
+              dataKey="id"
+              [tableStyle]="{ 'min-width': '50rem' }"
+            >
+            <ng-template pTemplate="body" let-item let-index="rowIndex">
+              <tr [pReorderableRow]="index">
+                <td>
+                  <span class="pi pi-bars" pReorderableRowHandle></span>
+              </td>
+                <td class="">{{ item.type }}</td>
+              </tr>
+            </ng-template>
+            </p-table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
