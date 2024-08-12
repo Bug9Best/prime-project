@@ -1,6 +1,5 @@
 <div class="layout-topbar">
-  <button #menubutton class="p-link layout-topbar-button"
-    (click)="phantomPageService.onMenuToggle()">
+  <button #menubutton class="p-link layout-topbar-button" (click)="phantomPageService.onMenuToggle()">
     <i class="pi pi-bars"></i>
   </button>
 
@@ -15,10 +14,12 @@
 
   <div #topbarmenu class="layout-topbar-menu"
     [ngClass]="{'layout-topbar-menu-mobile-active': phantomPageService.state.profileSidebarVisible}">
-    <button class="p-link layout-topbar-button-lang">
+    <button class="p-link layout-topbar-button-lang" (click)="language.toggle($event)">
       <i class="pi pi-language"></i>
       <div>Language</div>
     </button>
+    <p-menu #language [model]="languageItems" [popup]="true" appendTo="body"/>
+
     <button class="p-link layout-topbar-button">
       <i class="pi pi-sun"></i>
       <span>Theme</span>
