@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TranslateService } from '@ngx-translate/core';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ToastModule } from 'primeng/toast';
 
@@ -16,4 +17,10 @@ import { ToastModule } from 'primeng/toast';
 })
 export class AppComponent {
   title = 'prime-project';
+  translateService = inject(TranslateService);
+
+  constructor() {
+    this.translateService.setDefaultLang('en');
+    this.translateService.use('en');
+  }
 }
