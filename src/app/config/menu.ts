@@ -8,7 +8,7 @@ export var ConfigMenu = [
             { label: 'MENU_GANTT', icon: 'pi-calendar-clock', routerLink: ['/project/gantt'] },
             { label: 'MENU_SPRINT', icon: 'pi-spinner', routerLink: ['/project/sprint'] },
             { label: 'MENU_BACKLOG', icon: 'pi-align-left', routerLink: ['/project/backlog'] },
-            { label: 'MENU_LIST', icon: 'pi-list-check', routerLink: ['/project/list'] },
+            { label: 'MENU_LIST', icon: 'pi-list-check', routerLink: ['/project/issue'] },
             { label: 'MENU_BOARD', icon: 'pi-clipboard', routerLink: ['/project/board'] },
             { label: 'MENU_DOCUMENT', icon: 'pi-file', routerLink: ['/project/resource'] },
         ]
