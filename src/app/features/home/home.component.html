@@ -1,5 +1,7 @@
-<phantom-page>
-    <div class="flex justify-content-end w-full">
-        adasd
-    </div>
-</phantom-page>
+<div class="dock-window">
+    <p-dock [model]="items" [position]="position">
+        <ng-template pTemplate="item" let-item>
+            <img [src]="item.icon" [alt]="item.label" width="100%" />
+        </ng-template>
+    </p-dock>
+</div>
