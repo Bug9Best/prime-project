@@ -19,7 +19,7 @@ import { Subscription } from 'rxjs';
   ],
   templateUrl: './phantom-page.component.html',
 })
-export class PhantomPageComponent {
+export class PhantomPage {
 
   overlayMenuOpenSubscription: Subscription;
   menuOutsideClickListener: any;

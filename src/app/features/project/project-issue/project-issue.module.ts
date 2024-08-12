@@ -1,26 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home.component';
-import { PrimeNGModule } from '../../shared/modules/primeng.module';
-import { PhantomPage } from '../../template/phantom-page/phantom-page.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { PrimeNGModule } from '../../../shared/modules/primeng.module';
+import { ProjectIssueComponent } from './project-issue.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: HomeComponent,
+    component: ProjectIssueComponent
   },
 ];
 
 @NgModule({
   declarations: [
-    HomeComponent
+    ProjectIssueComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     PrimeNGModule,
-    PhantomPage
+    TranslateModule,
   ]
 })
-export class HomeModule { }
+export class ProjectIssueModule { }
