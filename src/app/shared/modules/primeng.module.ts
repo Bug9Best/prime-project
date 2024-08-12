@@ -62,6 +62,7 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 import { DragDropModule } from 'primeng/dragdrop';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
+import { DockModule } from 'primeng/dock';
 
 let modules = [
   ButtonModule,
@@ -124,7 +125,8 @@ let modules = [
   InputGroupAddonModule,
   DragDropModule,
   IconFieldModule,
-  InputIconModule
+  InputIconModule,
+  DockModule
 ]
 
 @NgModule({
