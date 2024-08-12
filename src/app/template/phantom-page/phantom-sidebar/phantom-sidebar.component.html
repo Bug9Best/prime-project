@@ -1,0 +1,52 @@
+<div class="h-full flex surface-ground overflow-hidden">
+  <div #sidebar class="w-full surface-overlay hidden lg:block flex-shrink-0 fixed lg:sticky left-0 top-0 z-1 border-right-1 surface-border select-none fadein animation-duration-150">
+    <div class="p-3 cursor-pointer hover:surface-ground">
+      <div class="flex align-items-center">
+        <span class="inline-flex justify-content-center align-items-center bg-orange-100"
+          style="border-radius: 4px; width:40px; height: 40px">
+          <i class="pi pi-sync text-xl text-orange-600"></i>
+        </span>
+        <div class="flex flex-column justify-content-center ml-3">
+          <span class="text-900 font-medium">Scrum Project</span>
+          <p class="m-0 text-600 text-xs">Project Management System</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-column h-full">
+      <div class="overflow-y-auto">
+        <ul class="list-none px-3 m-0">
+          <li *ngFor="let section of menu" class="section">
+            <div class="py-2 flex align-items-center text-600 cursor-pointer" (click)="toggleSection(section)">
+              <i class="pi" style="font-size: small;"
+                [ngClass]="{'pi-chevron-down': !section.expanded, 'pi-chevron-right': section.expanded}"></i>
+              <span class="text-sm font-bold ml-2">{{ section.label | translate }}</span>
+            </div>
+            <ul class="list-none p-0 m-0 overflow-hidden" [ngClass]="{'hidden': !section.expanded}" >
+              <li *ngFor="let item of section.items">
+                <a [routerLink]="item.routerLink" style="text-decoration: none;"
+                  class="my-1 flex align-items-center cursor-pointer px-4 py-2 border-round text-700"
+                  [ngClass]="{'hover:surface-100': !isActiveRoute(item.routerLink[0]),'highlight': isActiveRoute(item.routerLink[0])}">
+                  <i class="mr-2 pi {{item.icon}}" [ngClass]="{'highlight': isActiveRoute(item.routerLink[0])}"></i>
+                  <span class="text-sm font-light" [ngClass]="{'highlight': isActiveRoute(item.routerLink[0])}">{{
+                    item.label | translate }}</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-column relative flex-auto overflow-scroll">
+    <div class="p-3 flex flex-column">
+      <div class="main-content">
+        <ng-content></ng-content>
+      </div>
+      <div class="mt-3 surface-ground">
+        <!-- <app-footer [isFullOptions]="false"></app-footer> -->
+      </div>
+    </div>
+  </div>
+</div>

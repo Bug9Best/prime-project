@@ -1,0 +1,13 @@
+<div class="layout-wrapper" [ngClass]="containerClass">
+  <phantom-topbar></phantom-topbar>
+  <div class="layout-sidebar">
+    <phantom-sidebar></phantom-sidebar>
+  </div>
+  <div class="layout-main-container">
+    <div class="layout-main">
+      <ng-content></ng-content>
+      <!-- <router-outlet></router-outlet> -->
+    </div>
+    <phantom-footer></phantom-footer>
+  </div>
+</div>
