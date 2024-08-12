@@ -1,40 +1,39 @@
-  <div class="p-3 surface-overlay border-1 surface-border border-round">
-  </div>
+<div class="p-3 surface-overlay border-1 surface-border border-round">
+</div>
 
-  <div class="mt-3 flex overflow-x-auto">
-    <div class="mr-3" *ngFor="let board of listBoard">
-      <p-panel [header]="board.name" pDroppable (onDrop)="onDropItem(board)">
-        <div *ngFor="let item of board.items" pDraggable (onDragEnd)="onDragEnd()"
-          (onDragStart)="onDragStart(board, item)"
-          class="p-3 surface-overlay border-1 surface-border border-round mb-2 cursor-pointer">
-          <div class="p-card-header">{{ item.title }}</div>
-          <div class="p-card-body">{{ item.description }}</div>
-        </div>
-      </p-panel>
-    </div>
-    <div class="p-0">
-      <div class="create-board surface-overlay border-2 border-dashed  surface-border border-round cursor-pointer"
-        (click)="isOnAddBoard = true">
-        <i class="pi pi-plus border-2 border-dashed border-circle p-3"
-          style="font-size: 1.5rem; color: var(--gray-300); border-color: var(--gray-300);">
-        </i>
+<div class="mt-3 flex overflow-x-auto">
+  <div class="mr-3" *ngFor="let board of listBoard">
+    <p-panel [header]="board.name" pDroppable (onDrop)="onDropItem(board)">
+      <div *ngFor="let item of board.items" pDraggable (onDragEnd)="onDragEnd()"
+        (onDragStart)="onDragStart(board, item)"
+        class="p-3 surface-overlay border-1 surface-border border-round mb-2 cursor-pointer">
+        <div class="p-card-header">{{ item.title }}</div>
+        <div class="p-card-body">{{ item.description }}</div>
       </div>
+    </p-panel>
+  </div>
+  <div class="p-0">
+    <div class="create-board surface-overlay border-2 border-dashed  surface-border border-round cursor-pointer"
+      (click)="isOnAddBoard = true">
+      <i class="pi pi-plus border-2 border-dashed border-circle p-3"
+        style="font-size: 1.5rem; color: var(--gray-300); border-color: var(--gray-300);">
+      </i>
     </div>
   </div>
+</div>
 
-  <p-dialog header="Add Board" [(visible)]="isOnAddBoard" [modal]="true" [style]="{'min-width': '50vw'}"
-    styleClass="p-3">
-    <span class="p-text-secondary block mb-5">
-      Add a new board to your project
-    </span>
-    <div [formGroup]="formGroup">
-      <div class="flex align-items-center gap-3 mb-3">
-        <label for="broad" class="font-semibold w-6rem">Board Name</label>
-        <input pInputText id="broad" class="flex-auto p-inputtext-sm" autocomplete="off" formControlName="name" />
-      </div>
+<p-dialog header="Add Board" [(visible)]="isOnAddBoard" [modal]="true" [style]="{'min-width': '50vw'}" styleClass="p-3">
+  <span class="p-text-secondary block mb-5">
+    Add a new board to your project
+  </span>
+  <div [formGroup]="formGroup">
+    <div class="flex align-items-center gap-3 mb-3">
+      <label for="broad" class="font-semibold w-6rem">Board Name</label>
+      <input pInputText id="broad" class="flex-auto p-inputtext-sm" autocomplete="off" formControlName="name" />
     </div>
-    <p-footer>
-      <p-button label="Cancel" severity="secondary" size="small" [text]="true" (onClick)="isOnAddBoard = false" />
-      <p-button icon="pi pi-save" label="Save" size="small" (onClick)="onAddBoard()" />
-    </p-footer>
-  </p-dialog>
+  </div>
+  <p-footer>
+    <p-button label="Cancel" severity="secondary" size="small" [text]="true" (onClick)="isOnAddBoard = false" />
+    <p-button icon="pi pi-save" label="Save" size="small" (onClick)="onAddBoard()" />
+  </p-footer>
+</p-dialog>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { KanbanBoard, KanbanBoardItem, MockBoard } from '../../../shared/modules/data/board';
+import { KanbanBoard, KanbanBoardItem, MockBoard } from '../../../shared/data/board';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
