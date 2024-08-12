@@ -7,7 +7,6 @@ export interface AppConfig {
     theme: string;
     ripple: boolean;
     menuMode: string;
-    scale: number;
 }
 
 interface LayoutState {
@@ -29,7 +28,6 @@ export class PhantomPageService {
         menuMode: 'static',
         colorScheme: 'light',
         theme: 'lara-light-indigo',
-        scale: 14,
     };
 
     config = signal<AppConfig>(this._config);
