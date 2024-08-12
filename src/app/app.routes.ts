@@ -18,6 +18,11 @@ export const routes: Routes = [
         component: PhantomPage,
         children: [
             {
+                path: '',
+                redirectTo: 'dashboard',
+                pathMatch: 'prefix'
+            },
+            {
                 path: 'dashboard',
                 loadChildren: () => import('./features/project/project-dashboard/project-dashboard.module').then(m => m.ProjectDashboardModule)
             },
