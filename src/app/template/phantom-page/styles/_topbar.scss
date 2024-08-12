@@ -186,3 +186,7 @@
         }
     }
 }
+
+:host ::ng-deep .p-menu {
+    padding: 0;
+}
