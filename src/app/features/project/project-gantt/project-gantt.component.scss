@@ -1,0 +1,20 @@
+.toolbar-view {
+    padding: 0 15px;
+    cursor: pointer;
+    flex: 0 1 auto;
+    border: 1px solid #ddd;
+    margin-left: -1px;
+    position: relative;
+    background-color: #ffffff;
+    &.active {
+        color: #6698ff;
+        border-color: #6698ff;
+        z-index: 1;
+    }
+    &:first-child {
+        border-radius: 4px 0 0 4px;
+    }
+    &:last-child {
+        border-radius: 0 4px 4px 0;
+    }
+}

@@ -1,1 +1,88 @@
-<p>project-gantt works!</p>
+<ngx-gantt #gantt 
+  [items]="items" 
+  [baselineItems]="baselineItems"
+  [viewType]="viewType"
+  [draggable]="true"
+  [linkable]="true"
+  [selectable]="true"
+  [multiple]="true"
+  [showToolbar]="isShowToolbarChecked"
+  [toolbarOptions]="toolbarOptions"
+  [loading]="loading"
+  [virtualScrollEnabled]="false"
+  (viewChange)="viewChange($event)"
+  (dragEnded)="dragEnded($event)"
+  (selectedChange)="selectedChange($event)"
+  (linkDragEnded)="linkDragEnded($event)"><ngx-gantt #gantt 
+  [items]="items" 
+  [baselineItems]="baselineItems"
+  [viewType]="viewType"
+  [draggable]="true"
+  [linkable]="true"
+  [selectable]="true"
+  [multiple]="true"
+  [showToolbar]="isShowToolbarChecked"
+  [toolbarOptions]="toolbarOptions"
+  [loading]="loading"
+  [virtualScrollEnabled]="false"
+  (viewChange)="viewChange($event)"
+  (dragEnded)="dragEnded($event)"
+  (selectedChange)="selectedChange($event)"
+  (linkDragEnded)="linkDragEnded($event)">
+  <!-- (barClick)="barClick($event)"
+  (lineClick)="lineClick($event)"
+  (dragMoved)="dragMoved($event)" -->
+  <ngx-gantt-table
+    [draggable]="true"
+    [dropEnterPredicate]="dropEnterPredicate"
+    (dragDropped)="onDragDropped($event)"
+    (dragStarted)="onDragStarted($event)"
+    (dragEnded)="onDragEnded($event)">
+
+    <ngx-gantt-column name="{{ 'TITLE_GANTT_CHART' | translate }}" width="300px">
+      <ng-template #cell let-item="item"> {{ item.title }} </ng-template>
+    </ngx-gantt-column>
+  </ngx-gantt-table>
+
+  <ng-template #bar let-item="item">
+    <span class="pl-3" style="color: #fff">{{ item.title }} </span>
+  </ng-template>
+
+  <ng-template #toolbar let-item="item">
+    <thy-button-group thySize="sm" thyType="outline-default">
+      <thy-button class="toolbar-view" *ngFor="let view of views" [class.active]="view.value === selectedViewType" (click)="selectView(view.value)">
+        {{ view.name }}
+      </thy-button>
+    </thy-button-group>
+  </ng-template>
+</ngx-gantt>
+
+
+  <!-- (barClick)="barClick($event)"
+  (lineClick)="lineClick($event)"
+  (dragMoved)="dragMoved($event)" -->
+  <ngx-gantt-table
+    [draggable]="true"
+    [dropEnterPredicate]="dropEnterPredicate"
+    (dragDropped)="onDragDropped($event)"
+    (dragStarted)="onDragStarted($event)"
+    (dragEnded)="onDragEnded($event)">
+
+    <ngx-gantt-column name="{{ 'TITLE_GANTT_CHART' | translate }}" width="300px">
+      <ng-template #cell let-item="item"> {{ item.title }} </ng-template>
+    </ngx-gantt-column>
+  </ngx-gantt-table>
+
+  <ng-template #bar let-item="item">
+    <span class="pl-3" style="color: #fff">{{ item.title }} </span>
+  </ng-template>
+
+  <ng-template #toolbar let-item="item">
+    <thy-button-group thySize="sm" thyType="outline-default">
+      <thy-button class="toolbar-view" *ngFor="let view of views" [class.active]="view.value === selectedViewType" (click)="selectView(view.value)">
+        {{ view.name }}
+      </thy-button>
+    </thy-button-group>
+  </ng-template>
+</ngx-gantt>
+

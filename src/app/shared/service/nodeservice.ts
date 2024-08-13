@@ -1,0 +1,157 @@
+import { Injectable } from '@angular/core';
+    
+@Injectable()
+export class NodeService {
+    
+
+    getFileSystemNodesData() {
+        return [  
+            {  
+                "data":{  
+                    "type":"TASK",
+                    "summary":"Applications",
+                    "status":"TODO",
+                    "sprint":"",
+                    "assignee":""
+                },
+                "children":[  
+                    {  
+                        "data":{  
+                            "summary":"Angular",
+                            "status":"TODO",
+                        },
+                        "children":[  
+                            {  
+                                "data":{  
+                                    "summary":"angular.app",
+                                    "status":"TODO",
+                                }
+                            },
+                            {  
+                                "data":{  
+                                    "summary":"cli.app",
+                                    "status":"TODO",
+                                }
+                            },
+                            {  
+                                "data":{  
+                                    "summary":"mobile.app",
+                                    "status":"TODO",
+                                }
+                            }
+                        ]
+                    },
+                    {  
+                        "data":{  
+                            "summary":"editor.app",
+                            "status":"TODO",
+                        }
+                    },
+                    {  
+                        "data":{  
+                            "summary":"settings.app",
+                            "status":"TODO",
+                        }
+                    }
+                ]
+            },
+            {  
+                "data":{  
+                    "type":"TASK",
+                    "summary":"Cloud",
+                    "status":"TODO",
+                    "sprint":"",
+                    "assignee":""
+                },
+                "children":[  
+                    {  
+                        "data":{  
+                            "summary":"backup-1.zip",
+                            "status":"TODO",
+                        }
+                    },
+                    {  
+                        "data":{  
+                            "summary":"backup-2.zip",
+                            "status":"TODO",
+                        }
+                    }
+                ]
+            },
+            {  
+                "data": {  
+                    "type":"TASK",
+                    "summary":"Desktop",
+                    "status":"TODO",
+                    "sprint":"",
+                    "assignee":""
+                },
+                "children":[  
+                    {  
+                        "data":{  
+                            "summary":"note-meeting.txt",
+                            "status":"TODO",
+                        }
+                    },
+                    {  
+                        "data":{  
+                            "summary":"note-todo.txt",
+                            "status":"TODO",
+                        }
+                    }
+                ]
+            },
+            {  
+                "data":{  
+                    "type":"TASK",
+                    "summary":"Documents",
+                    "status":"TODO",
+                    "sprint":"",
+                    "assignee":""
+                },
+                "children":[
+                    {  
+                        "data":{  
+                            "summary":"Work",
+                            "status":"TODO",
+                        },
+                        "children":[  
+                            {  
+                                "data":{  
+                                    "summary":"Expenses.doc",
+                                    "status":"TODO",
+                                }
+                            },
+                            {  
+                                "data":{  
+                                    "summary":"Resume.doc",
+                                    "status":"TODO",
+                                }
+                            }
+                        ]
+                    },
+                    {  
+                        "data":{  
+                            "summary":"Home",
+                            "status":"TODO",
+                        },
+                        "children":[  
+                            {  
+                                "data":{  
+                                    "summary":"Invoices",
+                                    "status":"TODO",
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+        ]
+    }
+    
+
+    getFilesystem() {
+        return Promise.resolve(this.getFileSystemNodesData());
+    }
+    
+};
