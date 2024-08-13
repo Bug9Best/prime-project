@@ -8,6 +8,9 @@ import { DividerModule } from 'primeng/divider';
 import { TreeTableModule } from 'primeng/treetable';
 import { CheckboxModule } from 'primeng/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ThyButton, ThyButtonModule } from 'ngx-tethys/button';
+import { ThyLayoutModule } from 'ngx-tethys/layout';
+import { NgxGanttModule } from '@worktile/gantt';
 
 const routes: Routes = [
   {
@@ -29,7 +32,11 @@ const routes: Routes = [
     TreeTableModule,
     CheckboxModule,
     TreeTableModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ThyButtonModule,
+    ThyButton,
+    ThyLayoutModule,
+    NgxGanttModule
   ]
 })
 export class ProjectSprintModule { }

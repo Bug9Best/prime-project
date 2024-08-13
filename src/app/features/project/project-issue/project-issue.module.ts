@@ -9,7 +9,10 @@ import { TreeTableModule } from 'primeng/treetable';
 import { DividerModule } from 'primeng/divider';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { GanttPrintService } from '@worktile/gantt';
+import { GanttConfigProvider } from '../../../config/gantt.config';
+import { ThyButton, ThyButtonModule } from 'ngx-tethys/button';
+import { ThyLayoutModule } from 'ngx-tethys/layout';
 
 const routes: Routes = [
   {
@@ -31,7 +34,12 @@ const routes: Routes = [
     DividerModule,
     DropdownModule,
     FormsModule,
-    ReactiveFormsModule
-  ]
+    ReactiveFormsModule,
+    ThyButton, 
+    ThyButtonModule,
+    ThyLayoutModule
+  ],
+  providers: [GanttPrintService, GanttConfigProvider]
+
 })
 export class ProjectIssueModule { }
