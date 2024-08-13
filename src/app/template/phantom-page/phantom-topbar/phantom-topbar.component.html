@@ -3,31 +3,22 @@
     <i class="pi pi-bars"></i>
   </button>
 
-  <a class="layout-topbar-logo" routerLink="">
+  <div class="layout-topbar-logo" routerLink="">
     <img src="/images/project-logo.png" alt="logo">
-  </a>
+  </div>
 
-  <button #topbarmenubutton class="p-link layout-topbar-menu-button layout-topbar-button"
+  <button class="p-link layout-topbar-menu-button layout-topbar-button"
     (click)="phantomPageService.showProfileSidebar()">
     <i class="pi pi-ellipsis-v"></i>
   </button>
 
   <div #topbarmenu class="layout-topbar-menu"
     [ngClass]="{'layout-topbar-menu-mobile-active': phantomPageService.state.profileSidebarVisible}">
-    <button class="p-link layout-topbar-button-lang" (click)="language.toggle($event)">
-      <i class="pi pi-language"></i>
-      <div>Language</div>
-    </button>
-    <p-menu #language [model]="languageItems" [popup]="true" appendTo="body"/>
-
-    <button class="p-link layout-topbar-button">
-      <i class="pi pi-sun"></i>
-      <span>Theme</span>
-    </button>
     <button class="p-link layout-topbar-button">
       <i class="pi pi-bell"></i>
       <span>Notification</span>
     </button>
+
     <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
       <i class="pi pi-user"></i>
       <span>User</span>
