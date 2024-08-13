@@ -6,6 +6,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
 import { ButtonModule } from 'primeng/button';
 import { Overlay } from 'primeng/overlay';
+import { GanttConfig, GanttConfigProvider } from '../../../config/gantt.config';
+import { enUS, th } from 'date-fns/locale';
 
 @Component({
   selector: 'phantom-topbar',
@@ -17,13 +19,15 @@ import { Overlay } from 'primeng/overlay';
     OverlayPanelModule,
     ButtonModule
   ],
-  templateUrl: './phantom-topbar.component.html'
+  templateUrl: './phantom-topbar.component.html',
+  providers: [GanttConfig, GanttConfigProvider]
 })
 
 export class PhantomTopbarComponent {
   isLightTheme: boolean = true;
 
   constructor(
+    private ganntConfig: GanttConfig,
     public phantomPageService: PhantomPageService,
   ) {
   }
@@ -33,12 +37,39 @@ export class PhantomTopbarComponent {
   changeLanguage(lang: string) {
     this.translateService.use(lang);
     this.overlay.hide();
+    this.SetGanttConfig(lang);
   }
 
-  changeTheme(state: boolean) {
-    let activeTheme = (state) ? 'lara-dark-blue' : 'lara-light-blue';
-    let themeLink = <HTMLLinkElement>document.getElementById('app-theme');
-    themeLink.href = `/themes/${activeTheme}/theme.css`;
-    this.isLightTheme = !this.isLightTheme;
+  SetGanttConfig(lang: string) {
+    switch (lang) {
+      case 'en':
+        this.ganntConfig.dateOptions = {
+          locale: enUS
+        }
+        this.ganntConfig.dateFormat = {
+          hour: 'HH:mm',
+          day: 'd',
+          week: `'week' w 'of' yyyy`,
+          month: 'LLLL',
+          year: `'year' yyyy`,
+          yearMonth: `LLLL yyyy' (week' w ')'`,
+          yearQuarter: `QQQQ 'of' yyyy`,
+        }
+        break;
+      case 'th':
+        this.ganntConfig.dateOptions = {
+          locale: th
+        }
+        this.ganntConfig.dateFormat = {
+          hour: 'HH:mm',
+          day: 'd',
+          week: `'สัปดาห์' w 'ของ' yyyy`,
+          month: 'LLLL',
+          year: `'year' yyyy`,
+          yearMonth: `LLLL yyyy' (สัปดาห์' w ')'`,
+          yearQuarter: `QQQQ 'ของ' yyyy`,
+        }
+        break;
+    }
   }
 }
