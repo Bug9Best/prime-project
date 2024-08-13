@@ -14,6 +14,26 @@
 
   <div #topbarmenu class="layout-topbar-menu"
     [ngClass]="{'layout-topbar-menu-mobile-active': phantomPageService.state.profileSidebarVisible}">
+    <button class="p-link layout-topbar-button-lang" (click)="op.toggle($event)">
+      <i class="pi pi-language"></i>
+      <div>{{ 'LANGUAGE' | translate }}</div>
+    </button>
+    <p-overlayPanel #op class="p-0">
+      <div class="flex flex-column gap-2 w-17rem">
+        <button pButton class="p-button-text p-button-secondary" (click)="changeLanguage('en')">
+          <span>English</span>
+        </button>
+        <button pButton class="p-button-text p-button-secondary" (click)="changeLanguage('th')">
+          <span>ภาษาไทย</span>
+        </button>
+      </div>
+    </p-overlayPanel>
+
+    <button class="p-link layout-topbar-button" (click)="changeTheme(isLightTheme)">
+      <i class="pi" [ngClass]="isLightTheme ? 'pi-sun' : 'pi-moon'"></i>
+      <span>Theme</span>
+    </button>
+
     <button class="p-link layout-topbar-button">
       <i class="pi pi-bell"></i>
       <span>Notification</span>
