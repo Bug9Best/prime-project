@@ -5,7 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { ProjectGanttComponent } from './project-gantt.component';
 import { GanttPrintService, NgxGanttModule } from '@worktile/gantt';
-import { ThyButtonModule } from 'ngx-tethys/button';
+import { ThyButton, ThyButtonModule } from 'ngx-tethys/button';
+import { ThyLayoutModule } from 'ngx-tethys/layout';
 import { GanttConfigProvider } from '../../../config/gantt.config';
 
 const routes: Routes = [
@@ -25,7 +26,9 @@ const routes: Routes = [
     PrimeNGModule,
     TranslateModule,
     NgxGanttModule,
-    ThyButtonModule
+    ThyButtonModule,
+    ThyButton,
+    ThyLayoutModule
   ],
   providers: [GanttPrintService, GanttConfigProvider]
 

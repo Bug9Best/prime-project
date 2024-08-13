@@ -1,1 +1,65 @@
-<p>project-gantt works!</p>
+<div class="responsive-gantt p-3">
+  <div class="flex justify-content-between pb-2 border-bottom-1 surface-border">
+    <thy-button-group thySize="sm" thyType="outline-default">
+      <thy-button class="flex align-items-center justify-content-center" *ngFor="let view of viewsToolBar" [class.active]="view.value === selectedViewType" (click)="selectView(view.value)">
+        {{ view.name }}
+      </thy-button>
+    </thy-button-group>
+
+    <div class="flex gap-1">
+      <thy-button thyType="primary" thySize="default" (click)="refresh()">
+        <i class="pi pi-refresh mr-2" style="font-size: 0.75rem"></i>
+        Refresh
+      </thy-button>
+      <thy-button thyType="primary" thySize="default" (click)="scrollToToday()">
+        <i class="pi pi-calendar mr-2" style="font-size: 0.75rem"></i>
+        Today
+      </thy-button>
+      <thy-button thyType="primary" thySize="default" (click)="print('gantt-example')"> 
+        <i class="pi pi-print mr-2" style="font-size: 0.75rem"></i>
+        Print
+      </thy-button>    
+    </div>
+  </div>
+  
+  <ngx-gantt #gantt 
+    [items]="items" 
+    [baselineItems]="baselineItems"
+    [viewType]="viewType"
+    [draggable]="true"
+    [linkable]="true"
+    [selectable]="true"
+    [multiple]="true"
+    [showToolbar]="false"
+    [toolbarOptions]="toolbarOptions"
+    [loading]="loading"
+    [virtualScrollEnabled]="false"
+    (viewChange)="viewChange($event)"
+    (dragEnded)="dragEnded($event)"
+    (selectedChange)="selectedChange($event)"
+    (linkDragEnded)="linkDragEnded($event)">
+  <ngx-gantt-table
+    [draggable]="true"
+    [dropEnterPredicate]="dropEnterPredicate"
+    (dragDropped)="onDragDropped($event)"
+    (dragStarted)="onDragStarted($event)"
+    (dragEnded)="onDragEnded($event)">
+
+    <ngx-gantt-column name="Task/Issue" width="240px">
+      <ng-template #cell let-item="item"> {{ item.title }} </ng-template>
+    </ngx-gantt-column>
+
+    <ngx-gantt-column name="Start Date" width="120px">
+      <ng-template #cell let-item="item"> {{ getDate(item.start) | date:'yyyy-MM-dd' }} </ng-template>
+    </ngx-gantt-column>
+
+    <ngx-gantt-column name="End Date" width="120px">
+      <ng-template #cell let-item="item"> {{ getDate(item.end) | date:'yyyy-MM-dd' }} </ng-template>
+    </ngx-gantt-column>
+  </ngx-gantt-table>
+
+  <ng-template #bar let-item="item">
+    <span class="pl-3" style="color: #fff">{{ item.title }} </span>
+  </ng-template>
+</ngx-gantt>
+</div>
