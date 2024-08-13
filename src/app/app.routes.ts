@@ -54,8 +54,6 @@ export const routes: Routes = [
                 path: 'member',
                 loadChildren: () => import('./features/project/project-member/project-member.module').then(m => m.ProjectMemberModule)
             },
-        
         ]
-        // 
     },
 ];
