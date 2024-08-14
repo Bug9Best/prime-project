@@ -4,7 +4,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { CommonModule } from '@angular/common';
 import { ThaiModule } from '../../shared/pipes/thai.module';
 
-export type PhantomTableColumnType = "string" | "number" | "date" | "button" | "checked" | "control" | "citizen" | 'html';
+export type PhantomTableColumnType = "string" | "number" | "date" | "button" | "checked" | "control" | "citizen" | 'html' | 'image' | 'link' | 'tag' | 'process' | 'currency';
 export class PhantomTableColumn {
   label: string = "Column";
   field: string = "default";
@@ -50,27 +50,27 @@ export type PhantomTableFieldTemplate = {
 export class PhantomTableComponent {
 
   _selectedItems: any;
+  template: PhantomTableFieldTemplate = {};
 
   @Input() value: any = [];
   @Input() columns: any = [];
   @Input() showOrder: boolean = true;
-  showOrderIndex: number = 0;
+  @Input() showOrderIndex: number = 0;
+  @Input() paginator: boolean = true;
+  @Input() totalRecords: number = 10;
+  @Input() rowsPerPageOptions : number[] = [5, 10, 20, 50];
+  @Input() scrollable: boolean = true;
+  @Input() resizableColumns: boolean = true;
+  @Input() metaKeySelection: string = '';
+  @Input() scrollHeight: string = '551px';
+  @Input() selectionMode: any = 'multiple';
+  @Input() dataKey:string = 'id';
+  @Input() selection: any = [];
+  @Input() styleClass: string = 'p-datatable-gridlines';
 
   items = [
     { label: 'View', icon: 'pi pi-fw pi-search', command: () => this.viewIssue(this.selectedItems) },
   ];
-
-  paginator = input<boolean>(true);
-  totalRecords = input<number>(10);
-  rowsPerPageOptions = input<number[]>([5, 10, 20, 50]);
-  scrollable = input<boolean>(true);
-  scrollHeight = input<string>('551px');
-  resizableColumns = input<boolean>(true);
-  dataKey = input<string>('id');
-  selectionMode = input<string>('multiple');
-  metaKeySelection = input<string>('');
-  styleClass = input<string>('p-datatable-gridlines');
-
 
   public get selectedItems(): any {
     return this._selectedItems;
@@ -80,21 +80,6 @@ export class PhantomTableComponent {
   public set selectedItems(value: any) {
     this._selectedItems = value;
     this.onSelectedItems.emit(value);
-  }
-
-  get selection(): boolean {
-    return this.selectionMode() !== "";
-  }
-
-  @ContentChildren(PhantomTableFieldDirective)
-  templates: PhantomTableFieldDirective[] = [];
-  template: PhantomTableFieldTemplate = {};
-
-  ngAfterContentInit(): void {
-    this.templates.forEach(t => {
-      this.template[t.getName()] = t.templateRef;
-      console.log(t.getName());
-    })
   }
 
   viewIssue(selectedItems: any) {
