@@ -2,16 +2,16 @@
 <p-table 
   [value]="value" 
   [rows]="10"
-  [paginator]="true"
-  [rowsPerPageOptions]="[10, 20, 50]"
-  [scrollable]="true" 
-  [scrollHeight]="'551px'" 
-  [resizableColumns]="true" 
-  [selectionMode]="'multiple'" 
+  [paginator]="paginator"
+  [rowsPerPageOptions]="rowsPerPageOptions"
+  [scrollable]="scrollable" 
+  [scrollHeight]="scrollHeight" 
+  [resizableColumns]="resizableColumns" 
+  [selectionMode]="selectionMode" 
   [(selection)]="selectedItems" 
-  dataKey="id" 
+  [dataKey]="dataKey" 
   [contextMenu]="cm" 
-  [styleClass]="'p-datatable-gridlines'">
+  [styleClass]="styleClass">
   
   <ng-template pTemplate="header">
     <tr>
@@ -91,7 +91,7 @@
     </ng-template>
 
       <!-- Selectable -->
-      <tr *ngIf="selection" [pContextMenuRow]="item" [pSelectableRow]="item" [pSelectableRowIndex]="rowIndex" [pReorderableRow]="rowIndex">
+      <tr *ngIf="selectionMode" [pContextMenuRow]="item" [pSelectableRow]="item" [pSelectableRowIndex]="rowIndex" [pReorderableRow]="rowIndex">
         <ng-container
           [ngTemplateOutlet]="pTableRow"
           [ngTemplateOutletContext]="{ $implicit: item }">
@@ -99,7 +99,7 @@
       </tr>
 
       <!-- Not Selectable -->
-      <tr *ngIf="!selection" [pContextMenuRow]="item" [pReorderableRow]="rowIndex">
+      <tr *ngIf="!selectionMode" [pContextMenuRow]="item" [pReorderableRow]="rowIndex">
         <ng-container
           [ngTemplateOutlet]="pTableRow"
           [ngTemplateOutletContext]="{ $implicit: item }">
