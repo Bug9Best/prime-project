@@ -1,27 +1,16 @@
-<div class="p-3 surface-overlay border-1 surface-border border-round">
+<div class="p-4">
   <div class="surface-overlay">
     <div class="flex justify-content-between pb-2 surface-borderd">
       <div class="p-3">
-        <span class="text-lg font-medium text-900">{{
-          "MENU_SPRINT" | translate
-        }}</span>
+        <span class="text-lg font-medium text-900"> {{ "MENU_SPRINT" | translate }}</span>
       </div>
       <div class="flex align-items-center mt-2 md:mt-0">
         <span class="p-input-icon-left mr-2">
           <i class="pi pi-search"></i>
-          <input
-            type="text"
-            pInputText
-            placeholder="{{ 'SEARCH_TEXT' | translate }}"
-            class="p-inputtext-sm w-20rem"
-          />
+          <input type="text" pInputText placeholder="{{ 'SEARCH_TEXT' | translate }}" class="p-inputtext-sm w-20rem" />
         </span>
         <span>
-          <thy-button
-            thyType="primary"
-            thySize="default"
-            (click)="isOnCreateSprint = true"
-          >
+          <thy-button thyType="primary" thySize="default" (click)="isOnCreateSprint = true">
             Create Sprin
           </thy-button>
         </span>
@@ -29,20 +18,14 @@
     </div>
     <p-divider></p-divider>
   </div>
-  <p-treeTable
-    [value]="data"
-    [(selection)]="sprintItem"
-    dataKey="id"
-    [scrollable]="true"
-    scrollHeight="600px"
-    [tableStyle]="{ 'min-width': '50rem' }"
-  >
+  <p-treeTable [value]="data" [(selection)]="sprintItem" dataKey="id" [scrollable]="true" scrollHeight="600px"
+    [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
       <tr>
-        <th style="">Sprint name</th>
+        <th>Sprint name</th>
         <th class="">Sprint owner</th>
         <th class="text-center">Sprint start date</th>
-        <th style="">Progress</th>
+        <th>Progress</th>
       </tr>
     </ng-template>
     <ng-template pTemplate="body" let-rowNode let-rowData="rowData">
@@ -59,28 +42,16 @@
   </p-treeTable>
 </div>
 
-<p-dialog
-  header="Create Sprint"
-  [(visible)]="isOnCreateSprint"
-  [modal]="true"
-  [style]="{ 'min-width': '50vw' }"
-  styleClass="p-3"
->
+<p-dialog header="Create Sprint" [(visible)]="isOnCreateSprint" [modal]="true" [style]="{ 'min-width': '50vw' }"
+  styleClass="p-3">
   <span class="p-text-secondary block mb-5"> Create a new sprint </span>
   <div [formGroup]="formGroup">
     <div class="grid">
       <div class="col-3">
-        <label for="sprint_name" class="font-semibold w-6rem"
-          >Sprint Name</label
-        >
+        <label for="sprint_name" class="font-semibold w-6rem">Sprint Name</label>
       </div>
       <div class="col-9">
-        <input
-          type="text"
-          pInputText
-          class="p-inputtext-sm w-full"
-          formControlName="sprint_name"
-        />
+        <input type="text" pInputText class="p-inputtext-sm w-full" formControlName="sprint_name" />
       </div>
     </div>
     <div class="grid">
@@ -88,11 +59,7 @@
         <label for="username" class="font-semibold w-6rem">Start Date</label>
       </div>
       <div class="col-9">
-        <p-calendar
-          appendTo="body"
-          formControlName="start_date"
-          styleClass="w-full"
-        >
+        <p-calendar appendTo="body" formControlName="start_date" styleClass="w-full">
         </p-calendar>
       </div>
     </div>
@@ -102,22 +69,13 @@
         <label for="username" class="font-semibold w-6rem">End Date</label>
       </div>
       <div class="col-9">
-        <p-calendar
-          appendTo="body"
-          formControlName="end_date"
-          styleClass="w-full"
-        >
+        <p-calendar appendTo="body" formControlName="end_date" styleClass="w-full">
         </p-calendar>
       </div>
     </div>
   </div>
   <p-footer>
-    <thy-button
-      class="mr-2"
-      thyType="outline-default"
-      thySize="default"
-      (click)="isOnCreateSprint = false"
-    >
+    <thy-button class="mr-2" thyType="outline-default" thySize="default" (click)="isOnCreateSprint = false">
       cancel
     </thy-button>
     <thy-button thyType="primary" thySize="default" (click)="onCreateSprint()">
