@@ -1,24 +1,22 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { sprintdb } from '../../../shared/service/sprintdb';
 import { MessageService, TreeNode } from 'primeng/api';
+import { SprintData } from '../../../shared/service/sprintdb';
 
 @Component({
   selector: 'app-project-sprint',
   templateUrl: './project-sprint.component.html',
   styleUrl: './project-sprint.component.scss',
-  providers: [sprintdb],
 })
 export class ProjectSprintComponent {
   files!: any[];
 
   cols!: any[];
-  constructor(private sprintdb: sprintdb,   private messageService: MessageService,
-  ) {}
 
-  ngOnInit() {
-    this.sprintdb.getFilesystem().then((files) => (this.files = files));
-  }
+  data: any[] = SprintData;
+
+  constructor(private messageService: MessageService) {}
+
   isOnCreateSprint: boolean = false;
   checked: boolean = false;
 
@@ -26,7 +24,6 @@ export class ProjectSprintComponent {
 
   sprintItem!: any;
 
- 
   formGroup: FormGroup = new FormGroup({
     sprint_name: new FormControl('', Validators.required),
     start_date: new FormControl(new Date(), Validators.required),
