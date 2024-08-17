@@ -1,1 +1,18 @@
-    <p>project-resource works!</p>
+<ng80-board [board]="board">
+    <ng-template cardTpt let-item="item">
+      <div class="custom-card-template">
+        <h2>{{item.title}}</h2>
+        <p>{{item.description}}</p>
+      </div>
+    </ng-template>
+    <ng-template columnHeaderTpt let-column="column">
+      <div class="custom-column-header">
+        <h3>{{column.title}}</h3>
+      </div>
+    </ng-template>
+    <ng-template columnFooterTpt let-column="column">
+      <div class="custom-column-footer">
+        <button>Add Card</button>
+      </div>
+    </ng-template>
+  </ng80-board>

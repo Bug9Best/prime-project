@@ -1,0 +1,33 @@
+:host ::ng-deep .p-datatable {
+    &.p-datatable-gridlines .p-paginator-bottom {
+        border-radius: 0 0 8px 8px;
+    }
+
+    .p-column-resizer:hover {
+        background-color: #6698ff;
+        width: 3px;
+    }
+
+    .p-datatable-tbody>tr.p-highlight {
+        color: var(--text-color);
+    }
+}
+
+.reorder {
+    display: flex;
+    align-items: center;
+
+    span {
+        display: none;
+    }
+
+    &:hover {
+        span {
+            display: flex;
+        }
+    }
+}
+
+.reorder-icon {
+    width: 22px;
+}
