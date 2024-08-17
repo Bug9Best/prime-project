@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProjectDashboardComponent } from './project-dashboard.component';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { GridsterComponent, GridsterItemComponent } from 'angular-gridster2';
+
 
 const routes: Routes = [
   {
@@ -21,6 +23,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     PrimeNGModule,
     TranslateModule,
+    GridsterComponent,
+    GridsterItemComponent
   ]
 })
 export class ProjectDashboardModule { }

@@ -51,6 +51,7 @@ import { DividerModule } from 'primeng/divider';
 import { TagModule } from 'primeng/tag';
 import { TimelineModule } from 'primeng/timeline';
 import { ColorPickerModule } from 'primeng/colorpicker';
+import { TableModule } from 'primeng/table';
 import { TreeTableModule } from 'primeng/treetable';
 import { PanelMenuModule } from 'primeng/panelmenu';
 import { OrganizationChartModule } from 'primeng/organizationchart';
@@ -115,6 +116,7 @@ let modules = [
   TagModule,
   TimelineModule,
   ColorPickerModule,
+  TableModule,
   TreeTableModule,
   PanelMenuModule,
   OrganizationChartModule,
