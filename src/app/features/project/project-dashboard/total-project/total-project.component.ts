@@ -4,6 +4,9 @@ import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
 import { ProgressBarModule } from 'primeng/progressbar';
+import { AvatarGroupModule } from 'primeng/avatargroup';
+import { TooltipModule } from 'primeng/tooltip';
+
 
 @Component({
   selector: 'app-total-project',
@@ -13,7 +16,9 @@ import { ProgressBarModule } from 'primeng/progressbar';
     TableModule,
     ChartModule,
     AvatarModule,
-    ProgressBarModule
+    AvatarGroupModule,
+    ProgressBarModule,
+    TooltipModule
   ],
   templateUrl: './total-project.component.html',
   styleUrl: './total-project.component.scss'
