@@ -64,6 +64,7 @@ import { DragDropModule } from 'primeng/dragdrop';
 import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { DockModule } from 'primeng/dock';
+import { TooltipModule } from 'primeng/tooltip';
 
 let modules = [
   ButtonModule,
@@ -128,7 +129,8 @@ let modules = [
   DragDropModule,
   IconFieldModule,
   InputIconModule,
-  DockModule
+  DockModule,
+  TooltipModule
 ]
 
 @NgModule({
