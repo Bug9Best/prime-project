@@ -1,12 +1,20 @@
 import { Component } from '@angular/core';
+import { AvatarModule } from 'primeng/avatar';
 import { ButtonModule } from 'primeng/button';
 import { ChartModule } from 'primeng/chart';
 import { TableModule } from 'primeng/table';
+import { ProgressBarModule } from 'primeng/progressbar';
 
 @Component({
   selector: 'app-total-project',
   standalone: true,
-  imports: [ButtonModule, TableModule, ChartModule],
+  imports: [
+    ButtonModule,
+    TableModule,
+    ChartModule,
+    AvatarModule,
+    ProgressBarModule
+  ],
   templateUrl: './total-project.component.html',
   styleUrl: './total-project.component.scss'
 })

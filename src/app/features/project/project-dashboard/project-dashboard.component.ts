@@ -9,6 +9,7 @@ import { AssignMeComponent } from './assign-me/assign-me.component';
 import { TotalProjectComponent } from './total-project/total-project.component';
 import { TotalTaskComponent } from './total-task/total-task.component';
 import { GanttPrintService } from '@worktile/gantt';
+import { TotalProgressComponent } from './total-progress/total-progress.component';
 @Component({
   selector: 'app-project-dashboard',
   templateUrl: './project-dashboard.component.html',
@@ -86,8 +87,9 @@ export class ProjectDashboardComponent implements OnInit {
     };
 
     this.dashboard = [
-      { cols: 2, rows: 1, y: 0, x: 0, component: TotalTaskComponent },
-      { cols: 2, rows: 1, y: 0, x: 2, component: TotalProjectComponent},
+      { cols: 2, rows: 1, y: 0, x: 0, component: TotalProjectComponent },
+      { cols: 1, rows: 1, y: 0, x: 2, component: TotalTaskComponent},
+      { cols: 1, rows: 1, y: 0, x: 3, component: TotalProgressComponent},
       { cols: 4, rows: 1, y: 1, x: 0, component: AssignMeComponent},
     ];
   }

@@ -1,18 +1,24 @@
 <div class="p-4">
   <div class="flex justify-content-between align-items-center">
     <div class="text-lg">
-      Project Resources
+      Project Resource
     </div>
     <div>
-      <span class="p-input-icon-left">
-        <i class="pi pi-search"></i>
-        <input type="text" pInputText placeholder="{{ 'SEARCH_TEXT' | translate }}" class="p-inputtext-sm w-20rem" />
-      </span>
       <button pButton pRipple icon="pi pi-plus" label="Add resource" class="p-button-primary p-button-sm ml-2"
         (click)="isAddResource = true">
       </button>
     </div>
   </div>
+  <p-divider></p-divider>
+  <div class="flex justify-content-end mt-2">
+    <div>
+      <span class="p-input-icon-left">
+        <i class="pi pi-search"></i>
+        <input type="text" pInputText placeholder="{{ 'SEARCH_TEXT' | translate }}" class="p-inputtext-sm w-20rem" />
+      </span>
+    </div>
+  </div>
+  <p-divider class="mt-2"></p-divider>
 
   <div class="p-3 surface-overlay border-1 surface-border border-round mt-3">
     <div class="text-lg mb-2">
