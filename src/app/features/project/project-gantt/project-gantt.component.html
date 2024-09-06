@@ -21,7 +21,7 @@
       </thy-button>    
     </div>
   </div>
-  
+
   <ngx-gantt #gantt 
     [items]="items" 
     [baselineItems]="baselineItems"
@@ -38,28 +38,28 @@
     (dragEnded)="dragEnded($event)"
     (selectedChange)="selectedChange($event)"
     (linkDragEnded)="linkDragEnded($event)">
-  <ngx-gantt-table
-    [draggable]="true"
-    [dropEnterPredicate]="dropEnterPredicate"
-    (dragDropped)="onDragDropped($event)"
-    (dragStarted)="onDragStarted($event)"
-    (dragEnded)="onDragEnded($event)">
+    <ngx-gantt-table
+      [draggable]="true"
+      [dropEnterPredicate]="dropEnterPredicate"
+      (dragDropped)="onDragDropped($event)"
+      (dragStarted)="onDragStarted($event)"
+      (dragEnded)="onDragEnded($event)">
 
-    <ngx-gantt-column name="Task/Issue" width="240px">
-      <ng-template #cell let-item="item"> {{ item.title }} </ng-template>
-    </ngx-gantt-column>
+      <ngx-gantt-column name="Task/Issue" width="240px">
+        <ng-template #cell let-item="item"> {{ item.title }} </ng-template>
+      </ngx-gantt-column>
 
-    <ngx-gantt-column name="Start Date" width="120px">
-      <ng-template #cell let-item="item"> {{ getDate(item.start) | date:'yyyy-MM-dd' }} </ng-template>
-    </ngx-gantt-column>
+      <ngx-gantt-column name="Start Date" width="120px">
+        <ng-template #cell let-item="item"> {{ getDate(item.start) | date:'yyyy-MM-dd' }} </ng-template>
+      </ngx-gantt-column>
 
-    <ngx-gantt-column name="End Date" width="120px">
-      <ng-template #cell let-item="item"> {{ getDate(item.end) | date:'yyyy-MM-dd' }} </ng-template>
-    </ngx-gantt-column>
-  </ngx-gantt-table>
+      <ngx-gantt-column name="End Date" width="120px">
+        <ng-template #cell let-item="item"> {{ getDate(item.end) | date:'yyyy-MM-dd' }} </ng-template>
+      </ngx-gantt-column>
+    </ngx-gantt-table>
 
-  <ng-template #bar let-item="item">
-    <span class="pl-3" style="color: #fff">{{ item.title }} </span>
-  </ng-template>
-</ngx-gantt>
+    <ng-template #bar let-item="item">
+      <span class="pl-3" style="color: #fff">{{ item.title }} </span>
+    </ng-template>
+  </ngx-gantt>
 </div>

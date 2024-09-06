@@ -28,7 +28,7 @@ const routes: Routes = [
     NgxGanttModule,
     ThyButtonModule,
     ThyButton,
-    ThyLayoutModule
+    ThyLayoutModule,
   ],
   providers: [GanttPrintService, GanttConfigProvider]
 
