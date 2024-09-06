@@ -4,6 +4,9 @@ import { ProjectMemberComponent } from './project-member.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { TranslateModule } from '@ngx-translate/core';
+import { PhantomHeader } from '../../../template/phantom-header/phantom-header.component';
+import { ProjectMemberItemComponent } from './project-member-item/project-member-item.component';
+import { ProjectMemberDetailComponent } from './project-member-detail/project-member-detail.component';
 
 const routes: Routes = [
   {
@@ -14,13 +17,16 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ProjectMemberComponent
+    ProjectMemberComponent,
+    ProjectMemberItemComponent,
+    ProjectMemberDetailComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     PrimeNGModule,
     TranslateModule,
+    PhantomHeader
   ]
 })
 export class ProjectMemberModule { }

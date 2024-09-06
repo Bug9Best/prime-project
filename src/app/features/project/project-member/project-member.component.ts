@@ -7,25 +7,19 @@ import { ConfirmationService, MessageService } from 'primeng/api';
   styleUrl: './project-member.component.scss'
 })
 export class ProjectMemberComponent {
+
   isAddMember: boolean = false;
   isAddPosition: boolean = false;
+  isShowMember: boolean = false;
 
   memberItem!: any;
-  value: any = [
-    {
-      id: 1,
-      name: 'Phuri siripool',
-      email: 'Phuriq.com',
-      position: "-",
-    },
-    {
-      id: 2,
-      name: 'Natthaphon Ditthaviboon',
-      email: 'natbestgmail.com',
-      position: "-",
-    },
-  ];
 
+  listMember: any = [
+    { name: 'John Doe', position: 'Project Manager' },
+    { name: 'Jane Doe', position: 'Developer' },
+    { name: 'John Smith', position: 'Tester' },
+    { name: 'Jane Smith', position: 'Designer' },
+  ]
   positions: any = [
     { label: 'Project Manager', value: 'Project Manager' },
     { label: 'Developer', value: 'Developer' },
@@ -60,4 +54,5 @@ export class ProjectMemberComponent {
       }
     });
   }
+
 }

@@ -39,6 +39,8 @@
 
   "TITLE_CONFIG": "การตั้งค่า",
   "MENU_PROJECT_MEMBER": "สมาชิกโปรเจค",
+  "BUTTON_LABEL_ADD_MEMBER": "เพิ่มสมาชิก",
+
   "MENU_PROJECT_SETTING": "ตั้งค่าโปรเจค",
 
   "BUTTON_CREATE": "สร้าง",

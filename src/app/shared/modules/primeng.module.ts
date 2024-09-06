@@ -65,6 +65,7 @@ import { IconFieldModule } from 'primeng/iconfield';
 import { InputIconModule } from 'primeng/inputicon';
 import { DockModule } from 'primeng/dock';
 import { TooltipModule } from 'primeng/tooltip';
+import { ContextMenuModule } from 'primeng/contextmenu';
 
 let modules = [
   ButtonModule,
@@ -130,7 +131,8 @@ let modules = [
   IconFieldModule,
   InputIconModule,
   DockModule,
-  TooltipModule
+  TooltipModule,
+  ContextMenuModule
 ]
 
 @NgModule({

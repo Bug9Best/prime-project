@@ -39,6 +39,8 @@
 
   "TITLE_CONFIG": "Configuration",
   "MENU_PROJECT_MEMBER": "Project Member",
+  "BUTTON_LABEL_ADD_MEMBER": "Add Member",
+
   "MENU_PROJECT_SETTING": "Project Setting",
 
   "BUTTON_CREATE": "Create",
