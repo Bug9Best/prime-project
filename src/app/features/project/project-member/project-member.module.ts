@@ -4,9 +4,10 @@ import { ProjectMemberComponent } from './project-member.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { PhantomHeader } from '../../../template/phantom-header/phantom-header.component';
 import { ProjectMemberItemComponent } from './project-member-item/project-member-item.component';
 import { ProjectMemberDetailComponent } from './project-member-detail/project-member-detail.component';
+import { StyleClassModule } from 'primeng/styleclass';
+import { PhantomModule } from '../../../template/phantom-module.module';
 
 const routes: Routes = [
   {
@@ -26,7 +27,8 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     PrimeNGModule,
     TranslateModule,
-    PhantomHeader
+    StyleClassModule,
+    PhantomModule
   ]
 })
 export class ProjectMemberModule { }

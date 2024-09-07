@@ -91,7 +91,22 @@ export class ProjectGanttComponent {
     { id: '0000026', title: 'Task 26', start: 1635937997, end: 1643886797 },
     { id: '0000027', title: 'Task 27', start: 1637665997, end: 1644059597 },
     { id: '0000028', title: 'Task 28', start: 1611400397, end: 1615547597 },
-    { id: '0000029', title: 'Task 29', start: 1618053197, end: 1619176397 }
+    { id: '0000029', title: 'Task 29', start: 1618053197, end: 1619176397 },
+    { id: '0000030', title: 'Task 30', start: 1627729997, end: 1628421197 },
+    { id: '0000031', title: 'Task 31', start: 1627729997, end: 1628421197 },
+    { id: '0000032', title: 'Task 32', start: 1627729997, end: 1628421197 },
+    { id: '0000033', title: 'Task 33', start: 1627729997, end: 1628421197 },
+    { id: '0000034', title: 'Task 34', start: 1627729997, end: 1628421197 },
+    { id: '0000035', title: 'Task 35', start: 1627729997, end: 1628421197 },
+    { id: '0000036', title: 'Task 36', start: 1627729997, end: 1628421197 },
+    { id: '0000037', title: 'Task 37', start: 1627729997, end: 1628421197 },
+    { id: '0000038', title: 'Task 38', start: 1627729997, end: 1628421197 },
+    { id: '0000039', title: 'Task 39', start: 1627729997, end: 1628421197 },
+    { id: '0000040', title: 'Task 40', start: 1627729997, end: 1628421197 },
+    { id: '0000041', title: 'Task 41', start: 1627729997, end: 1628421197 },
+    { id: '0000042', title: 'Task 42', start: 1627729997, end: 1628421197 },
+    { id: '0000043', title: 'Task 43', start: 1627729997, end: 1628421197 },
+    { id: '0000044', title: 'Task 44', start: 1627729997, end: 1628421197 },
   ];
 
   @HostBinding('class.gantt-example-component') class = true;

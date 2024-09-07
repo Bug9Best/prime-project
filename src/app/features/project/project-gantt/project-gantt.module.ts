@@ -8,6 +8,7 @@ import { GanttPrintService, NgxGanttModule } from '@worktile/gantt';
 import { ThyButton, ThyButtonModule } from 'ngx-tethys/button';
 import { ThyLayoutModule } from 'ngx-tethys/layout';
 import { GanttConfigProvider } from '../../../config/gantt.config';
+import { PhantomModule } from '../../../template/phantom-module.module';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
     ThyButtonModule,
     ThyButton,
     ThyLayoutModule,
+    PhantomModule
   ],
   providers: [GanttPrintService, GanttConfigProvider]
 

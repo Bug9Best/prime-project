@@ -1,4 +1,4 @@
-<div class="p-4">
+<phantom-container>
   <phantom-header 
     [title]="'MENU_PROJECT_MEMBER'" 
     [buttonLabel]="'BUTTON_LABEL_ADD_MEMBER'"
@@ -8,9 +8,9 @@
 
   <div class="grid">
     @for (item of listMember; track $index) {
-    <div class="col-6">
+    <div class="col-12 sm:col-6">
       <project-member-item 
-        [member]="item">
+        [member]="item" hideOnOutsideClick>
       </project-member-item>
     </div>
     }
@@ -65,4 +65,4 @@
       </div>
     </ng-template>
   </p-dialog>
-</div>
+</phantom-container>
