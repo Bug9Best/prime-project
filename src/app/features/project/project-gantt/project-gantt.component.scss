@@ -4,6 +4,10 @@
     height: calc(100vh - 17rem);
 }
 
+:host ::ng-deep .gantt .gantt-scrollbar .gantt-table-scrollbar.with-scrollbar {
+    display: none;
+}
+
 :host ::ng-deep .gantt-table-body .gantt-table-item .gantt-expand-icon {
     display: flex;
     align-items: center;
