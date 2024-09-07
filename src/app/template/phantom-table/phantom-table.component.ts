@@ -37,17 +37,10 @@ export type PhantomTableFieldTemplate = {
 
 @Component({
   selector: 'phantom-table',
-  standalone: true,
-  imports: [
-    CommonModule,
-    TableModule,
-    ContextMenuModule,
-    ThaiModule
-  ],
   templateUrl: './phantom-table.component.html',
   styleUrl: './phantom-table.component.scss'
 })
-export class PhantomTableComponent {
+export class PhantomTable {
 
   _selectedItems: any;
   template: PhantomTableFieldTemplate = {};

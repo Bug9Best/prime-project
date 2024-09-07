@@ -3,15 +3,10 @@ import { Component } from '@angular/core';
 import { PrimeNGModule } from '../../shared/modules/primeng.module';
 
 @Component({
-  selector: 'app-phantom-dialog',
-  standalone: true,
-  imports: [
-    CommonModule,
-    PrimeNGModule
-  ],
+  selector: 'phantom-dialog',
   templateUrl: './phantom-dialog.component.html',
   styleUrl: './phantom-dialog.component.scss'
 })
-export class PhantomDialogComponent {
+export class PhantomDialog {
 
 }

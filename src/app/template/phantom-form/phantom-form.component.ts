@@ -4,17 +4,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PrimeNGModule } from '../../shared/modules/primeng.module';
 
 @Component({
-  selector: 'app-phantom-form',
-  standalone: true,
-  imports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    PrimeNGModule
-  ],
+  selector: 'phantom-form',
   templateUrl: './phantom-form.component.html',
   styleUrl: './phantom-form.component.scss'
 })
-export class PhantomFormComponent {
+export class PhantomForm {
 
 }
