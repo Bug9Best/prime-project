@@ -5,6 +5,8 @@ import { ProjectDashboardComponent } from './project-dashboard.component';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { GridsterComponent, GridsterItemComponent } from 'angular-gridster2';
+import { PhantomModule } from '../../../template/phantom-module.module';
+import { ProjectInfo } from './project-info/project-info.component';
 
 
 const routes: Routes = [
@@ -16,7 +18,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ProjectDashboardComponent
+    ProjectDashboardComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -24,7 +27,9 @@ const routes: Routes = [
     PrimeNGModule,
     TranslateModule,
     GridsterComponent,
-    GridsterItemComponent
+    GridsterItemComponent,
+    PhantomModule,
+    ProjectInfo
   ]
 })
 export class ProjectDashboardModule { }

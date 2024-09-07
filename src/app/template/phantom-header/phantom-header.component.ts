@@ -11,6 +11,7 @@ export class PhantomHeader {
   showButton = input<boolean>(true);
   buttonLabel = input<string>('');
   buttonIcon = input<string>('');
+  styleClass = input<string>();
 
   onClickEvent = output();
   onClick() {

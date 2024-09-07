@@ -1,22 +1,30 @@
 <div class="p-4">
-  <div class="w-full flex justify-content-between align-items-center">
-    <div class="surface-overlay">
-      <div class="flex flex-column flex md:flex-row md:justify-content-between md:align-items-center">
-        <span class="text-lg font-medium text-900">Dashboard</span>
-      </div>
-    </div>
-    <div class="align-items-center mt-2 md:mt-0">
-      <button pButton pRipple icon="pi pi-pencil" class="p-button-primary p-button-sm text-xs" [outlined]="true"
-        [rounded]="true"></button>
+  <div class="custom-height flex align-items-center">
+    <div class="text-lg ">
+      Dashboard
     </div>
   </div>
-  <div style="height: 45rem;">
-    <gridster [options]="options" class="surface-overlay border-none">
-      @for (item of dashboard; track item) {
-      <gridster-item [item]="item" class="bg-white shadow-2 border-round">
-        <ng-container *ngComponentOutlet="item['component']"> </ng-container>
-      </gridster-item>
-      }
-    </gridster>
+
+  <p-divider></p-divider>
+
+  <div class="grid">
+    <div class="col-12 xl:col-4">
+      <project-info>
+      </project-info>
+    </div>
+    <div class="col-12 xl:col-4">
+      <div class="border-1 surface-border border-round p-3 h-full">
+      </div>
+    </div>
+    <div class="col-12 xl:col-4">
+      <div class="border-1 surface-border border-round p-3 h-full">
+        asd
+      </div>
+    </div>
+    <div class="col-12 xl:col-4">
+      <div class="border-1 surface-border border-round p-3 h-full">
+        asd
+      </div>
+    </div>
   </div>
 </div>
