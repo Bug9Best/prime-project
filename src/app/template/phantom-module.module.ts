@@ -9,6 +9,7 @@ import { PhantomHeader } from './phantom-header/phantom-header.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { PhantomTable } from './phantom-table/phantom-table.component';
 import { ThaiModule } from '../shared/pipes/thai.module';
+import { PhantomContent } from './phantom-content/phantom-content.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { ThaiModule } from '../shared/pipes/thai.module';
     PhantomDialog,
     PhantomForm,
     PhantomHeader,
-    PhantomTable
+    PhantomTable,
+    PhantomContent,
   ],
   imports: [
     CommonModule,
@@ -31,7 +33,8 @@ import { ThaiModule } from '../shared/pipes/thai.module';
     PhantomDialog,
     PhantomForm,
     PhantomHeader,
-    PhantomTable
-  ]
+    PhantomTable,
+    PhantomContent,
+  ],
 })
-export class PhantomModule { }
+export class PhantomModule {}

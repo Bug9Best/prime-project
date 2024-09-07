@@ -66,6 +66,7 @@ import { InputIconModule } from 'primeng/inputicon';
 import { DockModule } from 'primeng/dock';
 import { TooltipModule } from 'primeng/tooltip';
 import { ContextMenuModule } from 'primeng/contextmenu';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
 
 let modules = [
   ButtonModule,
@@ -132,7 +133,8 @@ let modules = [
   InputIconModule,
   DockModule,
   TooltipModule,
-  ContextMenuModule
+  ContextMenuModule,
+  ScrollPanelModule
 ]
 
 @NgModule({
