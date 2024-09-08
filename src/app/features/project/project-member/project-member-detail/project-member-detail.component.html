@@ -111,16 +111,20 @@
         </li>
       </ul>
     </div>
-    <div class="flex flex-grow-1 gap-2 mt-3">
-      <button pButton pRipple 
-        type="button" 
-        icon="pi pi-trash"
-        label="Remove Member" 
-        class="p-button-text p-button-danger p-button-sm flex-grow-1" 
-        (click)="removeMember(member)">
-      </button>
-      <project-member-position>
-      </project-member-position>
+    <div class="flex gap-2 mt-3">
+      <div class="w-full"> 
+        <button pButton pRipple 
+          type="button" 
+          icon="pi pi-trash"
+          label="Remove Member" 
+          class="p-button-text p-button-danger p-button-sm w-full" 
+          (click)="removeMember(member)">
+        </button>
+      </div>
+      <div class="w-full">
+        <project-member-position>
+        </project-member-position>
+      </div>
     </div>
   </div>
 </p-sidebar>
