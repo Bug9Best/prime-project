@@ -1,9 +1,7 @@
 <div class="p-4">
-  <phantom-header 
-    [title]="'MENU_PROJECT_MEMBER'" 
-    [buttonLabel]="'BUTTON_LABEL_ADD_MEMBER'"
-    [buttonIcon]="'pi pi-user-plus'" 
-    (onClickEvent)="isAddMember = true">
+  <phantom-header [title]="'MENU_PROJECT_MEMBER'">
+    <project-member-invite>
+    </project-member-invite>
   </phantom-header>
 
   <phantom-content>
@@ -11,60 +9,10 @@
       @for (item of listMember; track $index) {
       <div class="col-12 xl:col-6">
         <project-member-item 
-          [member]="item" hideOnOutsideClick>
+          [member]="item">
         </project-member-item>
       </div>
       }
     </div>
   </phantom-content>
-
-  <p-dialog [(visible)]="isAddMember" [modal]="true" [closable]="false" [showHeader]="false"
-    [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw', height: '22rem'}">
-    <section class="flex flex-column w-full mt-4">
-      <div class="flex w-full justify-content-between mb-4">
-        <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center bg-blue-100"><i
-            class="pi pi-users text-blue-700 text-4xl"></i></span>
-        <button pButton pRipple type="button" icon="pi pi-times"
-          class="p-button-rounded p-button-secondary p-button-text align-self-start"
-          (click)="isAddMember = false"></button>
-      </div>
-      <p class="font-semibold text-xl mt-0 mb-2 text-900">Invite Team Member</p>
-      <p class="font-normal text-base mt-0 mb-3 text-600"> Enter the email address of the person you want to invite to
-        this project. </p>
-      <input type="text" pInputText class="p-inputtext-sm w-full">
-    </section>
-    <ng-template pTemplate="footer">
-      <div class="pt-3 flex">
-        <button pButton pRipple (click)="isAddMember = false" label="Cancel" class="p-button-text flex-grow-1"></button>
-        <button pButton pRipple (click)="isAddMember = false" label="Invite" class="flex-grow-1"></button>
-      </div>
-    </ng-template>
-  </p-dialog>
-
-  <p-dialog [(visible)]="isAddPosition" [modal]="true" [closable]="false" [showHeader]="false"
-    [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw'}">
-    <section class="flex flex-column w-full mt-4">
-      <div class="flex w-full justify-content-between mb-4">
-        <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center bg-blue-100"><i
-            class="pi pi-shield text-blue-700 text-4xl"></i></span>
-        <button pButton pRipple type="button" icon="pi pi-times"
-          class="p-button-rounded p-button-secondary p-button-text align-self-start"
-          (click)="isAddPosition = false"></button>
-      </div>
-      <p class="font-semibold text-xl mt-0 mb-2 text-900">Change Position</p>
-      <p class="font-normal text-base mt-0 mb-3 text-600">
-        You can adjust the position of team members in this project to ensure they utilize resources according to their
-        roles. </p>
-      <p-dropdown [options]="positions" placeholder="Select Position" optionLabel="label" appendTo="body"
-        styleClass="w-full border-round-lg">
-      </p-dropdown>
-    </section>
-    <ng-template pTemplate="footer">
-      <div class="pt-3 flex">
-        <button pButton pRipple (click)="isAddPosition = false" label="Cancel"
-          class="p-button-text flex-grow-1"></button>
-        <button pButton pRipple (click)="isAddPosition = false" label="Save" class="flex-grow-1"></button>
-      </div>
-    </ng-template>
-  </p-dialog>
 </div>
