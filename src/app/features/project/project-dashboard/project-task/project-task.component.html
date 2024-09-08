@@ -17,6 +17,7 @@
   <p-scroller 
     [items]="listTask" 
     [itemSize]="50"
+    styleClass="phantom-scrollbar"
     scrollHeight="250px">
         <ng-template pTemplate="item" let-item let-options="options">
             <div class="flex align-items-center p-2" [ngClass]="{ 'surface-ground': options.odd }" style="height: 50px;">
