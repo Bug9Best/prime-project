@@ -4,10 +4,12 @@ import { ProjectMemberComponent } from './project-member.component';
 import { RouterModule, Routes } from '@angular/router';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { ProjectMemberItemComponent } from './project-member-item/project-member-item.component';
-import { ProjectMemberDetailComponent } from './project-member-detail/project-member-detail.component';
+import { ProjectMemberItem } from './project-member-item/project-member-item.component';
+import { ProjectMemberDetail } from './project-member-detail/project-member-detail.component';
 import { StyleClassModule } from 'primeng/styleclass';
-import { PhantomModule } from '../../../template/phantom-module.module';
+import { PhantomTemplateModule } from '../../../template/phantom-template.module';
+import { ProjectMemberInvite } from './project-member-invite/project-member-invite.component';
+import { ProjectMemberPosition } from './project-member-position/project-member-position.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,10 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProjectMemberComponent,
-    ProjectMemberItemComponent,
-    ProjectMemberDetailComponent
+    ProjectMemberItem,
+    ProjectMemberDetail,
+    ProjectMemberInvite,
+    ProjectMemberPosition
   ],
   imports: [
     CommonModule,
@@ -28,7 +32,7 @@ const routes: Routes = [
     PrimeNGModule,
     TranslateModule,
     StyleClassModule,
-    PhantomModule
+    PhantomTemplateModule
   ]
 })
 export class ProjectMemberModule { }
