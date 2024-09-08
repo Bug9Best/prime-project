@@ -8,7 +8,7 @@ import { DividerModule } from 'primeng/divider';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
-import { PhantomModule } from '../../../template/phantom-module.module';
+import { PhantomTemplateModule } from '../../../template/phantom-template.module';
 
 const routes: Routes = [
   {
@@ -32,7 +32,7 @@ const routes: Routes = [
     FormsModule,
     ReactiveFormsModule,
 
-    PhantomModule
+    PhantomTemplateModule
   ],
 })
 export class ProjectIssueModule { }

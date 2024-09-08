@@ -4,8 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProjectDashboardComponent } from './project-dashboard.component';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { GridsterComponent, GridsterItemComponent } from 'angular-gridster2';
-import { PhantomModule } from '../../../template/phantom-module.module';
+import { PhantomTemplateModule } from '../../../template/phantom-template.module';
 import { ProjectInfo } from './project-info/project-info.component';
 import { ProjectRecentActivity } from './project-recent-activity/project-recent-activity.component';
 import { ProjectTeamProgress } from './project-team-progress/project-team-progress.component';
@@ -38,7 +37,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     PrimeNGModule,
     TranslateModule,
-    PhantomModule,
+    PhantomTemplateModule,
     MeterGroupModule
   ]
 })
