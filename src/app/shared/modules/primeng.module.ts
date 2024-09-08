@@ -67,6 +67,7 @@ import { DockModule } from 'primeng/dock';
 import { TooltipModule } from 'primeng/tooltip';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { MeterGroupModule } from 'primeng/metergroup';
 
 let modules = [
   ButtonModule,
@@ -134,7 +135,8 @@ let modules = [
   DockModule,
   TooltipModule,
   ContextMenuModule,
-  ScrollPanelModule
+  ScrollPanelModule,
+  MeterGroupModule
 ]
 
 @NgModule({
