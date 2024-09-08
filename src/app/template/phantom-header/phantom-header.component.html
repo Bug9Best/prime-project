@@ -2,16 +2,8 @@
   <div class="text-lg" [ngClass]="styleClass()">
     {{ title() | translate }}
   </div>
-  <div>
-    @if (showButton()) {
-    <button pButton pRipple 
-      label="{{ buttonLabel() | translate }}"
-      [icon]="buttonIcon()"
-      class="p-button-primary p-button-sm"
-      (click)="onClick()">
-    </button>
-    }
-  </div>
+  <ng-content>
+  </ng-content>
 </div>
 <p-divider></p-divider>
 <div class="flex justify-content-between mt-2">

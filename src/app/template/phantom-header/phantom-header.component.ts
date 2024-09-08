@@ -8,13 +8,5 @@ import { Component, input, Input, output } from '@angular/core';
 export class PhantomHeader {
 
   title = input<string>('Phantom Header');
-  showButton = input<boolean>(true);
-  buttonLabel = input<string>('');
-  buttonIcon = input<string>('');
   styleClass = input<string>();
-
-  onClickEvent = output();
-  onClick() {
-    this.onClickEvent.emit();
-  }
 }
