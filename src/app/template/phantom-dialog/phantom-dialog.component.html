@@ -1,1 +1,88 @@
-<p>phantom-dialog works!</p>
+@if (showButton) {
+  <button type="button"
+    (click)="onShow()"
+    [class]="buttonStyleClass"
+    [icon]="icon"
+    label="{{ label | translate }}"
+    [style]="buttonStyle"
+    pButton>
+  </button>
+}
+
+<p-dialog
+  [styleClass]="'card2u-dialog'"
+  [modal]="modal"
+  [dismissableMask]="dismissableMask"
+  [draggable]="draggable"
+  [closable]="false"
+  [appendTo]="appendTo"
+  [style]="dialogstyle"
+  [style.width]="dialogWidth"
+  [style.height]="dialogHeight"
+  [contentStyle]="{ padding: '0px' }"
+  [(visible)]="visible">
+
+  <!-- Header -->
+  <ng-template pTemplate="header">
+    <div class="w-full {{ headerStyleClass }}">
+      <div class="flex align-items-center justify-content-between">
+        <div class="flex align-items-center">
+          <ng-container *ngIf="showBack">
+            <div class="mr-2">
+              <button type="button"
+                (click)="onBackClick.emit()"
+                class="p-button-text p-button-rounded p-button-secondary mr-2"
+                icon="pi pi-arrow-left"
+                pButton>
+              </button>
+            </div>
+          </ng-container>
+          <div>
+            <ng-container *ngIf="showHeader">
+              <div class="text-xl font-bold">
+                {{ header || label || "Dialog" | translate }}
+              </div>
+            </ng-container>
+            <ng-container *ngIf="showSubHeader">
+              <div class="text-muted">
+                {{ subHeader || "" }}
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        <div>
+          <ng-container *ngIf="showEdit">
+            <button type="button"
+              (click)="onEditClick.emit(data)"
+              class="p-button-text p-button-rounded p-button-warning mr-2"
+              icon="pi pi-pencil"
+              pButton>
+            </button>
+          </ng-container>
+          <ng-container *ngIf="showTrash">
+            <button type="button"
+              (click)="onTrashClick.emit(data)"
+              class="p-button-text p-button-rounded p-button-danger mr-2"
+              icon="pi pi-trash"
+              pButton>
+            </button>
+          </ng-container>
+          <ng-container *ngIf="showClose">
+            <button type="button"
+              (click)="onClose()"
+              class="p-button-text p-button-rounded p-button-secondary mr-2"
+              icon="pi pi-times"
+              pButton>
+            </button>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+
+  <!-- Content -->
+  <div [class]="contentStyleClass">
+    <ng-content></ng-content>
+  </div>
+</p-dialog>
+  
