@@ -3,4 +3,62 @@
     Project Progress
   </div>
   <p-divider></p-divider>
+  <div class="px-3">
+    <div class="mb-5">
+      <div class="flex">
+        <div class="flex align-items-center">
+          <p-avatar 
+            icon="pi pi-flag" 
+            [style]="{ 'background-color': '#3b82f6', color: '#fff' }" 
+            shape="circle" />
+        </div>
+        <div class="flex flex-column ml-2">
+          <span class="font-bold">Sprint 1</span> 
+          <span class="text-sm">Current sprint</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="col-4">
+        <div class="flex align-items-center">
+          <p-avatar 
+            icon="pi pi-list" 
+            styleClass="mr-2" 
+            [style]="{ 'background-color': '#3b82f6', color: '#fff' }" 
+            shape="circle" />
+          <div class="flex flex-column">
+            <span class="font-bold">2/10 Tasks</span> 
+            <span class="text-sm">To Do</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="flex align-items-center">
+          <p-avatar 
+            icon="pi pi-step-forward-alt" 
+            styleClass="mr-2" 
+            [style]="{ 'background-color': '#eab308', color: '#fff' }" 
+            shape="circle" />
+          <div class="flex flex-column">
+            <span class="font-bold">3/10 Tasks</span> 
+            <span class="text-sm">In progress</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="flex align-items-center">
+          <p-avatar 
+            icon="pi pi-check" 
+            styleClass="mr-2" 
+            [style]="{ 'background-color': '#22c55e', color: '#fff' }" 
+            shape="circle" />
+          <div class="flex flex-column">
+            <span class="font-bold">5/10 Tasks</span> 
+            <span class="text-sm">Done</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
