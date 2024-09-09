@@ -27,11 +27,11 @@ export class ProjectSprintComponent {
   sprintItem!: any;
 
   value: any[] = [
-    { id: '000000', sprintname: 'Task Tesk', sprintowner: 'Task Tesk', sprintdate: 1627729997, progressbar: 50,},
-    { id: '000001', sprintname: 'Task 1', sprintowner: 'Task Tesk', sprintdate: 1617361997, progressbar: 50,},
-    { id: '000002', sprintname: 'Task 2', sprintowner: 'Task Tesk', sprintdate: 1610536397,  progressbar: 50,},
-    { id: '000003', sprintname: 'Task 3 ', sprintowner: 'Task Tesk', sprintdate: 1628507597,  progressbar: 50,},
-    { id: '000004', sprintname: 'Task 4', sprintowner: 'Task Tesk', sprintdate: 1624705997, progressbar: 50 },
+    { id: '000000', sprintname: 'Task Tesk', sprintowner: 'Task Tesk', sprintdate: 1627729997, progressbar: 10,},
+    { id: '000001', sprintname: 'Task 1', sprintowner: 'Task Tesk', sprintdate: 1617361997, progressbar: 20,},
+    { id: '000002', sprintname: 'Task 2', sprintowner: 'Task Tesk', sprintdate: 1610536397,  progressbar: 30,},
+    { id: '000003', sprintname: 'Task 3 ', sprintowner: 'Task Tesk', sprintdate: 1628507597,  progressbar: 40,},
+    { id: '000004', sprintname: 'Task 4', sprintowner: 'Task Tesk', sprintdate: 1624705997, progressbar: 75 },
     { id: '000005', sprintname: 'Task 5', sprintowner: 'Task Tesk', sprintdate: 1628075597,  progressbar: 50 },
     { id: '000006', sprintname: 'Task 6', sprintowner: 'Task Tesk', sprintdate: 1641121997,  progressbar: 50 },
     { id: '000007', sprintname: 'Task 7', sprintowner: 'Task Tesk', sprintdate: 1639393997,  progressbar: 50 },
