@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-section-features',
-  standalone: true,
-  imports: [],
+  selector: 'section-features',
   templateUrl: './section-features.component.html',
   styleUrl: './section-features.component.scss'
 })

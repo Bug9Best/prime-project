@@ -1,0 +1,138 @@
+<p-contextMenu #cm [model]="items" />
+<p-table
+  [value]="value"
+  [rows]="10"
+  [paginator]="paginator"
+  [rowsPerPageOptions]="rowsPerPageOptions"
+  [scrollable]="scrollable"
+  [scrollHeight]="scrollHeight"
+  [resizableColumns]="resizableColumns"
+  [selectionMode]="selectionMode"
+  [(selection)]="selectedItems"
+  [dataKey]="dataKey"
+  [contextMenu]="cm"
+  [styleClass]="styleClass"
+>
+  <ng-template pTemplate="header">
+    <tr>
+      <ng-container *ngFor="let col of columns; index as index">
+        <ng-container *ngIf="showOrder && showOrderIndex === index">
+          <th pResizableColumn [style.width]="'80px'" class="text-center">
+            No.
+          </th>
+        </ng-container>
+        <th pResizableColumn [style]="col.style">{{ col.label }}</th>
+      </ng-container>
+    </tr>
+  </ng-template>
+
+  <ng-template pTemplate="body" let-item let-rowIndex="rowIndex">
+    <ng-template #pTableRow>
+      <ng-container *ngFor="let col of columns; index as i">
+        <ng-container *ngIf="showOrder && showOrderIndex === i">
+          <td class="reorder" [style.width]="'80px'" pReorderableRowHandle>
+            <span
+              class="text-400 pi pi-ellipsis-v"
+              pReorderableRowHandle
+            ></span>
+            <span
+              class="text-400 pi pi-ellipsis-v -ml-2"
+              pReorderableRowHandle
+            ></span>
+            <div class="text-center">{{ rowIndex + 1 }}</div>
+          </td>
+        </ng-container>
+
+        <td [colSpan]="col.colSpan" [style]="col.style">
+          <ng-template #pDefault>
+            <ng-container *ngIf="item[col.field]; else pElse">
+              <ng-container [ngSwitch]="col.type">
+                <ng-container *ngSwitchCase="'string'">
+                  {{ item[col.field] }}
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'number'">
+                  {{ item[col.field] | number : col.numberFormat }}
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'date'">
+                  <ng-container [ngSwitch]="col.dateFormat">
+                    <ng-container *ngSwitchCase="'relative'">
+                      <div class="text-success">
+                        {{ item[col.field] | thdate }}
+                      </div>
+                      <div class="text-xs text-gray-400">
+                        {{ item[col.field] | thdate : "dateTime" }}
+                      </div>
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>
+                      {{ item[col.field] | thdate : col.dateFormat }}
+                    </ng-container>
+                  </ng-container>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'progress'">
+                  <p-progressBar value="{{ item[col.field] }}">
+                    <ng-template pTemplate="content" let-value>
+                        <span>{{ value }}</span>
+                    </ng-template>
+                  </p-progressBar>
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'citizen'">
+                  {{ item[col.field] | thcard }}
+                </ng-container>
+
+                <ng-container *ngSwitchCase="'html'">
+                  <div [innerHTML]="item[col.field]"></div>
+                </ng-container>
+
+                <ng-container *ngSwitchDefault>
+                  {{ item[col.field] }}
+                </ng-container>
+              </ng-container>
+            </ng-container>
+          </ng-template>
+
+          <ng-template #pElse>
+            {{ col.emptyText || "-" }}
+          </ng-template>
+
+          <ng-container
+            [ngTemplateOutlet]="template[col.field] || pDefault"
+            [ngTemplateOutletContext]="{ $implicit: item, column: col }"
+          >
+          </ng-container>
+        </td>
+      </ng-container>
+    </ng-template>
+
+    <!-- Selectable -->
+    <tr
+      *ngIf="selectionMode"
+      [pContextMenuRow]="item"
+      [pSelectableRow]="item"
+      [pSelectableRowIndex]="rowIndex"
+      [pReorderableRow]="rowIndex"
+    >
+      <ng-container
+        [ngTemplateOutlet]="pTableRow"
+        [ngTemplateOutletContext]="{ $implicit: item }"
+      >
+      </ng-container>
+    </tr>
+
+    <!-- Not Selectable -->
+    <tr
+      *ngIf="!selectionMode"
+      [pContextMenuRow]="item"
+      [pReorderableRow]="rowIndex"
+    >
+      <ng-container
+        [ngTemplateOutlet]="pTableRow"
+        [ngTemplateOutletContext]="{ $implicit: item }"
+      >
+      </ng-container>
+    </tr>
+  </ng-template>
+</p-table>
