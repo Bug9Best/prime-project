@@ -23,6 +23,7 @@ export const routes: Routes = [
                 pathMatch: 'prefix'
             },
             {
+                
                 path: 'dashboard',
                 loadChildren: () => import('./features/project/project-dashboard/project-dashboard.module').then(m => m.ProjectDashboardModule)
             },

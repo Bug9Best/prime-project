@@ -16,4 +16,5 @@ export class PhantomHeader {
   onClick() {
     this.onClickEvent.emit();
   }
+
 }

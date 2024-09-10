@@ -1,1 +1,119 @@
-<p>project-create works!</p>
+<div>
+    <phantom-topbar [isShowToggleSidebar]="false">
+    </phantom-topbar>
+  
+    <div class="flex align-items-center justify-content-center surface-ground">
+      <div class="container p-5">
+        <div class="surface-card p-4 shadow-2 border-round w-full">
+          <div>
+            <div class="flex justify-content-between">
+              <div>
+                <div class="text-3xl font-medium text-900 mb-2">Project Create</div>
+              </div>
+            </div>
+            <div class="grid formgrid p-fluid -mb-3">
+              <div class="field col-12">
+                <label for="project_name" class="font-medium text-900">Project Name</label>
+                <input pInputText type="text" id="project_name" placeholder="Enter project name" class="p-inputtext-sm" />
+              </div>
+            </div>
+  
+            <p-divider></p-divider>
+            <label for="project_name" class="font-medium text-900">Project template</label>
+            <div class="text-sm font-medium text-500 mb-3">
+              You can't change the template later.
+            </div>
+            <div class="grid">
+              <div class="col-12">
+                <div class="shadow-2 surface-card p-4 border-2 border-transparent cursor-pointer"
+                  style="border-radius: 10px" [ngClass]="{
+                  'border-orange-500': template === 0,
+                  'hover:border-orange-200': template !== 0 }" (click)="template = 0">
+                  <div class="flex align-items-center">
+                    <div class="mr-3">
+                      <span class="inline-flex justify-content-center align-items-center bg-orange-100"
+                        style="border-radius: 4px; width: 45px; height: 45px">
+                        <i class="pi pi-spinner text-2xl text-orange-600"></i>
+                      </span>
+                    </div>
+                    <div>
+                      <span class="text-900 text-xl mb-2 font-medium">Scrum Project</span>
+                      <p class="m-0 text-600 font-medium text-sm">
+                        Visualize and advance your project forward using issues on a
+                        powerful board.
+                      </p>
+                    </div>
+                    <p-radioButton name="template" [value]="0" [(ngModel)]="template" class="ml-auto"></p-radioButton>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <div class="shadow-2 surface-card p-4 border-2 border-transparent cursor-pointer"
+                  style="border-radius: 10px" [ngClass]="{
+                  'border-blue-500': template === 1,
+                  'hover:border-blue-200': template !== 1 }" (click)="template = 1">
+                  <div class="flex align-items-center">
+                    <div class="mr-3">
+                      <span class="inline-flex justify-content-center align-items-center bg-blue-100"
+                        style="border-radius: 4px; width: 45px; height: 45px">
+                        <i class="pi pi-align-left text-2xl text-blue-600"></i>
+                      </span>
+                    </div>
+                    <div>
+                      <span class="text-900 text-xl mb-2 font-medium">Waterfall Project</span>
+                      <p class="m-0 text-600 font-medium text-sm">
+                        Visualize and advance your project forward using issues on a
+                        powerful board.
+                      </p>
+                    </div>
+                    <p-radioButton name="template" [value]="1" [(ngModel)]="template" class="ml-auto"></p-radioButton>
+                  </div>
+                </div>
+              </div>
+  
+              <div class="col-12">
+                <div class="shadow-2 surface-card p-4 border-2 border-transparent cursor-pointer"
+                  style="border-radius: 10px" [ngClass]="{
+                  'border-green-500': template === 2,
+                  'hover:border-green-200': template !== 2 }" (click)="template = 2">
+                  <div class="flex align-items-center">
+                    <div class="mr-3">
+                      <span class="inline-flex justify-content-center align-items-center bg-green-100"
+                        style="border-radius: 4px; width: 45px; height: 45px">
+                        <i class="pi pi-clipboard text-2xl text-green-600"></i>
+                      </span>
+                    </div>
+                    <div>
+                      <span class="text-900 text-xl mb-2 font-medium">Kanban Project</span>
+                      <p class="m-0 text-600 font-medium text-sm">
+                        Sprint toward your project goals with a board, backlog, and
+                        timeline.
+                      </p>
+                    </div>
+                    <p-radioButton name="template" [value]="2" [(ngModel)]="template" class="ml-auto"></p-radioButton>
+                  </div>
+                </div>
+              </div>
+  
+  
+            </div>
+  
+            <p-divider></p-divider>
+  
+            <div class="flex justify-content-end">
+              <p-button text="true" size="small" severity="secondary" label="Cancel" (onClick)="onCancel()">
+              </p-button>
+              <p-button size="small" icon="pi pi-arrow-right" iconPos="right" label="Create Project" class="ml-2"
+                (onClick)="onCreateProject()">
+              </p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="surface-ground p-4">
+      <phantom-footer [isFullOptions]="false">
+      </phantom-footer>
+    </div>
+  </div>

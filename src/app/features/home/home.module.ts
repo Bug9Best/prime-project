@@ -11,6 +11,7 @@ import { SectionFeaturesComponent } from './section-features/section-features.co
 import { SectionGetstartedComponent } from './section-getstarted/section-getstarted.component';
 import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
+import { PhantomFooterHomeComponent } from "../../template/phantom-footer-home/phantom-footer-home.component";
 
 const routes: Routes = [
   {
@@ -35,6 +36,7 @@ const routes: Routes = [
     PrimeNGModule,
     PhantomPage,
     TranslateModule,
-  ]
+    PhantomFooterHomeComponent
+]
 })
 export class HomeModule { }
