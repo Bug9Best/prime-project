@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ThyButton, ThyButtonModule } from 'ngx-tethys/button';
 import { ThyLayoutModule } from 'ngx-tethys/layout';
 import { NgxGanttModule } from '@worktile/gantt';
+import { PhantomModule } from '../../../template/phantom-module.module';
 
 const routes: Routes = [
   {
@@ -36,7 +37,8 @@ const routes: Routes = [
     ThyButtonModule,
     ThyButton,
     ThyLayoutModule,
-    NgxGanttModule
+    NgxGanttModule,
+    PhantomModule
   ]
 })
 export class ProjectSprintModule { }
