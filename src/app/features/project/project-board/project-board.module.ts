@@ -7,6 +7,7 @@ import { ProjectBoardComponent } from './project-board.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PhantomTemplateModule } from '../../../template/phantom-template.module';
 import { ProjectBoardAdd } from './project-board-add/project-board-add.component';
+import { ProjectBoardList } from './project-board-list/project-board-list.component';
 
 const routes: Routes = [
   {
@@ -18,7 +19,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProjectBoardComponent,
-    ProjectBoardAdd
+    ProjectBoardAdd,
+    ProjectBoardList
   ],
   imports: [
     CommonModule,
