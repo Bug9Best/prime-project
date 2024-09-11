@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core';
+import { Component, inject, Input, output, ViewChild } from '@angular/core';
 import { PhantomPageService } from '../phantom-page.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -8,6 +8,7 @@ import { ButtonModule } from 'primeng/button';
 import { Overlay } from 'primeng/overlay';
 import { GanttConfig, GanttConfigProvider } from '../../../config/gantt.config';
 import { enUS, th } from 'date-fns/locale';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'phantom-topbar',
@@ -24,7 +25,12 @@ import { enUS, th } from 'date-fns/locale';
 })
 
 export class PhantomTopbarComponent {
+  @Input()
+  isShowToggleSidebar: boolean = true;
+  
+  stateToogleSidebar: boolean = false;
   isLightTheme: boolean = true;
+
 
   constructor(
     private ganntConfig: GanttConfig,
@@ -38,6 +44,11 @@ export class PhantomTopbarComponent {
     this.translateService.use(lang);
     this.overlay.hide();
     this.SetGanttConfig(lang);
+  }
+  onToggleSidebarEvent = output<boolean>();
+  toggleSidebar(state: boolean) {
+    this.stateToogleSidebar = !state;
+    this.onToggleSidebarEvent.emit(state);
   }
 
   SetGanttConfig(lang: string) {

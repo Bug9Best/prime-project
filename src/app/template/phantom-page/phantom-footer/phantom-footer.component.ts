@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, input } from '@angular/core';
 import { PhantomPageService } from '../phantom-page.service';
 
 @Component({
@@ -10,4 +10,6 @@ import { PhantomPageService } from '../phantom-page.service';
 export class PhantomFooterComponent {
 
   layoutService = inject(PhantomPageService);
+  isFullOptions = input<boolean>(true);
+
 }
