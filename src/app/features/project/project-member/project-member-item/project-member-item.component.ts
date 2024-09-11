@@ -14,6 +14,6 @@ export class ProjectMemberItem {
   memberDetail!: ProjectMemberDetail;
   onSelectMember() {
     this.memberDetail.member = this.member;
-    this.memberDetail.isShowMember = !this.memberDetail.isShowMember;
+    this.memberDetail.visible = !this.memberDetail.visible;
   }
 }

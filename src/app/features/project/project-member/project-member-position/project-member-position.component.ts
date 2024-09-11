@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProjectMemberPosition {
 
-  isAddPosition: boolean = false;
+  visible: boolean = false;
 
   positions: any[] = [
     { id: 1, name: 'Developer' },

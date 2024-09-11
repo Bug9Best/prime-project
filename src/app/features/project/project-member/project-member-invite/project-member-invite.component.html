@@ -1,5 +1,5 @@
 <phantom-dialog
-  [(visible)]="isAddMember"
+  [(visible)]="visible"
   [icon]="'pi pi-user-plus'"
   [label]="'BUTTON_LABEL_ADD_MEMBER'"
   [showHeader]="false"
@@ -15,7 +15,7 @@
           type="button"
           icon="pi pi-times"
           class="p-button-rounded p-button-secondary p-button-text align-self-start"
-          (click)="isAddMember = false">
+          (click)="visible = false">
         </button>
       </div>
       <p class="font-semibold text-xl mt-0 mb-2 text-900">Invite Team Member</p>
@@ -25,12 +25,12 @@
   
     <div class="pt-3 flex">
       <button pButton pRipple 
-        (click)="isAddMember = false" 
+        (click)="visible = false" 
         label="Cancel" 
         class="p-button-text p-button-danger flex-grow-1">
       </button>
       <button pButton pRipple 
-        (click)="isAddMember = false" 
+        (click)="visible = false" 
         label="Invite" 
         class="flex-grow-1">
       </button>

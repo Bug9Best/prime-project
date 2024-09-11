@@ -9,7 +9,7 @@ import { ConfirmationService } from 'primeng/api';
 export class ProjectMemberDetail {
 
   member: any;
-  isShowMember: boolean = false;
+  visible: boolean = false;
 
   constructor(
     private confirmationService: ConfirmationService,
@@ -21,7 +21,7 @@ export class ProjectMemberDetail {
       rejectButtonStyleClass: 'p-button-text p-button-danger p-button-sm',
       acceptButtonStyleClass: 'p-button-sm',
       accept: () => {
-        this.isShowMember = false;
+        this.visible = false;
       }
     });
   }

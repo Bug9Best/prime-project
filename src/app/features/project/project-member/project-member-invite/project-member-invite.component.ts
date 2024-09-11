@@ -7,6 +7,5 @@ import { Component } from '@angular/core';
 })
 export class ProjectMemberInvite {
 
-  isAddMember = false;
-
+  visible = false;
 }
