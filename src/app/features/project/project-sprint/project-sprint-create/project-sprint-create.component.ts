@@ -43,14 +43,18 @@ export class ProjectSprintCreate {
     });
   }
 
-  onCreateEvent = output<any>();
-  onCreateSprint() {
+  validatreForm() {
     if (this.formGroup.invalid) {
       this.formGroup.markAllAsTouched();
       this.showMessages('warn', 'Error', 'Please fill in the form');
       return;
     }
 
+    this.onCreateSprint()
+  }
+
+  onCreateEvent = output<any>();
+  onCreateSprint() {
     let values = this.formGroup.value;
     values.process = 1;
     values.duration = this.getTotalDate(values.start_date, values.end_date);
