@@ -1,34 +1,38 @@
 <div>
-    <home-navigate 
-      (onSignInEvent)="onOpenSignInEvent()" 
-      (onSignUpEvent)="onOpenSignUpEvent()"
-      (onScrollToElementEvent)="onScrollToElementEvent($event)">
-    </home-navigate>
-    <sign-in-dialog
-      (onSignInEvent)="signInCredential()"
-      (onSignInGoogleEvent)="signInGoogle()"
-      (onSignUpEvent)="onOpenSignUpEvent()">
-    </sign-in-dialog>
-    <sign-up-dialog
-      (onSignUpEvent)="onSignUp()"
-      (onSignInGoogleEvent)="signInGoogle()">
-    </sign-up-dialog>
-  
-    <div class="first section" id="getstarted">
-      <section-getstarted>
-      </section-getstarted>
+  <home-navigate 
+    (onSignInEvent)="onOpenSignInEvent()" 
+    (onSignUpEvent)="onOpenSignUpEvent()"
+    (onScrollToElementEvent)="onScrollToElementEvent($event)">
+  </home-navigate>
+  <sign-in-dialog
+    (onSignInEvent)="signInCredential()"
+    (onSignInGoogleEvent)="signInGoogle()"
+    (onSignUpEvent)="onOpenSignUpEvent()">
+  </sign-in-dialog>
+  <sign-up-dialog
+    (onSignUpEvent)="onSignUp()"
+    (onSignInGoogleEvent)="signInGoogle()">
+  </sign-up-dialog>
+
+  <div class="surface-card">
+    <div class="layout-main-no-outline">
+      <div class="first section" id="getstarted">
+        <section-getstarted>
+        </section-getstarted>
+      </div>
+
+      <div class="section" id="features">
+        <section-features>
+        </section-features>
+      </div>
+
+      <div class="section" id="team">
+        <section-developer>
+        </section-developer>
+      </div>
     </div>
-  
-    <div class="section" id="features">
-      <section-features>
-      </section-features>
-    </div>
-  
-    <div class="section" id="team">
-      <section-developer>
-      </section-developer>
-    </div>
-  
-    <phantom-footer-home>
-    </phantom-footer-home>
   </div>
+
+  <phantom-footer-home>
+  </phantom-footer-home>
+</div>
