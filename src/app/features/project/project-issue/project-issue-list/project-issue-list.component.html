@@ -1,7 +1,10 @@
-<div class="surface-overlay">
-    
-  </div> 
+@if (!listIssue.length) {
+  <phantom-empty [description]="'PAGE_ISSUE_EMPTY'">
+  </phantom-empty>
+}
+@else {
+  <phantom-table-for-list 
+    [value]="listIssue" [columns]="columns">
+  </phantom-table-for-list>
+}
 
-  <p-divider></p-divider>
-  <phantom-table [value]="value" [columns]="columns">
-  </phantom-table>

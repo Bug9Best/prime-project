@@ -1,11 +1,12 @@
 <div class="p-4">
   <phantom-header [title]="'TITLE_ISSUE'">
-  <project-issue-create >
-  </project-issue-create>
+    <project-issue-create 
+      (onCreateEvent)="createIssue($event)">
+    </project-issue-create>
   </phantom-header>
 
-  <project-issue-list>
-    
-  </project-issue-list>
-
+  <phantom-content>
+    <project-issue-list>
+    </project-issue-list>
+  </phantom-content>
 </div>

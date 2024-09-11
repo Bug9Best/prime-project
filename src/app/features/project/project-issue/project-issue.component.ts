@@ -1,8 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { NodeService } from '../../../shared/service/nodeservice';
-import { PhantomTableColumn } from '../../../template/phantom-table/phantom-table.component';
-
+import { ProjectIssueList } from './project-issue-list/project-issue-list.component';
 
 @Component({
   selector: 'project-issue',
@@ -12,5 +10,9 @@ import { PhantomTableColumn } from '../../../template/phantom-table/phantom-tabl
 })
 export class ProjectIssueComponent {
 
-  
+  @ViewChild(ProjectIssueList)
+  projectIssueList!: ProjectIssueList;
+  createIssue(data: any) {
+    this.projectIssueList.createIssue(data);
+  }
 }

@@ -1,40 +1,44 @@
-<phantom-dialog
-  header="Create Issue"
-  [(visible)]="isOnCreateIssue"
-  [modal]="true"
-  [label]="'Create Issue'" 
-  [style]="{ 'min-width': '50vw' }"
-  styleClass="p-3"
->
+<phantom-dialog 
+  [(visible)]="visible" 
+  [modal]="true" 
+  [icon]="'pi pi-plus'"
+  [header]="'Create Issue'" 
+  [label]="'Create Issue'"
+  [style]="{ 'min-width': '50vw' }" 
+  styleClass="p-3">
+
   <span class="p-text-secondary block mb-5"> Create a new issue </span>
   <div [formGroup]="formGroup">
     <div class="grid">
       <div class="col-3">
-        <label for="username" class="font-semibold w-6rem">Issue Type</label>
+        <label for="username" class="font-semibold w-6rem">
+          Issue Type
+        </label>
       </div>
       <div class="col-9">
-        <p-dropdown
-          [options]="optionsType"
-          optionLabel="label"
+        <p-dropdown 
+          appendTo="body" 
           placeholder="Select Type"
-          formControlName="type"
+          [options]="optionsType" 
+          optionLabel="label" 
+          optionValue="value"
           styleClass="w-full"
-        >
+          formControlName="type">
         </p-dropdown>
       </div>
     </div>
 
     <div class="grid">
       <div class="col-3">
-        <label for="username" class="font-semibold w-6rem">Issue Name</label>
+        <label for="username" class="font-semibold w-6rem">
+          Issue Name
+        </label>
       </div>
       <div class="col-9">
-        <input
+        <input pInputText
           type="text"
-          pInputText
-          class="p-inputtext-sm w-full"
-          formControlName="summary"
-        />
+          class="p-inputtext-sm w-full" 
+          formControlName="title"/>
       </div>
     </div>
 
@@ -43,14 +47,14 @@
         <label for="username" class="font-semibold w-6rem">Assign To</label>
       </div>
       <div class="col-9">
-        <p-dropdown
-          appendTo="body"
-          [options]="optionsAssignee"
-          optionLabel="label"
+        <p-dropdown 
+          appendTo="body" 
           placeholder="Select Assignee"
-          formControlName="assignee"
+          [options]="optionsAssignee" 
+          optionLabel="label" 
+          optionValue="value"
           styleClass="w-full"
-        >
+          formControlName="assignee">
         </p-dropdown>
       </div>
     </div>
@@ -60,31 +64,30 @@
         <label for="username" class="font-semibold w-6rem">Sprint</label>
       </div>
       <div class="col-9">
-        <p-dropdown
-          appendTo="body"
-          [options]="options"
-          optionLabel="label"
+        <p-dropdown 
+          appendTo="body" 
           placeholder="Select Assignee"
-          formControlName="sprint"
+          [options]="options" 
+          optionLabel="label" 
+          optionValue="value"
           styleClass="w-full"
-        >
+          formControlName="sprint">
         </p-dropdown>
       </div>
     </div>
   </div>
-  <p-footer class="flex justify-content-end mt-2">
-    <p-button
-      label="Cancel"
-      severity="secondary"
-      size="small"
-      [text]="true"
-      (onClick)="isOnCreateIssue = false"
-    />
-    <p-button
+
+  <div class="pt-3 flex">
+    <button pButton pRipple 
+      label="Cancel" 
+      class="p-button-text p-button-danger flex-grow-1"
+      (click)="visible = false">
+    </button>
+    <button pButton pRipple 
       icon="pi pi-save"
-      label="Save"
-      size="small"
-      (onClick)="onCreateIssue()"
-    />
-  </p-footer>
+      label="Create Issue" 
+      class="flex-grow-1"
+      (click)="validateForm()">
+    </button>
+  </div>
 </phantom-dialog>
