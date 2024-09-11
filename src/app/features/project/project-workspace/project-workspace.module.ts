@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { ProjectSprintComponent } from '../project-sprint/project-sprint.component';
+import { PhantomTemplateModule } from '../../../template/phantom-template.module';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
     RouterModule.forChild(routes),
     PrimeNGModule,
     TranslateModule,
+    PhantomTemplateModule
   ]
 })
 export class ProjectWorkspaceModule { }
