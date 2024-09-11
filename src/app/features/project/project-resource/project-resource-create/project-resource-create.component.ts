@@ -17,7 +17,8 @@ export class ProjectResourceCreate {
     content: new FormControl(null),
   });
 
-  onCloseDialog() {
+  onCloseDialog(visible: boolean) {
+    this.visible = visible;
     this.formGroup.reset();
   }
 
@@ -41,5 +42,6 @@ export class ProjectResourceCreate {
 
     let values = this.formGroup.value;
     this.onAddResource.emit(values);
+    this.onCloseDialog(false);
   }
 }
