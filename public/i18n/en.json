@@ -15,6 +15,7 @@
 
   "MENU_SPRINT": "Sprint",
   "TITLE_SPRINT": "Sprint",
+  "PAGE_SPRINT_EMPTY" :"No sprint in this project. Please create a new sprint.",
 
   "MENU_BACKLOG": "Backlog",
   "TITLE_BACKLOG": "Backlog",
