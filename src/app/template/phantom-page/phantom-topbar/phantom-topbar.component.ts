@@ -8,7 +8,6 @@ import { ButtonModule } from 'primeng/button';
 import { Overlay } from 'primeng/overlay';
 import { GanttConfig, GanttConfigProvider } from '../../../config/gantt.config';
 import { enUS, th } from 'date-fns/locale';
-import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'phantom-topbar',
@@ -18,25 +17,21 @@ import { MenuItem } from 'primeng/api';
     RouterModule,
     TranslateModule,
     OverlayPanelModule,
-    ButtonModule
+    ButtonModule,
   ],
   templateUrl: './phantom-topbar.component.html',
-  providers: [GanttConfig, GanttConfigProvider]
+  providers: [GanttConfig, GanttConfigProvider],
 })
-
 export class PhantomTopbarComponent {
+
   @Input()
   isShowToggleSidebar: boolean = true;
-  
   stateToogleSidebar: boolean = false;
-  isLightTheme: boolean = true;
-
 
   constructor(
     private ganntConfig: GanttConfig,
-    public phantomPageService: PhantomPageService,
-  ) {
-  }
+    public phantomPageService: PhantomPageService
+  ) {}
 
   @ViewChild('op', { static: false }) overlay!: Overlay;
   translateService = inject(TranslateService);
@@ -55,8 +50,8 @@ export class PhantomTopbarComponent {
     switch (lang) {
       case 'en':
         this.ganntConfig.dateOptions = {
-          locale: enUS
-        }
+          locale: enUS,
+        };
         this.ganntConfig.dateFormat = {
           hour: 'HH:mm',
           day: 'd',
@@ -65,12 +60,12 @@ export class PhantomTopbarComponent {
           year: `'year' yyyy`,
           yearMonth: `LLLL yyyy' (week' w ')'`,
           yearQuarter: `QQQQ 'of' yyyy`,
-        }
+        };
         break;
       case 'th':
         this.ganntConfig.dateOptions = {
-          locale: th
-        }
+          locale: th,
+        };
         this.ganntConfig.dateFormat = {
           hour: 'HH:mm',
           day: 'd',
@@ -79,7 +74,7 @@ export class PhantomTopbarComponent {
           year: `'year' yyyy`,
           yearMonth: `LLLL yyyy' (สัปดาห์' w ')'`,
           yearQuarter: `QQQQ 'ของ' yyyy`,
-        }
+        };
         break;
     }
   }
