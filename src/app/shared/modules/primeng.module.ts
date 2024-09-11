@@ -68,6 +68,7 @@ import { TooltipModule } from 'primeng/tooltip';
 import { ContextMenuModule } from 'primeng/contextmenu';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { MeterGroupModule } from 'primeng/metergroup';
+import { FloatLabelModule } from 'primeng/floatlabel';
 
 let modules = [
   ButtonModule,
@@ -136,7 +137,8 @@ let modules = [
   TooltipModule,
   ContextMenuModule,
   ScrollPanelModule,
-  MeterGroupModule
+  MeterGroupModule,
+  FloatLabelModule,
 ]
 
 @NgModule({
