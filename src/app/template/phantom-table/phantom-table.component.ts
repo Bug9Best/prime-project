@@ -1,8 +1,4 @@
-import { Component, ContentChildren, Directive, Input, input, output, TemplateRef } from '@angular/core';
-import { TableModule } from 'primeng/table';
-import { ContextMenuModule } from 'primeng/contextmenu';
-import { CommonModule } from '@angular/common';
-import { ThaiModule } from '../../shared/pipes/thai.module';
+import { Component, Directive, Input, input, output, TemplateRef } from '@angular/core';
 
 export type PhantomTableColumnType = "string" | "number" | "date" | "button" | "checked" | "control" | "citizen" | 'html' | 'image' | 'link' | 'tag' | 'process' | 'currency';
 export class PhantomTableColumn {
