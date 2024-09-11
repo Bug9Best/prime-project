@@ -1,0 +1,20 @@
+<div class="flex gap-3">
+  <div *ngFor="let board of listBoard" class="h-full">
+    <p-panel [header]="board.name" pDroppable (onDrop)="onDropItem(board)">
+      <div *ngFor="let item of board.items" pDraggable (onDragEnd)="onDragEnd()"
+        (onDragStart)="onDragStart(board, item)"
+        class="p-3 surface-overlay border-1 surface-border border-round mb-2 cursor-pointer">
+        <div class="p-card-header">{{ item.title }}</div>
+        <div class="p-card-body">{{ item.description }}</div>
+      </div>
+
+      <ng-template pTemplate="footer" style="padding: 0;">
+        <button pButton pRipple 
+          icon="pi pi-plus"
+          label="Create Issue"
+          class="p-button-secondary p-button-outlined p-button-sm w-full">
+        </button>
+      </ng-template>
+    </p-panel>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+:host ::ng-deep .p-panel {
+  width: 300px;
+
+  .p-panel-header {
+      background-color: var(--surface-overlay);
+  }
+
+  .p-panel-content {
+      height: calc(100vh - 33.5rem);
+      padding: 0.5rem;
+      background-color: var(--surface-ground);
+  }
+
+  .p-panel-footer {
+      padding: 0.5rem;
+  }
+}
+
+:host ::ng-deep .p-button-secondary {
+  border: 1px solid var(--surface-border);
+}
