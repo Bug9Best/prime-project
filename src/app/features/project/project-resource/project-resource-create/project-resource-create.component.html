@@ -2,10 +2,10 @@
   [(visible)]="visible" 
   [icon]="'pi pi-file'" 
   [label]="'BUTTON_ADD_RESOURCE_LABEL'" 
-  [dialogstyle]="{ width: '70vw' }"
+  [dialogstyle]="{ width: '50vw' }"
   [showHeader]="false"
   [showClose]="false"
-  (visibleChange)="onCloseDialog()">
+  (visibleChange)="onCloseDialog($event)">
 
   <section class="flex flex-column w-full">
     <div class="flex w-full justify-content-between mb-4">
