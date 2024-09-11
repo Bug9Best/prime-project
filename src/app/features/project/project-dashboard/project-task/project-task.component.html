@@ -4,93 +4,33 @@
       Project Task
     </div>
     <div [formGroup]="formGroup">
-      <p-selectButton 
-        [options]="stateOptions" 
-        class="h-1rem" 
-        formControlName="value" 
-        optionLabel="label"
+      <p-selectButton [options]="stateOptions" class="h-1rem" formControlName="value" optionLabel="label"
         optionValue="value" />
     </div>
   </div>
   <p-divider></p-divider>
 
-  <p-scroller 
-    [items]="listTask" 
-    [itemSize]="50"
-    styleClass="phantom-scrollbar"
-    scrollHeight="250px">
-        <ng-template pTemplate="item" let-item let-options="options">
-          <ul class="list-none p-0 m-0">
-            <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between p-3 border-1 mb-3 bg-yellow-50 border-yellow-500" style="border-radius: 10px;">
-                <div>
-                    <div>
-                        <span class="inline-flex justify-content-center align-items-center w-2rem h-2rem border-circle border-1 border-yellow-200">
-                            <i class="pi pi-cog text-yellow-700"></i>
-                        </span>
-                        <span class="text-yellow-700 font-bold ml-2">TASK 1</span>
-                    </div>
-                    <p class="text-yellow-700 mt-2 mb-0">Due <span class="font-medium">10/09/2021</span></p>
-                </div>
-                <div class="flex align-items-center justify-content-between md:justify-content-end mt-3 md:mt-0">
-                  <div>
-                    <p-avatarGroup class="flex align-items-center"  [pTooltip]="'Natthaphon D. Best' + '\n'  + 'Phuriq' + '\n' + 'and 1 others'">
-                      <p-avatar 
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" 
-                        shape="circle" />
-                      <p-avatar 
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png" 
-                        shape="circle" />
-                      <p-avatar 
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/onyamalimba.png" 
-                        shape="circle" />
-                    </p-avatarGroup>
-                  </div>
-                </div>
-            </li>
-            <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between p-3 border-1 mb-3 bg-green-50 border-green-500" style="border-radius: 10px;">
-                <div>
-                    <div>
-                        <span class="inline-flex justify-content-center align-items-center w-2rem h-2rem border-circle border-1 border-green-200">
-                            <i class="pi pi-file text-green-600"></i>
-                        </span>
-                        <span class="text-green-700 font-bold ml-2">Task 2</span>
-                    </div>
-                    <p class="text-green-700 mt-2 mb-0">Due <span class="font-medium">21/10/2021</span></p>
-                </div>
-                <div class="flex align-items-center justify-content-between md:justify-content-end mt-3 md:mt-0">
-                  <div>
-                    <p-avatarGroup class="flex align-items-center"  [pTooltip]="'Natthaphon D. Best' + '\n'  + 'Phuriq' + '\n' + 'and 1 others'">
-                      <p-avatar 
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" 
-                        shape="circle" />
-                      <p-avatar 
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png" 
-                        shape="circle" />
-                    </p-avatarGroup>
-                  </div>
-                </div>
-            </li>
-            <li class="flex flex-column md:flex-row md:align-items-center md:justify-content-between p-3 border-1 mb-3 bg-pink-50 border-pink-500" style="border-radius: 10px;">
-                <div>
-                    <div>
-                        <span class="inline-flex justify-content-center align-items-center w-2rem h-2rem border-circle border-1 border-pink-200">
-                            <i class="pi pi-cog text-pink-600"></i>
-                        </span>
-                        <span class="text-pink-700 font-bold ml-2">Task 3</span>
-                    </div>
-                    <p class="text-pink-700 mt-2 mb-0">Due <span class="font-medium">20/12/2021</span></p>
-                </div>
-                <div class="flex align-items-center justify-content-between md:justify-content-end mt-3 md:mt-0">
-                  <div>
-                    <p-avatarGroup class="flex align-items-center"  [pTooltip]="'Natthaphon D. Best' + '\n'  + 'Phuriq' + '\n' + 'and 1 others'">
-                      <p-avatar 
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" 
-                        shape="circle" />
-                    </p-avatarGroup>
-                  </div>
-                </div>
-            </li>
-        </ul>
-        </ng-template>
+  <p-scroller [items]="listTask" [itemSize]="100" styleClass="phantom-scrollbar" scrollHeight="250px">
+    <ng-template pTemplate="item" let-item let-options="options">
+      <ul class="list-none p-0 m-0 cursor-pointer">
+        <li class="flex align-items-center justify-content-between border-1 surface-border border-round mb-3 p-3">
+          <div class="flex align-items-center">
+            <i class="pi pi-cog text-gray-400 mr-2" style="font-size: 28px;"></i>
+            <div class="flex flex-column">
+              <span class="text-gray-700 font-bold">Task 1</span>
+              <span class="text-gray-400">Due 20/12/2021</span>
+            </div>
+          </div>
+          <div class="flex align-items-center justify-content-between md:justify-content-end mt-3 md:mt-0">
+            <div>
+              <p-avatarGroup class="flex align-items-center"
+                [pTooltip]="'Natthaphon D. Best' + '\n'  + 'Phuriq' + '\n' + 'and 1 others'">
+                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+              </p-avatarGroup>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </ng-template>
   </p-scroller>
 </div>
