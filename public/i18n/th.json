@@ -37,7 +37,8 @@
 
   "MENU_RESOURCE": "ทรัพยากรในโครงการ",
   "TITLE_RESOURCE": "ทรัพยากรในโครงการ",
-  "BUTTON_CREATE_RESOURCE": "สร้างทรัพยากรใหม่",
+  "BUTTON_ADD_RESOURCE_LABEL": "เพิ่มทรัพยากรใหม่",
+  "PAGE_RESOURCE_EMPTY": "ไม่มีทรัพยากรในโครงการนี้",
   
   "TITLE_CONFIG": "การตั้งค่า",
   "MENU_PROJECT_MEMBER": "สมาชิกโปรเจค",

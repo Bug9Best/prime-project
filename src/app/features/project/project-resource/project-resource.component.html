@@ -1,10 +1,13 @@
 <div class="p-4">
   <phantom-header [title]="'TITLE_RESOURCE'">
-    <project-resource-create>
+    <project-resource-create 
+      (onAddResource)="addResource($event)">
     </project-resource-create>
   </phantom-header>
 
   <phantom-content>
-    asdas
+    <project-resource-list
+      (onEditResourceEvent)="editResource($event)">
+    </project-resource-list>
   </phantom-content>
 </div>

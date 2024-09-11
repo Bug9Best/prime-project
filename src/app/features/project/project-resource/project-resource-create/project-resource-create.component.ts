@@ -10,12 +10,17 @@ import { MessageService } from 'primeng/api';
 export class ProjectResourceCreate {
   visible: boolean = false;
 
-  text = signal<string>('');
-
   formGroup: FormGroup = new FormGroup({
     topic: new FormControl(null, Validators.required),
     content: new FormControl(null),
+    resource_owner: new FormControl(null),
+    create_date: new FormControl(null),
   });
+
+  editResource(data: any) {
+    this.visible = true;
+    this.formGroup.patchValue(data.data);
+  }
 
   onCloseDialog(visible: boolean) {
     this.visible = visible;
@@ -41,6 +46,8 @@ export class ProjectResourceCreate {
     }
 
     let values = this.formGroup.value;
+    values.resource_owner = 'Natthaphon Ditthaviboon';
+    values.create_date = new Date();
     this.onAddResource.emit(values);
     this.onCloseDialog(false);
   }

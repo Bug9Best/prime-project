@@ -37,7 +37,8 @@
 
   "MENU_RESOURCE": "Project Resource",
   "TITLE_RESOURCE": "Project Resource",
-  "BUTTON_CREATE_RESOURCE": "Create Resource",
+  "BUTTON_ADD_RESOURCE_LABEL": "Create Resource",
+  "PAGE_RESOURCE_EMPTY": "No resource in this project.",
 
   "TITLE_CONFIG": "Configuration",
   "MENU_PROJECT_MEMBER": "Project Member",
