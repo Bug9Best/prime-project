@@ -9,6 +9,8 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { PhantomTemplateModule } from '../../../template/phantom-template.module';
+import { ProjectIssueCreate, } from './project-issue-create/project-issue-create.component';
+import { ProjectIssueList } from './project-issue-list/project-issue-list.component';
 
 const routes: Routes = [
   {
@@ -19,7 +21,9 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ProjectIssueComponent
+    ProjectIssueComponent,
+    ProjectIssueCreate,
+    ProjectIssueList
   ],
   imports: [
     CommonModule,
