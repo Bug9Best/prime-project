@@ -31,7 +31,6 @@ const routes: Routes = [
     DropdownModule,
     FormsModule,
     ReactiveFormsModule,
-
     PhantomTemplateModule
   ],
 })

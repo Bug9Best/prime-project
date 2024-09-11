@@ -62,14 +62,6 @@
                     </ng-container>
                   </ng-container>
                 </ng-container>
-
-                <ng-container *ngSwitchCase="'citizen'">
-                  {{ item[col.field] | thcard }}
-                </ng-container>
-
-                <ng-container *ngSwitchCase="'html'">
-                  <div [innerHTML]="item[col.field]"></div>
-                </ng-container>
                 
                 <ng-container *ngSwitchDefault>
                   {{ item[col.field] }}

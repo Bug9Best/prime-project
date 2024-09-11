@@ -10,6 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PhantomTable } from './phantom-table/phantom-table.component';
 import { ThaiModule } from '../shared/pipes/thai.module';
 import { PhantomContent } from './phantom-content/phantom-content.component';
+import { PhantomTableForlist } from './phantom-table-for-list/phantom-table-for-list.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PhantomContent } from './phantom-content/phantom-content.component';
     PhantomHeader,
     PhantomTable,
     PhantomContent,
+    PhantomTableForlist
   ],
   imports: [
     CommonModule,
@@ -35,6 +37,7 @@ import { PhantomContent } from './phantom-content/phantom-content.component';
     PhantomHeader,
     PhantomTable,
     PhantomContent,
+    PhantomTableForlist
   ],
 })
 export class PhantomTemplateModule {}

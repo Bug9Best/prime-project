@@ -1,6 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { PrimeNGModule } from '../../shared/modules/primeng.module';
-import { MenuItem } from 'primeng/api';
+import { MenuItem, MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
+import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
+import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
+import { AuthService } from '../../shared/service/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -9,48 +13,52 @@ import { MenuItem } from 'primeng/api';
 })
 export class HomeComponent {
 
-  items: MenuItem[] | undefined;
+  constructor(
+    private router: Router,
+    private messageService: MessageService,
+    private authService: AuthService
+  ) {}
 
-  position: any = 'bottom';
-
-  positionOptions = [
-    {
-      label: 'Bottom',
-      value: 'bottom'
-    },
-    {
-      label: 'Top',
-      value: 'top'
-    },
-    {
-      label: 'Left',
-      value: 'left'
-    },
-    {
-      label: 'Right',
-      value: 'right'
+  onScrollToElementEvent(element: string) {
+    const targetElement = document.getElementById(element);
+    if (targetElement) {
+      targetElement.scrollIntoView({ behavior: 'smooth' });
     }
-  ];
-
-  ngOnInit() {
-    this.items = [
-      {
-        label: 'Finder',
-        icon: 'https://primefaces.org/cdn/primeng/images/dock/finder.svg'
-      },
-      {
-        label: 'App Store',
-        icon: 'https://primefaces.org/cdn/primeng/images/dock/appstore.svg'
-      },
-      {
-        label: 'Photos',
-        icon: 'https://primefaces.org/cdn/primeng/images/dock/photos.svg'
-      },
-      {
-        label: 'Trash',
-        icon: 'https://primefaces.org/cdn/primeng/images/dock/trash.png'
-      }
-    ];
   }
 
+  showMessage(severity: string, summary: string, detail: string) {
+    this.messageService.add({
+      key: 'app',
+      severity: severity,
+      summary: summary,
+      detail: detail,
+    });
+  }
+
+  signInCredential() {
+    this.router.navigate(['/project-create']);
+  }
+
+  signInGoogle() {
+    window.location.href = 'http://localhost:3000/google';
+  }
+
+  onSignUp() {
+    this.signUpDialog.visible = false;
+    this.showMessage('success', 'Success', 'Sign up successfully');
+  }
+
+  @ViewChild(SignInDialogComponent)
+  signInDialog!: SignInDialogComponent;
+  onOpenSignInEvent() {
+    this.signUpDialog.visible = false;
+    this.signInDialog.visible = true;
+  }
+
+  @ViewChild(SignUpDialogComponent)
+  signUpDialog!: SignUpDialogComponent;
+  onOpenSignUpEvent() {
+    this.signInDialog.visible = false;
+    this.signUpDialog.visible = true;
+  }
 }

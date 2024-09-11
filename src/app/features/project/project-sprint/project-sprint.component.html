@@ -18,7 +18,7 @@
     </div>
     <p-divider></p-divider>
   </div>
-  <p-treeTable [value]="data" [(selection)]="sprintItem" dataKey="id" [scrollable]="true" scrollHeight="600px"
+  <!-- <p-treeTable [value]="data" [(selection)]="sprintItem" dataKey="id" [scrollable]="true" scrollHeight="600px"
     [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
       <tr>
@@ -40,7 +40,9 @@
       </tr>
     </ng-template>
   </p-treeTable>
-</div>
+</div> -->
+<phantom-table-for-list [value]="value" [columns]="columns">
+</phantom-table-for-list>
 
 <p-dialog header="Create Sprint" [(visible)]="isOnCreateSprint" [modal]="true" [style]="{ 'min-width': '50vw' }"
   styleClass="p-3">

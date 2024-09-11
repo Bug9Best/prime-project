@@ -4,6 +4,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
 import { PrimeNGModule } from '../../shared/modules/primeng.module';
 import { PhantomPage } from '../../template/phantom-page/phantom-page.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { HomeNavigateComponent } from './home-navigate/home-navigate.component';
+import { SectionDeveloperComponent } from './section-developer/section-developer.component';
+import { SectionFeaturesComponent } from './section-features/section-features.component';
+import { SectionGetstartedComponent } from './section-getstarted/section-getstarted.component';
+import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
+import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
 
 const routes: Routes = [
   {
@@ -14,13 +21,20 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent
+    HomeComponent,
+    HomeNavigateComponent,
+    SectionDeveloperComponent,
+    SectionFeaturesComponent,
+    SectionGetstartedComponent,
+    SignInDialogComponent,
+    SignUpDialogComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     PrimeNGModule,
-    PhantomPage
+    PhantomPage,
+    TranslateModule,
   ]
 })
 export class HomeModule { }
