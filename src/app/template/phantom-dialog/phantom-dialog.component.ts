@@ -71,7 +71,7 @@ export class PhantomDialog {
   showHeader: boolean = true;
 
   @Input()
-  showSubHeader: boolean = true;
+  showSubHeader: boolean = false;
 
   @Input()
   headerStyleClass: string = "p-0";

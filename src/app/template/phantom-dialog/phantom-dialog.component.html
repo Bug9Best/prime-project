@@ -19,7 +19,8 @@
   [style]="dialogstyle"
   [style.width]="dialogWidth"
   [style.height]="dialogHeight"
-  [contentStyle]="{ padding: '0px' }"
+  [showHeader]="showHeader"
+  [contentStyle]="{ padding: '0px',  'border-radius': showHeader ? '0 0 0.5rem 0.5rem' : '0.5rem' }"
   [(visible)]="visible">
 
   <!-- Header -->
