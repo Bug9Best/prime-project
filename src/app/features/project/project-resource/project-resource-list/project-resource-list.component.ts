@@ -1,5 +1,6 @@
 import { Component, output } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
+import { MenuItem } from 'primeng/api';
 
 @Component({
   selector: 'project-resource-list',
@@ -7,7 +8,34 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrl: './project-resource-list.component.scss',
 })
 export class ProjectResourceList {
+  selectedResource: any;
   listResource: any[] = [];
+  listMenu: MenuItem[] = [
+    {
+      label: 'Edit',
+      icon: 'pi pi-pen-to-square',
+      styleClass: 'text-sm text-red-500',
+      command: (event) => {
+        this.onEditResource(
+          this.selectedResource,
+          this.listResource.indexOf(this.selectedResource)
+        );
+      },
+    },
+    {
+      separator: true,
+    },
+    {
+      label: 'Delete',
+      icon: 'pi pi-trash',
+      styleClass: 'text-sm text-red-500',
+      command: (event) => {
+        this.listResource = this.listResource.filter(
+          (val) => val !== this.selectedResource
+        );
+      },
+    },
+  ];
 
   constructor(private sanitizer: DomSanitizer) {}
 

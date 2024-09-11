@@ -11,21 +11,7 @@
     [collapseIcon]="'pi pi-angle-down'"
     styleClass="mb-4">
     <ng-template pTemplate="header">
-      <div class="flex align-items-center justify-content-between w-full">
-        <div class="font-bold">
-          {{ item.topic || 'N/A' }}
-        </div>
-        <div style="width: 28px; height: 28px;" 
-          class="flex align-items-center justify-content-center cursor-pointer" 
-          (click)="onEditResource(item, $index)">
-          <p-avatar 
-            styleClass="mr-2 hover:bg-gray-100" 
-            [style]="{ 'background-color': '#f9fafb', color: '##6b7280' }" 
-            shape="circle" >
-            <i class="pi pi-pencil"></i>
-          </p-avatar>
-        </div>
-      </div>
+      {{ item.topic || 'N/A' }}
     </ng-template>
     <ng-template pTemplate="footer">
       <div class="flex flex-wrap align-items-center justify-content-between gap-3">
@@ -36,6 +22,15 @@
           {{ item.create_date || 'N/A' | date:'hh:mm:aa dd/MM/yyyy' }}
         </span>
       </div>
+    </ng-template>
+
+    <ng-template pTemplate="icons">
+      <button 
+        class="p-panel-header-icon p-link mr-2" 
+        (click)="menu.toggle($event); selectedResource=item">
+        <span class="pi pi-cog"></span>
+      </button>
+      <p-menu #menu id="config_menu" [model]="listMenu" [popup]="true" />
     </ng-template>
 
     @if (!checkPath(item.content)) {
