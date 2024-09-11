@@ -62,13 +62,13 @@
                       </div>
                     </ng-container>
                     <ng-container *ngSwitchDefault>
-                      {{ item[col.field] | thdate : col.dateFormat }}
+                      {{ item[col.field] | date:'dd/MM/yyyy' }}
                     </ng-container>
                   </ng-container>
                 </ng-container>
 
                 <ng-container *ngSwitchCase="'progress'">
-                  <p-progressBar value="{{ item[col.field] }}">
+                  <p-progressBar [value]="[col.field]">
                     <ng-template pTemplate="content" let-value>
                         <span>{{ value }}</span>
                     </ng-template>
