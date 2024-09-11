@@ -18,6 +18,8 @@ export class ProjectMemberDetail {
   removeMember(item: any) {
     this.confirmationService.confirm({
       message: 'Do you want to remove this member from project?',
+      rejectButtonStyleClass: 'p-button-text p-button-danger p-button-sm',
+      acceptButtonStyleClass: 'p-button-sm',
       accept: () => {
         this.isShowMember = false;
       }

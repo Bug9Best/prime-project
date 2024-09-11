@@ -24,26 +24,27 @@
         <li class="text-900 p-2"> {{ member?.position }}</li>
         <li class="surface-100 text-sm text-700 font-medium p-2 border-round mt-4 mb-1">Join Date</li>
         <li class="text-900 p-2"> {{ member?.join_date | date:'dd/MM/yyyy' }} </li>
-        <li class="surface-100 text-sm text-700 font-medium p-2 border-round mt-4 mb-1">Recent Activity</li>
-      <ul class="mt-4 list-none p-0 mx-0">
-          <li class="flex align-items-center pb-3">
-              <span style="width:1rem;height:1rem" class="border-round bg-indigo-500 mr-3 flex-shrink-0"></span>
-              <span class="text-sm font-medium text-90">To-Do</span>
-              <span class="text-600 text-sm font-medium ml-auto">8</span>
-          </li>
-          <li class="flex align-items-center py-3">
-              <span style="width:1rem;height:1rem" class="border-round bg-blue-500 mr-3 flex-shrink-0"></span>
-              <span class="text-s  font-medium text-90">Doing</span>
-              <span class="text-600 text-sm font-medium ml-auto">5</span>
-          </li>
-          <li class="flex align-items-center py-3">
-              <span style="width:1rem;height:1rem" class="border-round bg-orange-500 mr-3 flex-shrink-0"></span>
-              <span class="text-sm font-medium text-90">Done</span>
-              <span class="text-600 text-sm font-medium ml-auto">20</span>
-          </li>
-      </ul>
+        <li class="surface-100 text-sm text-700 font-medium p-2 border-round mt-4 mb-1">Task Overview</li>
+          <ul class="list-none p-3 mx-0">
+              <li class="flex align-items-center pb-3">
+                  <span style="width:1rem;height:1rem" class="border-round bg-blue-500 mr-3 flex-shrink-0"></span>
+                  <span class="text-sm font-medium text-90">To-Do</span>
+                  <span class="text-600 text-sm font-medium ml-auto">8</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                  <span style="width:1rem;height:1rem" class="border-round bg-orange-500 mr-3 flex-shrink-0"></span>
+                  <span class="text-s  font-medium text-90">Doing</span>
+                  <span class="text-600 text-sm font-medium ml-auto">5</span>
+              </li>
+              <li class="flex align-items-center py-3">
+                  <span style="width:1rem;height:1rem" class="border-round bg-green-500 mr-3 flex-shrink-0"></span>
+                  <span class="text-sm font-medium text-90">Done</span>
+                  <span class="text-600 text-sm font-medium ml-auto">20</span>
+              </li>
+          </ul>
       </ul>
     </div>
+
     <div class="flex gap-2 mt-3">
       <div class="w-full"> 
         <button pButton pRipple 
