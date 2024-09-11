@@ -1,12 +1,7 @@
 :host ::ng-deep .p-datatable {
-
     .p-column-resizer:hover {
         background-color: #6698ff;
         width: 3px;
-    }
-
-    .p-datatable-tbody > tr.p-highlight {
-        color: var(--text-color);
     }
 
     .p-datatable-thead > tr > th:first-child {
@@ -15,6 +10,18 @@
 
     .p-datatable-thead > tr > th:last-child {
         border-radius: 0 8px 0 0;
+    }
+
+    .p-datatable-tbody > tr.p-highlight {
+        color: var(--text-color);
+    }
+
+    .p-datatable-tbody > tr:last-child > td:first-child {
+        border-radius: 0 0 0 8px;
+    }
+
+    .p-datatable-tbody > tr:last-child > td:last-child {
+        border-radius: 0 0 8px 0;
     }
 }
 
