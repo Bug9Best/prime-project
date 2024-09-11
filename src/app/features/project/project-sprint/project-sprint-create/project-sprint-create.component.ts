@@ -49,7 +49,6 @@ export class ProjectSprintCreate {
       this.showMessages('warn', 'Error', 'Please fill in the form');
       return;
     }
-
     this.onCreateSprint()
   }
 
