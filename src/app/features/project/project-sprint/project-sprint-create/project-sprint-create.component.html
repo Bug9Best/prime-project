@@ -1,26 +1,20 @@
-<phantom-dialog
-  header="Create Sprint"
-  [(visible)]="isOnCreateSprint"
-  [modal]="true"
+<phantom-dialog 
+  [(visible)]="visible" 
+  [modal]="true" 
+  [header]="'Create Sprint'"
   [label]="'Create Sprint'"
-  [style]="{ 'min-width': '50vw' }"
-  styleClass="p-3"
->
+  [icon]="'pi pi-plus'"
+  [style]="{ 'min-width': '50vw' }" 
+  styleClass="p-3">
+
   <span class="p-text-secondary block mb-5"> Create a new sprint </span>
   <div [formGroup]="formGroup">
     <div class="grid">
       <div class="col-3">
-        <label for="sprint_name" class="font-semibold w-6rem"
-          >Sprint Name</label
-        >
+        <label for="sprint_name" class="font-semibold w-6rem">Sprint Name</label>
       </div>
       <div class="col-9">
-        <input
-          type="text"
-          pInputText
-          class="p-inputtext-sm w-full"
-          formControlName="sprint_name"
-        />
+        <input type="text" pInputText class="p-inputtext-sm w-full" formControlName="sprint_name" />
       </div>
     </div>
     <div class="grid">
@@ -28,11 +22,7 @@
         <label for="username" class="font-semibold w-6rem">Start Date</label>
       </div>
       <div class="col-9">
-        <p-calendar
-          appendTo="body"
-          formControlName="start_date"
-          styleClass="w-full"
-        >
+        <p-calendar appendTo="body" formControlName="start_date" styleClass="w-full">
         </p-calendar>
       </div>
     </div>
@@ -42,30 +32,23 @@
         <label for="username" class="font-semibold w-6rem">End Date</label>
       </div>
       <div class="col-9">
-        <p-calendar
-          appendTo="body"
-          formControlName="end_date"
-          styleClass="w-full"
-        >
+        <p-calendar appendTo="body" formControlName="end_date" styleClass="w-full">
         </p-calendar>
       </div>
     </div>
   </div>
-  <p-footer class="flex justify-content-end mt-2">
-    <p-button
-      label="Cancel"
-      severity="secondary"
-      size="small"
-      [text]="true"
-      (click)="isOnCreateSprint = false"
-    >
-    </p-button>
-    <p-button
+
+  <div class="pt-3 flex">
+    <button pButton pRipple 
+      (click)="visible = false" 
+      label="Cancel" 
+      class="p-button-text p-button-danger flex-grow-1">
+    </button>
+    <button pButton pRipple 
       icon="pi pi-save"
-      label="Save"
-      size="small"
-      (click)="onCreateSprint()"
-    >
-    </p-button>
-  </p-footer>
+      label="Create Sprint" 
+      class="flex-grow-1"
+      (click)="onCreateSprint()">
+    </button>
+  </div>
 </phantom-dialog>

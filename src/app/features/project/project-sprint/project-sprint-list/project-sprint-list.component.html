@@ -1,2 +1,10 @@
-<phantom-table-for-list [value]="value" [columns]="columns">
-</phantom-table-for-list>
+@if (!listSprint.length) {
+  <phantom-empty [description]="'PAGE_SPRINT_EMPTY'">
+  </phantom-empty>
+}
+@else {
+  <phantom-table-for-list 
+    [value]="listSprint" [columns]="columns">
+  </phantom-table-for-list>
+}
+

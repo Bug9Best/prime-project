@@ -1,6 +1,7 @@
 <div class="p-4">
   <phantom-header [title]="'MENU_SPRINT'">
-    <project-sprint-create>
+    <project-sprint-create
+      (onCreateEvent)="createSprint($event)">
     </project-sprint-create>
   </phantom-header>
   
