@@ -1,1 +1,47 @@
-<p>project-resource-create works!</p>
+<phantom-dialog 
+  [(visible)]="visible" 
+  [icon]="'pi pi-file'" 
+  [label]="'BUTTON_ADD_RESOURCE_LABEL'" 
+  [dialogstyle]="{ width: '70vw' }"
+  [showHeader]="false"
+  [showClose]="false"
+  (visibleChange)="onCloseDialog()">
+
+  <section class="flex flex-column w-full">
+    <div class="flex w-full justify-content-between mb-4">
+      <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center bg-blue-100">
+        <i class="pi pi-file text-blue-700 text-4xl"></i>
+      </span>
+      <button pButton pRipple type="button" icon="pi pi-times"
+        class="p-button-rounded p-button-secondary p-button-text align-self-start" (click)="visible = false">
+      </button>
+    </div>
+    <p class="font-semibold text-xl mt-0 mb-2 text-900">Add Resource</p>
+    <p class="font-normal text-base mt-0 mb-3 text-600">
+      Add a new resource to the project for the team to use.
+    </p>
+  </section>
+
+  <section [formGroup]="formGroup" class="mt-4">
+    <div class="mb-2">
+      <p-floatLabel>
+        <input pInputText id="username" class="p-inputtext-sm w-full" formControlName="topic" />
+        <label for="username">Topic</label>
+      </p-floatLabel>
+    </div>
+    <p-editor [style]="{ height: '320px' }" formControlName="content" appendTo="body"/>
+  </section>
+
+  <div class="pt-3 flex">
+    <button pButton pRipple  
+      label="Cancel" 
+      class="p-button-text p-button-danger p-button-sm flex-grow-1"
+      (click)="visible = false">
+    </button>
+    <button pButton pRipple 
+      label="Add Resource" 
+      class="p-button-sm flex-grow-1" 
+      (click)="validateForm()">
+    </button>
+  </div>
+</phantom-dialog>
