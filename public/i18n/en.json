@@ -32,6 +32,7 @@
 
   "MENU_LIST": "List",
   "TITLE_LIST": "List",
+  "PAGE_ISSUE_EMPTY": "No issue in this project. Please create a new issue.",
   
   "MENU_BOARD": "Board",
   "TITLE_BOARD": "Board",
