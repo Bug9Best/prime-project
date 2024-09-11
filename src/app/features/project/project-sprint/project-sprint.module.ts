@@ -12,6 +12,8 @@ import { ThyButton, ThyButtonModule } from 'ngx-tethys/button';
 import { ThyLayoutModule } from 'ngx-tethys/layout';
 import { NgxGanttModule } from '@worktile/gantt';
 import { PhantomTemplateModule } from '../../../template/phantom-template.module';
+import { ProjectSprintCreate } from './project-sprint-create/project-sprint-create.component';
+import { ProjectSprintList } from './project-sprint-list/project-sprint-list.component';
 
 const routes: Routes = [
   {
@@ -22,7 +24,9 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ProjectSprintComponent
+    ProjectSprintComponent,
+    ProjectSprintCreate,
+    ProjectSprintList
   ],
   imports: [
     CommonModule,

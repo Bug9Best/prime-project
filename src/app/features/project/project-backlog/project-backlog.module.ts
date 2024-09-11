@@ -4,12 +4,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { ProjectBacklogComponent } from './project-backlog.component';
-import { BacklogControlComponent } from './backlog-control/backlog-control.component';
 import { BacklogIssueComponent } from './backlog-issue/backlog-issue.component';
 import { BacklogIssueCreateComponent } from './backlog-issue-create/backlog-issue-create.component';
 import { BacklogSprintComponent } from './backlog-sprint/backlog-sprint.component';
 import { BacklogSprintCreateComponent } from './backlog-sprint-create/backlog-sprint-create.component';
 import { PickListModule } from 'primeng/picklist';
+import { PhantomTemplateModule } from '../../../template/phantom-template.module';
 
 
 
@@ -23,7 +23,6 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     ProjectBacklogComponent,
-    BacklogControlComponent,
     BacklogIssueComponent,
     BacklogIssueCreateComponent,
     BacklogSprintComponent,
@@ -35,6 +34,7 @@ const routes: Routes = [
     PrimeNGModule,
     TranslateModule,
     PickListModule,
+    PhantomTemplateModule
   ]
 })
 export class ProjectBacklogModule { }

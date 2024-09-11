@@ -1,73 +1,11 @@
 <div class="p-4">
-  <div class="surface-overlay">
-    <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
-      <span class="text-lg font-medium text-900"> {{ "MENU_LIST" | translate }} </span>
-      <div class="flex align-items-center mt-2 md:mt-0">
-        <span class="p-input-icon-left mr-2">
-          <i class="pi pi-search" icon="pi "></i>
-          <input type="text" pInputText placeholder="{{ 'SEARCH_TEXT' | translate }}" class="p-inputtext-sm w-20rem" />
-        </span>
-        <span>
-          <p-button icon="pi pi-plus" label="Create Issue" size="small" class="ml-2"
-            (onClick)="isOnCreateIssue = true"></p-button>
-        </span>
-      </div>
-    </div>
-  </div> 
+  <phantom-header [title]="'TITLE_ISSUE'">
+  <project-issue-create >
+  </project-issue-create>
+  </phantom-header>
 
-  <p-divider></p-divider>
-  <phantom-table [value]="value" [columns]="columns">
-  </phantom-table>
+  <project-issue-list>
+    
+  </project-issue-list>
 
-  <p-dialog header="Create Issue" [(visible)]="isOnCreateIssue" [modal]="true" [style]="{ 'min-width': '50vw' }"
-    styleClass="p-3">
-    <span class="p-text-secondary block mb-5"> Create a new issue </span>
-    <div [formGroup]="formGroup">
-      <div class="grid">
-        <div class="col-3">
-          <label for="username" class="font-semibold w-6rem">Issue Type</label>
-        </div>
-        <div class="col-9">
-          <p-dropdown [options]="optionsType" optionLabel="label" placeholder="Select Type" formControlName="type"
-            styleClass="w-full">
-          </p-dropdown>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="col-3">
-          <label for="username" class="font-semibold w-6rem">Issue Name</label>
-        </div>
-        <div class="col-9">
-          <input type="text" pInputText class="p-inputtext-sm w-full" formControlName="summary" />
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="col-3">
-          <label for="username" class="font-semibold w-6rem">Assign To</label>
-        </div>
-        <div class="col-9">
-          <p-dropdown appendTo="body" [options]="optionsAssignee" optionLabel="label" placeholder="Select Assignee"
-            formControlName="assignee" styleClass="w-full">
-          </p-dropdown>
-        </div>
-      </div>
-
-      <div class="grid">
-        <div class="col-3">
-          <label for="username" class="font-semibold w-6rem">Sprint</label>
-        </div>
-        <div class="col-9">
-          <p-dropdown appendTo="body" [options]="options" optionLabel="label" placeholder="Select Assignee"
-            formControlName="sprint" styleClass="w-full">
-          </p-dropdown>
-        </div>
-      </div>
-    </div>
-    <p-footer>
-      <p-button label="Cancel" severity="secondary" size="small" [text]="true" (onClick)="isOnCreateIssue = false" />
-      <p-button icon="pi pi-save" label="Save" size="small" (onClick)="onCreateIssue()" />
-    </p-footer>
-  </p-dialog>
 </div>
