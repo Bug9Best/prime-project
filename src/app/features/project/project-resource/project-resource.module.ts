@@ -5,6 +5,8 @@ import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { ProjectResourceComponent } from './project-resource.component';
 import { BoardModule } from 'ngx-board';
 import { TranslateModule } from '@ngx-translate/core';
+import { PhantomTemplateModule } from '../../../template/phantom-template.module';
+import { ProjectResourceCreate } from './project-resource-create/project-resource-create.component';
 
 const routes: Routes = [
   {
@@ -15,14 +17,16 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ProjectResourceComponent
+    ProjectResourceComponent,
+    ProjectResourceCreate
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
     PrimeNGModule,
     BoardModule,
-    TranslateModule
+    TranslateModule,
+    PhantomTemplateModule
 
   ]
 })
