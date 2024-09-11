@@ -3,7 +3,6 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MessageService, TreeNode } from 'primeng/api';
 import { SprintData } from '../../../shared/service/sprintdb';
 import { PhantomTableForlistColumn } from '../../../template/phantom-table-for-list/phantom-table-for-list.component';
-import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-project-sprint',
