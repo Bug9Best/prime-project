@@ -11,6 +11,7 @@ import { PhantomTable } from './phantom-table/phantom-table.component';
 import { ThaiModule } from '../shared/pipes/thai.module';
 import { PhantomContent } from './phantom-content/phantom-content.component';
 import { PhantomTableForlist } from './phantom-table-for-list/phantom-table-for-list.component';
+import { PhantomEmpty } from './phantom-empty/phantom-empty.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PhantomTableForlist } from './phantom-table-for-list/phantom-table-for-
     PhantomHeader,
     PhantomTable,
     PhantomContent,
-    PhantomTableForlist
+    PhantomTableForlist,
+    PhantomEmpty
   ],
   imports: [
     CommonModule,
@@ -37,7 +39,8 @@ import { PhantomTableForlist } from './phantom-table-for-list/phantom-table-for-
     PhantomHeader,
     PhantomTable,
     PhantomContent,
-    PhantomTableForlist
+    PhantomTableForlist,
+    PhantomEmpty
   ],
 })
 export class PhantomTemplateModule {}
