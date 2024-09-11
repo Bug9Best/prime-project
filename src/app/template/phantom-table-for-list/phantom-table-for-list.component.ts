@@ -1,9 +1,6 @@
-import { Component, Directive, Input, input, output, TemplateRef } from '@angular/core';
-
+import { Component, Directive, Input, output, TemplateRef } from '@angular/core';
 export type PhantomTableForlistColumnType = "string" | "number" | "date" | "button" | "checked" | "control" | "citizen" | 'html' | 'image' | 'link' | 'tag' | 'process' | 'currency'| 'progress';
-export class PhantomTableForListComponent {
 
-}
 export class PhantomTableForlistColumn {
   label: string = "Column";
   field: string = "default";
@@ -54,7 +51,7 @@ export class PhantomTableForlist {
   @Input() resizableColumns: boolean = true;
   @Input() metaKeySelection: string = '';
   @Input() scrollHeight: string = '551px';
-  @Input() selectionMode: any = 'multiple';
+  @Input() selectionMode: any = 'single';
   @Input() dataKey:string = 'id';
   @Input() selection: any = [];
   @Input() styleClass: string = 'p-datatable-gridlines';

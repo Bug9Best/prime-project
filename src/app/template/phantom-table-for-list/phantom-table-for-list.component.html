@@ -1,18 +1,14 @@
 <p-contextMenu #cm [model]="items" />
 <p-table
   [value]="value"
-  [rows]="10"
-  [paginator]="paginator"
-  [rowsPerPageOptions]="rowsPerPageOptions"
   [scrollable]="scrollable"
-  [scrollHeight]="scrollHeight"
   [resizableColumns]="resizableColumns"
   [selectionMode]="selectionMode"
   [(selection)]="selectedItems"
   [dataKey]="dataKey"
   [contextMenu]="cm"
-  [styleClass]="styleClass"
->
+  [styleClass]="styleClass">
+  
   <ng-template pTemplate="header">
     <tr>
       <ng-container *ngFor="let col of columns; index as index">
@@ -100,38 +96,31 @@
 
           <ng-container
             [ngTemplateOutlet]="template[col.field] || pDefault"
-            [ngTemplateOutletContext]="{ $implicit: item, column: col }"
-          >
+            [ngTemplateOutletContext]="{ $implicit: item, column: col }">
           </ng-container>
         </td>
       </ng-container>
     </ng-template>
 
     <!-- Selectable -->
-    <tr
-      *ngIf="selectionMode"
+    <tr *ngIf="selectionMode"
       [pContextMenuRow]="item"
       [pSelectableRow]="item"
       [pSelectableRowIndex]="rowIndex"
-      [pReorderableRow]="rowIndex"
-    >
+      [pReorderableRow]="rowIndex">
       <ng-container
         [ngTemplateOutlet]="pTableRow"
-        [ngTemplateOutletContext]="{ $implicit: item }"
-      >
+        [ngTemplateOutletContext]="{ $implicit: item }">
       </ng-container>
     </tr>
 
     <!-- Not Selectable -->
-    <tr
-      *ngIf="!selectionMode"
+    <tr *ngIf="!selectionMode"
       [pContextMenuRow]="item"
-      [pReorderableRow]="rowIndex"
-    >
+      [pReorderableRow]="rowIndex">
       <ng-container
         [ngTemplateOutlet]="pTableRow"
-        [ngTemplateOutletContext]="{ $implicit: item }"
-      >
+        [ngTemplateOutletContext]="{ $implicit: item }">
       </ng-container>
     </tr>
   </ng-template>
