@@ -10,7 +10,7 @@ export var ConfigMenu = [
             { label: 'MENU_BACKLOG', icon: 'pi-align-left', routerLink: '/project/backlog' },
             { label: 'MENU_LIST', icon: 'pi-list-check', routerLink: '/project/issue' },
             { label: 'MENU_BOARD', icon: 'pi-clipboard', routerLink: '/project/board' },
-            { label: 'MENU_DOCUMENT', icon: 'pi-file', routerLink: '/project/resource' },
+            { label: 'MENU_RESOURCE', icon: 'pi-file', routerLink: '/project/resource' },
         ]
     },
     {

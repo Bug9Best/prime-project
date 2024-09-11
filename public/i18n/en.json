@@ -8,6 +8,7 @@
 
   "MENU_GANTT": "Gantt Chart",
   "TITLE_GANTT": "Gantt Chart",
+  "TITLE_GANTT_CHART": "Task Title",
 
   "MENU_WORK_BREAK_DOWN": "Work Break Down",
   "TITLE_WORK_BREAK_DOWN": "Work Break Down",
@@ -34,8 +35,9 @@
   "MENU_BOARD": "Board",
   "TITLE_BOARD": "Board",
 
-  "MENU_DOCUMENT": "Document",
-  "TITLE_DOCUMENT": "Document",
+  "MENU_RESOURCE": "Project Resource",
+  "TITLE_RESOURCE": "Project Resource",
+  "BUTTON_CREATE_RESOURCE": "Create Resource",
 
   "TITLE_CONFIG": "Configuration",
   "MENU_PROJECT_MEMBER": "Project Member",
@@ -61,7 +63,5 @@
   "DEVELOPER_NATTHAPHON": "Mr. Natthaphon Ditthaviboon",
   "DEVELOPER_NATTHAPHON_POSITION": "Software Developer",
   "DEVELOPER_PHURI": "Mr. Phuri Siripool",
-  "DEVELOPER_PHURI_POSITION": "Software Developer",
-
-  "TITLE_GANTT_CHART": "Task Title"
+  "DEVELOPER_PHURI_POSITION": "Software Developer"
 }

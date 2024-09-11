@@ -8,6 +8,7 @@
 
   "MENU_GANTT": "แผนภูมิแกรนต์",
   "TITLE_GANTT": "แผนภูมิแกรนต์",
+  "TITLE_GANTT_CHART": "ชื่อรายการ",
 
   "MENU_WORK_BREAK_DOWN": "แบ่งงาน",
   "TITLE_WORK_BREAK_DOWN": "แบ่งงาน",
@@ -34,9 +35,10 @@
   "MENU_BOARD": "กระดาน",
   "TITLE_BOARD": "กระดาน",
 
-  "MENU_DOCUMENT": "เอกสารโครงการ",
-  "TITLE_DOCUMENT": "เอกสารโครงการ",
-
+  "MENU_RESOURCE": "ทรัพยากรในโครงการ",
+  "TITLE_RESOURCE": "ทรัพยากรในโครงการ",
+  "BUTTON_CREATE_RESOURCE": "สร้างทรัพยากรใหม่",
+  
   "TITLE_CONFIG": "การตั้งค่า",
   "MENU_PROJECT_MEMBER": "สมาชิกโปรเจค",
   "BUTTON_LABEL_ADD_MEMBER": "เพิ่มสมาชิก",
@@ -61,7 +63,5 @@
   "DEVELOPER_NATTHAPHON": "นายณัฐพล ดิษฐวิบูลย์",
   "DEVELOPER_NATTHAPHON_POSITION": "นักพัฒนาซอฟต์แวร์",
   "DEVELOPER_PHURI": "นายภูริ ศิริภูล",
-  "DEVELOPER_PHURI_POSITION": "นักพัฒนาซอฟต์แวร์",
-
-  "TITLE_GANTT_CHART": "ชื่อรายการ"
+  "DEVELOPER_PHURI_POSITION": "นักพัฒนาซอฟต์แวร์"
 }
