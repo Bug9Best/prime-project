@@ -1,23 +1,46 @@
 <phantom-dialog
-  [(visible)]="isAddBoard"
-  [icon]="'pi pi-user-plus'"
-  [label]="'BUTTON_LABEL_ADD_MEMBER'"
+  [(visible)]="visible"
+  [icon]="'pi pi-clipboard'"
+  [label]="'BUTTON_LABEL_BOARD_ADD'"
   [showHeader]="false"
   [showClose]="false">
-    <span class="p-text-secondary block mb-5">
-      Add a new board to your project
-    </span>
+
+  <section class="flex flex-column w-full">
+    <div class="flex w-full justify-content-between mb-4">
+      <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center bg-blue-100">
+        <i class="pi pi-clipboard text-blue-700 text-4xl"></i>
+      </span>
+      <button 
+        pButton pRipple 
+        type="button"
+        icon="pi pi-times"
+        class="p-button-rounded p-button-secondary p-button-text align-self-start"
+        (click)="visible = false">
+      </button>
+    </div>
+    <p class="font-semibold text-xl mt-0 mb-2 text-900">Add a new board to your project</p>
+    <p class="font-normal text-base mt-0 mb-3 text-600"> 
+      A board is made up of multiple lists used to manage your project. 
+      You can create a board for anything: a project, your next trip, or even a meal plan.
+    </p>
     <div [formGroup]="formGroup">
       <div class="flex align-items-center gap-3 mb-3">
         <label for="broad" class="font-semibold w-6rem">Board Name</label>
         <input pInputText id="broad" class="flex-auto p-inputtext-sm" autocomplete="off" formControlName="name" />
       </div>
     </div>
+  </section>
 
-    <p-footer>
-      <div class="flex justify-content-end gap-2">
-        <p-button label="Cancel" severity="secondary" size="small" [text]="true" (onClick)="isAddBoard = false" />
-        <p-button icon="pi pi-save" label="Create" size="small"/>
-      </div>
-    </p-footer>
+  <div class="pt-3 flex">
+    <button pButton pRipple 
+      (click)="visible = false" 
+      label="Cancel" 
+      class="p-button-text p-button-danger flex-grow-1">
+    </button>
+    <button pButton pRipple 
+      label="Create Board" 
+      class="flex-grow-1"
+      (click)="validateForm()">
+    </button>
+  </div>
 </phantom-dialog>
