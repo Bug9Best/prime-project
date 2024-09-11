@@ -8,7 +8,6 @@ import { ProjectResourceCreate } from './project-resource-create/project-resourc
   styleUrl: './project-resource.component.scss',
 })
 export class ProjectResourceComponent {
-  isAddResource: boolean = false;
 
   @ViewChild(ProjectResourceList)
   projectResourceList!: ProjectResourceList;
