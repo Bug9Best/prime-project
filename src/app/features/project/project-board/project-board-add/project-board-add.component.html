@@ -1,0 +1,23 @@
+<phantom-dialog
+  [(visible)]="isAddBoard"
+  [icon]="'pi pi-user-plus'"
+  [label]="'BUTTON_LABEL_ADD_MEMBER'"
+  [showHeader]="false"
+  [showClose]="false">
+    <span class="p-text-secondary block mb-5">
+      Add a new board to your project
+    </span>
+    <div [formGroup]="formGroup">
+      <div class="flex align-items-center gap-3 mb-3">
+        <label for="broad" class="font-semibold w-6rem">Board Name</label>
+        <input pInputText id="broad" class="flex-auto p-inputtext-sm" autocomplete="off" formControlName="name" />
+      </div>
+    </div>
+
+    <p-footer>
+      <div class="flex justify-content-end gap-2">
+        <p-button label="Cancel" severity="secondary" size="small" [text]="true" (onClick)="isAddBoard = false" />
+        <p-button icon="pi pi-save" label="Create" size="small"/>
+      </div>
+    </p-footer>
+</phantom-dialog>

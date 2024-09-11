@@ -5,6 +5,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { ProjectBoardComponent } from './project-board.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PhantomTemplateModule } from '../../../template/phantom-template.module';
+import { ProjectBoardAdd } from './project-board-add/project-board-add.component';
 
 const routes: Routes = [
   {
@@ -15,7 +17,8 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    ProjectBoardComponent
+    ProjectBoardComponent,
+    ProjectBoardAdd
   ],
   imports: [
     CommonModule,
@@ -23,7 +26,8 @@ const routes: Routes = [
     PrimeNGModule,
     TranslateModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    PhantomTemplateModule
   ]
 })
 export class ProjectBoardModule { }
