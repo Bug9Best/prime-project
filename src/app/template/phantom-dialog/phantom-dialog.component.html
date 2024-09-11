@@ -21,6 +21,7 @@
   [style.height]="dialogHeight"
   [showHeader]="showHeader"
   [contentStyle]="{ padding: '0px',  'border-radius': showHeader ? '0 0 0.5rem 0.5rem' : '0.5rem' }"
+  (visibleChange)="onClose()"
   [(visible)]="visible">
 
   <!-- Header -->
