@@ -18,12 +18,8 @@
 
     <div class="phantom-scrollbar flex-auto relative overflow-y-auto border-bottom-1 surface-border" style="max-height: calc(100vh - 12rem);">
       <ul class="list-none p-0 m-0 overflow-y-auto">
-        <li class="surface-100 text-sm text-700 font-medium p-2 border-round mb-1">Fullname</li>
-        <li class="text-900 p-2"> {{ member?.full_name }}</li>
-        <li class="surface-100 text-sm text-700 font-medium p-2 border-round mt-4 mb-1">Position</li>
-        <li class="text-900 p-2"> {{ member?.position }}</li>
         <li class="surface-100 text-sm text-700 font-medium p-2 border-round mt-4 mb-1">Join Date</li>
-        <li class="text-900 p-2"> {{ member?.join_date | date:'dd/MM/yyyy' }} </li>
+        <li class="text-900 p-2"> {{ member?.join_date | date:'dd MMMM yyyy' }} </li>
         <li class="surface-100 text-sm text-700 font-medium p-2 border-round mt-4 mb-1">Task Overview</li>
           <ul class="list-none p-3 mx-0">
               <li class="flex align-items-center pb-3">
