@@ -16,7 +16,7 @@ export class ProjectSprintCreate {
     end_date: new FormControl('', Validators.required),
   });
 
-  constructor(private messageService: MessageService) {}
+  constructor(private messageService: MessageService) { }
 
   getTotalDate(start_date: any, end_date: any) {
     let start = new Date(start_date);
@@ -55,10 +55,11 @@ export class ProjectSprintCreate {
   onCreateEvent = output<any>();
   onCreateSprint() {
     let values = this.formGroup.value;
+    values.id = Math.floor(Math.random() * 1000);
     values.process = 1;
     values.duration = this.getTotalDate(values.start_date, values.end_date);
     values.sprint_owner = 'John Doe';
-    
+
     this.onCreateEvent.emit(values);
     this.showMessages('success', 'Success', 'Sprint created successfully');
     this.resetForm();
