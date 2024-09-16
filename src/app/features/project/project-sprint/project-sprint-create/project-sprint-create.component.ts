@@ -14,6 +14,8 @@ export class ProjectSprintCreate {
     sprint_name: new FormControl('', Validators.required),
     start_date: new FormControl(new Date(), Validators.required),
     end_date: new FormControl('', Validators.required),
+    sprint_note: new FormControl('', Validators.required),
+
   });
 
   constructor(private messageService: MessageService) {}
@@ -21,9 +23,8 @@ export class ProjectSprintCreate {
   getTotalDate(start_date: any, end_date: any) {
     let start = new Date(start_date);
     let end = new Date(end_date);
-    let diff = Math.abs(start.getTime() - end.getTime());
-    let diffDays = Math.ceil(diff / (1000 * 3600 * 24));
-    return diffDays + ' days';
+    let diff = (start.getDay()) ;
+    return diff;
   }
 
   resetForm() {

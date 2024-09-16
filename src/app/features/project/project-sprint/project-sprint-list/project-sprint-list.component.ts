@@ -43,6 +43,14 @@ export class ProjectSprintList {
         width: '25%',
       },
     },
+    {
+      type: 'string',
+      label: 'Note',
+      field: 'sprint_note',
+      style: {
+        width: '30%',
+      },
+    },
   ];
 
   createSprint(data: any) {
