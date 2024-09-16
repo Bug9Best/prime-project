@@ -23,8 +23,9 @@ export class ProjectSprintCreate {
   getTotalDate(start_date: any, end_date: any) {
     let start = new Date(start_date);
     let end = new Date(end_date);
-    let diff = (start.getDay()) ;
-    return diff;
+    let diff = Math.abs(start.getTime() - end.getTime());
+    let diffDays = Math.ceil(diff / (1000 * 3600 * 24));
+    return diffDays + ' days';
   }
 
   resetForm() {
