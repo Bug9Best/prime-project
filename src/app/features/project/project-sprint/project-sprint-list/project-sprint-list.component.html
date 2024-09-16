@@ -6,14 +6,14 @@
   <phantom-table 
     [value]="listSprint" 
     [columns]="columns">
-    <ng-template phantomTableField="sprint_duration" let-item>
-      <div class="text-center text-blue-500">
-        {{ item.duration }} 
-      </div>
-      <div class="text-sm text-center">
-        ({{ item.start_date | date: 'dd MMM yyyy' }} - {{ item.end_date | date: 'dd MMM yyyy' }})
-      </div>
-    </ng-template>
+      <ng-template phantomTableField="duration" let-item>
+        <div class="text-center text-blue-500">
+          {{ item.duration }} 
+        </div>
+        <div class="text-sm text-center">
+          ({{ item.start_date | date: 'dd MMM yyyy' }} - {{ item.end_date | date: 'dd MMM yyyy' }})
+        </div>
+      </ng-template>
   </phantom-table>
 }
 

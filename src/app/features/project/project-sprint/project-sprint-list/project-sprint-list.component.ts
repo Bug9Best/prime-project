@@ -28,9 +28,9 @@ export class ProjectSprintList {
       },
     },
     {
-      type: 'date',
+      type: 'string',
       label: 'Sprint Duration',
-      field: 'sprint_duration',
+      field: 'duration',
       style: {
         width: '20%',
       },
