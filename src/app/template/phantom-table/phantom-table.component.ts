@@ -1,6 +1,6 @@
-import { Component, Directive, Input, input, output, TemplateRef } from '@angular/core';
+import { Component, ContentChildren, Directive, Input, output, TemplateRef } from '@angular/core';
+export type PhantomTableColumnType = "string" | "number" | "date" | "button" | "checked" | "control" | "citizen" | 'html' | 'image' | 'link' | 'tag' | 'process' | 'currency' | 'progress';
 
-export type PhantomTableColumnType = "string" | "number" | "date" | "button" | "checked" | "control" | "citizen" | 'html' | 'image' | 'link' | 'tag' | 'process' | 'currency';
 export class PhantomTableColumn {
   label: string = "Column";
   field: string = "default";
@@ -14,11 +14,11 @@ export class PhantomTableColumn {
 }
 
 @Directive({
-  selector: '[pTableField]'
+  selector: '[phantomTableField]'
 })
-export class PhantomTableFieldDirective {
 
-  @Input('pTableField')
+export class PhantomTableFieldDirective {
+  @Input('phantomTableField')
   name: string = "default";
 
   constructor(public templateRef: TemplateRef<any>) { }
@@ -39,21 +39,21 @@ export type PhantomTableFieldTemplate = {
 export class PhantomTable {
 
   _selectedItems: any;
-  template: PhantomTableFieldTemplate = {};
 
   @Input() value: any = [];
   @Input() columns: any = [];
   @Input() showOrder: boolean = true;
   @Input() showOrderIndex: number = 0;
+  @Input() reOrder: boolean = false;
   @Input() paginator: boolean = true;
   @Input() totalRecords: number = 10;
-  @Input() rowsPerPageOptions : number[] = [5, 10, 20, 50];
+  @Input() rowsPerPageOptions: number[] = [5, 10, 20, 50];
   @Input() scrollable: boolean = true;
   @Input() resizableColumns: boolean = true;
   @Input() metaKeySelection: string = '';
   @Input() scrollHeight: string = '551px';
-  @Input() selectionMode: any = 'multiple';
-  @Input() dataKey:string = 'id';
+  @Input() selectionMode: any = 'single';
+  @Input() dataKey: string = 'id';
   @Input() selection: any = [];
   @Input() styleClass: string = 'p-datatable-gridlines';
 
@@ -73,5 +73,15 @@ export class PhantomTable {
 
   viewIssue(selectedItems: any) {
     console.log(selectedItems);
+  }
+
+  @ContentChildren(PhantomTableFieldDirective)
+  templates: PhantomTableFieldDirective[] = [];
+  template: PhantomTableFieldTemplate = {};
+
+  ngAfterContentInit(): void {
+    this.templates.forEach(t => {
+      this.template[t.getName()] = t.templateRef;
+    })
   }
 }

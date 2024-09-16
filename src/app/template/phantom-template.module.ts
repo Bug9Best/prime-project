@@ -7,10 +7,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PhantomForm } from './phantom-form/phantom-form.component';
 import { PhantomHeader } from './phantom-header/phantom-header.component';
 import { TranslateModule } from '@ngx-translate/core';
-import { PhantomTable } from './phantom-table/phantom-table.component';
+import { PhantomTable, PhantomTableFieldDirective } from './phantom-table/phantom-table.component';
 import { ThaiModule } from '../shared/pipes/thai.module';
 import { PhantomContent } from './phantom-content/phantom-content.component';
-import { PhantomTableForlist } from './phantom-table-for-list/phantom-table-for-list.component';
 import { PhantomEmpty } from './phantom-empty/phantom-empty.component';
 
 @NgModule({
@@ -21,7 +20,7 @@ import { PhantomEmpty } from './phantom-empty/phantom-empty.component';
     PhantomHeader,
     PhantomTable,
     PhantomContent,
-    PhantomTableForlist,
+    PhantomTableFieldDirective,
     PhantomEmpty
   ],
   imports: [
@@ -39,8 +38,8 @@ import { PhantomEmpty } from './phantom-empty/phantom-empty.component';
     PhantomHeader,
     PhantomTable,
     PhantomContent,
-    PhantomTableForlist,
+    PhantomTableFieldDirective,
     PhantomEmpty
   ],
 })
-export class PhantomTemplateModule {}
+export class PhantomTemplateModule { }
