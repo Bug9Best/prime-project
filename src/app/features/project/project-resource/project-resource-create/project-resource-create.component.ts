@@ -9,6 +9,7 @@ import { MessageService } from 'primeng/api';
 })
 export class ProjectResourceCreate {
   visible: boolean = false;
+  text = 'Create Resource';
 
   formGroup: FormGroup = new FormGroup({
     topic: new FormControl(null, Validators.required),
