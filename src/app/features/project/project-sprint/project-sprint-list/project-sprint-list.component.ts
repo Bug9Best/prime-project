@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PhantomTableForlistColumn } from '../../../../template/phantom-table-for-list/phantom-table-for-list.component';
+import { PhantomTableColumn } from '../../../../template/phantom-table/phantom-table.component';
 
 @Component({
   selector: 'project-sprint-list',
@@ -10,7 +10,7 @@ export class ProjectSprintList {
 
   listSprint: any[] = [];
 
-  columns: PhantomTableForlistColumn[] = [
+  columns: PhantomTableColumn[] = [
     {
       type: 'string',
       label: 'Task/Issue',
@@ -28,9 +28,9 @@ export class ProjectSprintList {
       },
     },
     {
-      type: 'string',
+      type: 'date',
       label: 'Sprint Duration',
-      field: 'duration',
+      field: 'sprint_duration',
       style: {
         width: '20%',
       },
