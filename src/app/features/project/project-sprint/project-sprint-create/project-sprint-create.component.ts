@@ -9,6 +9,7 @@ import { MessageService } from 'primeng/api';
 })
 export class ProjectSprintCreate {
   visible: boolean = false;
+  minDate: any = new Date();
 
   formGroup: FormGroup = new FormGroup({
     sprint_name: new FormControl('', Validators.required),
@@ -17,7 +18,23 @@ export class ProjectSprintCreate {
     sprint_note: new FormControl(),
   });
 
-  constructor(private messageService: MessageService) { }
+  constructor(private messageService: MessageService) {
+    // Subscribe to start_date value changes
+    this.start_date?.valueChanges.subscribe((value) => {
+      this.minDate = value;
+      if (value > this.end_date?.value) {
+        this.end_date?.setValue(null);
+      }
+    });
+  }
+
+  get start_date() {
+    return this.formGroup.get('start_date');
+  }
+
+  get end_date() {
+    return this.formGroup.get('end_date');
+  }
 
   getTotalDate(start_date: any, end_date: any) {
     let start = new Date(start_date);
@@ -50,13 +67,11 @@ export class ProjectSprintCreate {
       this.showMessages('warn', 'Error', 'Please fill in the form');
       return;
     }
-    this.onCreateSprint()
+    this.onCreateSprint();
   }
 
-  onCreateEvent = output<any>(
-    
-  );
-  
+  onCreateEvent = output<any>();
+
   onCreateSprint() {
     let values = this.formGroup.value;
     values.id = Math.floor(Math.random() * 1000);

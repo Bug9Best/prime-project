@@ -12,8 +12,7 @@
     <div class="grid">
       <div class="col-3">
         <label for="sprint_name" class="font-semibold w-6rem"
-          >Sprint Name</label
-        >
+          >Sprint Name</label>
       </div>
       <div class="col-9">
         <input
@@ -30,11 +29,10 @@
       </div>
       <div class="col-9">
         <p-calendar
-        [readonlyInput]="true"
+          [readonlyInput]="true"
           appendTo="body"
           formControlName="start_date"
-          styleClass="w-full"
-        >
+          styleClass="w-full">
         </p-calendar>
       </div>
     </div>
@@ -47,8 +45,8 @@
         <p-calendar
           appendTo="body"
           formControlName="end_date"
-          styleClass="w-full"
-        >
+          [minDate]="minDate"
+          styleClass="w-full">
         </p-calendar>
       </div>
     </div>
@@ -61,8 +59,7 @@
           type="text"
           pInputText
           class="p-inputtext-sm w-full"
-          formControlName="sprint_note"
-        />
+          formControlName="sprint_note"/>
       </div>
     </div>
   </div>
@@ -73,15 +70,15 @@
       pRipple
       (click)="visible = false"
       label="Cancel"
-      class="p-button-text p-button-danger flex-grow-1"
-    ></button>
+      class="p-button-text p-button-danger flex-grow-1">
+    </button>
     <button
       pButton
       pRipple
       icon="pi pi-save"
       label="Create Sprint"
       class="flex-grow-1"
-      (click)="validatreForm()"
-    ></button>
+      (click)="validatreForm()">
+    </button>
   </div>
 </phantom-dialog>

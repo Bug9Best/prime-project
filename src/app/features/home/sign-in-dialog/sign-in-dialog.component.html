@@ -23,18 +23,31 @@
       <input id="password1" type="password" placeholder="Password" pInputText class="p-inputtext-sm w-full mb-3">
       <div class="flex align-items-center justify-content-between mb-6">
         <div class="flex align-items-center">
-          <p-checkbox id="rememberme" [binary]="true" styleClass="mr-2"></p-checkbox>
+          <p-checkbox 
+            id="rememberme" 
+            [binary]="true" 
+            styleClass="mr-2">
+          </p-checkbox>
           <label for="rememberme1">Remember me</label>
         </div>
         <a class="font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer">Forgot password?</a>
       </div>
-      <button pButton pRipple label="Sign In" icon="pi pi-user" class="w-full p-button-sm"
-      (click)="onSignin()"></button>
+      <button pButton pRipple 
+        label="Sign In" 
+        icon="pi pi-user" 
+        class="w-full p-button-sm"
+        (click)="onSignin()">
+      </button>
       <p-divider align="center">
         <span class="text-600 font-normal text-sm">OR</span>
       </p-divider>
-      <button pButton pRipple severity="secondary" label="Sign In with Google" icon="pi pi-google" class="w-full p-button-sm"
-      (click)="onSigninGoogle()"></button>
+      <button pButton pRipple 
+        severity="secondary" 
+        label="Sign In with Google" 
+        icon="pi pi-google" 
+        class="w-full p-button-sm"
+        (click)="onSigninGoogle()">
+      </button>
       <div class="flex justify-content-center mt-3">
         <span class="text-600 font-medium line-height-3">Don't have an account?</span>
         <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer"

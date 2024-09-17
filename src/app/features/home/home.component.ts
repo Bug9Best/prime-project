@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { PrimeNGModule } from '../../shared/modules/primeng.module';
-import { MenuItem, MessageService } from 'primeng/api';
+import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
@@ -9,10 +8,9 @@ import { AuthService } from '../../shared/service/auth/auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
 })
 export class HomeComponent {
-
   constructor(
     private router: Router,
     private messageService: MessageService,
