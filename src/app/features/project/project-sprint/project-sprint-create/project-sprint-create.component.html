@@ -30,6 +30,7 @@
       </div>
       <div class="col-9">
         <p-calendar
+        [readonlyInput]="true"
           appendTo="body"
           formControlName="start_date"
           styleClass="w-full"
@@ -56,9 +57,14 @@
         <label for="username" class="font-semibold w-6rem">Note</label>
       </div>
       <div class="col-9">
-          <input type="text" pInputText class="p-inputtext-sm w-full" formControlName="sprint_note" />
-        </div>
+        <input
+          type="text"
+          pInputText
+          class="p-inputtext-sm w-full"
+          formControlName="sprint_note"
+        />
       </div>
+    </div>
   </div>
 
   <div class="pt-3 flex">
