@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { PhantomTableColumn } from '../../../../template/phantom-table/phantom-table.component';
+import { listIssue } from '../../../../shared/data/issue';
 
 @Component({
   selector: 'project-issue-list',
@@ -8,7 +9,7 @@ import { PhantomTableColumn } from '../../../../template/phantom-table/phantom-t
 })
 export class ProjectIssueList {
 
-  listIssue: any[] = [];
+  listIssue: any[] = listIssue;
 
   columns: PhantomTableColumn[] = [
     {
@@ -47,5 +48,10 @@ export class ProjectIssueList {
 
   createIssue(data: any) {
     this.listIssue.push(data);
+  }
+
+  onSelectedItemsEvent = output<any>();
+  onSelectedItems(data: any) {
+    this.onSelectedItemsEvent.emit(data);
   }
 }

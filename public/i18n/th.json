@@ -27,6 +27,7 @@
   "BUTTON_CREATE_SPRINT": "สร้างสปรินต์ใหม่",
   "DESCRIPTION_NO_ISSUE": "กรุณาสร้างงานที่ต้องทำเพื่อเริ่มต้นการวางแผนงาน",
   "BUTTON_CREATE_ISSUE": "สร้างงานที่ต้องทำใหม่",
+  "TITLE_DETAIL_ISSUE": "รายละเอียดอิซชู่",
 
   "MENU_TIMELINE": "ไทมไลน์",
   "TITLE_TIMELINE": "ไทมไลน์",

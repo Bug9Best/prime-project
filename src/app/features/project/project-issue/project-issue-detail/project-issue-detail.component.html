@@ -1,0 +1,38 @@
+<phantom-dialog
+  [(visible)]="visible"
+  [showButton]="false"
+  [label]="'TITLE_DETAIL_ISSUE'"
+  [dialogstyle]="{ width: '50vw' }"
+  [appendTo]="'body'"
+>
+  <div class="flex flex-column">
+    <div class="text-2xl font-bold">
+      <div class="flex">
+        <div style="width: 200px">Sprint owner</div>
+        <span class="ml-3"> {{ issueData.title }}</span>
+      </div>
+    </div>
+    <div class="text-xl mt-5">
+      <div class="flex">
+        <div style="width: 200px">Issue type</div>
+        <span class="ml-3"> {{ issueData.type }}</span>
+      </div>
+    </div>
+  </div>
+  <div class="flex align-content-center">
+    <div>
+      <div class="mt-5">
+        <div class="flex">
+          <div style="width: 200px">Sprint owner</div>
+          <span class="ml-3">{{ issueData.sprint }}</span>
+        </div>
+      </div>
+      <div class="mt-5">
+        <div class="flex">
+          <div style="width: 200px">Duration</div>
+          <span class="ml-3">{{ issueData.assignee }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</phantom-dialog>

@@ -27,6 +27,7 @@
   "LABEL_NO_ISSUE": "No Issue",
   "DESCRIPTION_NO_ISSUE": "There is no issue in this project. Please create a new issue.",
   "BUTTON_CREATE_ISSUE": "Create new issue",
+  "TITLE_DETAIL_ISSUE": "Issue Detail",
 
   "MENU_TIMELINE": "Timeline",
   "TITLE_TIMELINE": "Timeline",

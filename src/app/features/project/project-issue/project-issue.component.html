@@ -6,7 +6,10 @@
   </phantom-header>
 
   <phantom-content>
-    <project-issue-list>
+    <project-issue-list
+    (onSelectedItemsEvent)="viewDetail($event)">
     </project-issue-list>
   </phantom-content>
+  <project-issue-detail>
+  </project-issue-detail>
 </div>
