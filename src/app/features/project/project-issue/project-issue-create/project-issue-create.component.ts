@@ -66,6 +66,7 @@ export class ProjectIssueCreate {
   onCreateEvent = output<any>();
   onCreateIssue() {
     let values = this.formGroup.value;
+    values.id = Math.floor(Math.random() * 1000);
     this.onCreateEvent.emit(values);
     this.showMessages('success', 'Success', 'Sprint created successfully');
     this.resetForm();
