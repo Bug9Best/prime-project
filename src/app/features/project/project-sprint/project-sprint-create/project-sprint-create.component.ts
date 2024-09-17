@@ -14,8 +14,7 @@ export class ProjectSprintCreate {
     sprint_name: new FormControl('', Validators.required),
     start_date: new FormControl(new Date(), Validators.required),
     end_date: new FormControl('', Validators.required),
-    sprint_note: new FormControl('', Validators.required),
-
+    sprint_note: new FormControl(),
   });
 
   constructor(private messageService: MessageService) { }
@@ -54,7 +53,10 @@ export class ProjectSprintCreate {
     this.onCreateSprint()
   }
 
-  onCreateEvent = output<any>();
+  onCreateEvent = output<any>(
+    
+  );
+  
   onCreateSprint() {
     let values = this.formGroup.value;
     values.id = Math.floor(Math.random() * 1000);
