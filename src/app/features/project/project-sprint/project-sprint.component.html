@@ -6,7 +6,10 @@
   </phantom-header>
   
   <phantom-content>
-    <project-sprint-list>
+    <project-sprint-list  
+      (onSelectedItemsEvent)="viewDetail($event)">
     </project-sprint-list>
   </phantom-content>
+  <project-sprint-detail>
+  </project-sprint-detail>
 </div>

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { ProjectSprintList } from './project-sprint-list/project-sprint-list.component';
+import { ProjectSprintDetail } from './project-sprint-detail/project-sprint-detail.component';
 
 @Component({
   selector: 'app-project-sprint',
@@ -7,10 +8,16 @@ import { ProjectSprintList } from './project-sprint-list/project-sprint-list.com
   styleUrl: './project-sprint.component.scss',
 })
 export class ProjectSprintComponent {
-
-  @ViewChild(ProjectSprintList) 
+  @ViewChild(ProjectSprintList)
   projectSprintList!: ProjectSprintList;
   createSprint(data: any) {
     this.projectSprintList.createSprint(data);
+  }
+
+  @ViewChild(ProjectSprintDetail)
+  sprintDetail!: ProjectSprintDetail;
+  viewDetail(data: any) {
+    if (!data) return;
+    this.sprintDetail.showDialog(data);
   }
 }

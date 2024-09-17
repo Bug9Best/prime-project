@@ -65,14 +65,13 @@ export class PhantomTable {
     return this._selectedItems;
   }
 
-  onSelectedItems = output<any>();
   public set selectedItems(value: any) {
     this._selectedItems = value;
-    this.onSelectedItems.emit(value);
   }
-
+  
+  onSelectedItems = output<any>();
   viewIssue(selectedItems: any) {
-    console.log(selectedItems);
+    this.onSelectedItems.emit(selectedItems);
   }
 
   @ContentChildren(PhantomTableFieldDirective)

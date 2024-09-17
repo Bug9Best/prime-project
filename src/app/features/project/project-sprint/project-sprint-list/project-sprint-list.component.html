@@ -5,7 +5,8 @@
 @else {
   <phantom-table 
     [value]="listSprint" 
-    [columns]="columns">
+    [columns]="columns"
+    (onSelectedItems)="onSelectedItems($event)">
       <ng-template phantomTableField="duration" let-item>
         <div class="text-center text-blue-500">
           {{ item.duration }} 

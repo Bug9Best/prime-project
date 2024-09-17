@@ -146,6 +146,10 @@ export class ProjectGanttComponent {
     this.items = [...this.items];
   }
 
+  barClick(event: any) {
+    console.log('barClick', event);
+  }
+
   print(name: string) {
     this.printService.print(name);
   }

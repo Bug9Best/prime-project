@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, output } from '@angular/core';
 import { PhantomTableColumn } from '../../../../template/phantom-table/phantom-table.component';
+import { listSprint } from '../../../../shared/data/sprint';
 
 @Component({
   selector: 'project-sprint-list',
@@ -7,8 +8,7 @@ import { PhantomTableColumn } from '../../../../template/phantom-table/phantom-t
   styleUrl: './project-sprint-list.component.scss',
 })
 export class ProjectSprintList {
-
-  listSprint: any[] = [];
+  listSprint: any[] = listSprint;
 
   columns: PhantomTableColumn[] = [
     {
@@ -55,5 +55,10 @@ export class ProjectSprintList {
 
   createSprint(data: any) {
     this.listSprint.push(data);
+  }
+
+  onSelectedItemsEvent = output<any>();
+  onSelectedItems(data: any) {
+    this.onSelectedItemsEvent.emit(data);
   }
 }
