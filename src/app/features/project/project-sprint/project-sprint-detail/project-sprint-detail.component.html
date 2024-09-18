@@ -38,11 +38,19 @@
           </phantom-empty>
         </p-tabPanel>
         <p-tabPanel header="Comment">
-          <phantom-empty>
-          </phantom-empty>
+          @for (item of [1,2,3]; track $index) {
+          <div class="border-1 surface-border border-round p-3 mb-2">
+            Lorem ipsum dolor sit amet.
+          </div>
+          }
+
+          <textarea pInputTextarea rows="5" class="w-full"></textarea>
+          <div class="flex justify-content-end">
+            <button pButton pRipple type="button" label="Comment" class="p-button-sm p-button-success">
+            </button>
+          </div>
         </p-tabPanel>
       </p-tabView>
-      <div class="h-10rem p-2"></div>
     </div>
     <p-divider layout="vertical" styleClass="m-0 p-0"></p-divider>
 
@@ -84,6 +92,13 @@
         </div>
       </div>
       }
+      <p-divider></p-divider>
+      <div>
+        <button pButton pRipple type="button" label="Remove Sprint"
+          class="p-button-outlined p-button-sm p-button-danger w-full"
+          (click)="onDelete()">
+        </button>
+      </div>
     </div>
   </div>
 </phantom-dialog>

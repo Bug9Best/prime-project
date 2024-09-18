@@ -66,11 +66,15 @@
         </div>
 
         <p-divider styleClass="h-full"></p-divider>
-
-        <div>
+        <div class="flex">
           <button pButton pRipple type="button" label="Remove Task"
-            class="p-button-outlined p-button-sm p-button-danger w-full">
+            class="p-button-outlined p-button-sm p-button-danger w-full"
+            (click)="onDelete()">
           </button>
+
+          <button pButton pRipple type="button" label="Save Changes"
+          class="p-button-sm p-button-success w-full ml-2">
+        </button>
         </div>
       </div>
     </div>

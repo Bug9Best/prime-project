@@ -1,20 +1,25 @@
 @if (!listSprint.length) {
-  <phantom-empty [description]="'PAGE_SPRINT_EMPTY'">
-  </phantom-empty>
+<phantom-empty [description]="'PAGE_SPRINT_EMPTY'">
+</phantom-empty>
 }
 @else {
-  <phantom-table 
-    [value]="listSprint" 
-    [columns]="columns"
-    (onSelectedItems)="onSelectedItems($event)">
-      <ng-template phantomTableField="duration" let-item>
-        <div class="text-center text-blue-500">
-          {{ item.duration }} 
-        </div>
-        <div class="text-sm text-center">
-          ({{ item.start_date | date: 'dd MMM yyyy' }} - {{ item.end_date | date: 'dd MMM yyyy' }})
-        </div>
-      </ng-template>
-  </phantom-table>
-}
+<phantom-table [value]="listSprint" [columns]="columns" (onSelectedItems)="onSelectedItems($event)">
+  <ng-template phantomTableField="sprint_owner" let-item>
+    <div class="flex align-items-center">
+      <p-avatar class="mt-1" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
+      <div class="ml-2"> 
+        {{ item.sprint_owner }}
+      </div>
+    </div>
+  </ng-template>
 
+  <ng-template phantomTableField="duration" let-item>
+    <div class="text-center text-blue-500">
+      {{ item.duration }}
+    </div>
+    <div class="text-sm text-center">
+      ({{ item.start_date | date: 'dd MMM yyyy' }} - {{ item.end_date | date: 'dd MMM yyyy' }})
+    </div>
+  </ng-template>
+</phantom-table>
+}
