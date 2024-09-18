@@ -16,7 +16,7 @@ export var listSprint = [
     duration: '2 weeks',
     start_date: '2021-01-01',
     end_date: '2021-01-15',
-    process: 50,
+    process: 25,
     sprint_note: 'Sprint 2 note',
   },
 ];

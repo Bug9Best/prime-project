@@ -5,32 +5,64 @@
   [dialogstyle]="{ width: '50vw' }"
   [appendTo]="'body'"
 >
-  <div class="flex flex-column">
-    <div class="text-2xl font-bold">
-      <div class="flex">
-        <div style="width: 200px">Sprint owner</div>
-        <span class="ml-3"> {{ issueData.title }}</span>
-      </div>
-    </div>
-    <div class="text-xl mt-5">
-      <div class="flex">
-        <div style="width: 200px">Issue type</div>
-        <span class="ml-3"> {{ issueData.type }}</span>
-      </div>
-    </div>
+  <div class="p-4">
+    {{ issueData.title }}
+    <p-divider></p-divider>
   </div>
-  <div class="flex align-content-center">
-    <div>
-      <div class="mt-5">
-        <div class="flex">
-          <div style="width: 200px">Sprint owner</div>
-          <span class="ml-3">{{ issueData.sprint }}</span>
+
+  <div class="grid m-0 p-0">
+    <p-tabView>
+      <p-tabPanel header="Comment">
+        <div class="col-9">
+          <div class="p-4 mb-2">
+            <div class="flex flex-column">
+              <div class="flex justify-content-start">
+                <div class="">
+                  <div class="flex justify-content-center mb-2 w-full">
+                    <textarea
+                      rows="5"
+                      cols="30"
+                      pInputTextarea
+                      [(ngModel)]="value"
+                    ></textarea>
+                  </div>
+                  <p-timeline [value]="events">
+                    <ng-template pTemplate="content" let-event>
+                      {{ event.status }}
+                    </ng-template>
+                  </p-timeline>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Subtask"> adawaawfawf </p-tabPanel>
+    </p-tabView>
+
+    <p-divider layout="vertical" styleClass="m-0 p-0"></p-divider>
+
+    <div class="col-3 p-4">
+      <div class="text-md font-bold">Assignees</div>
+      <div class="flex justify-content-between mt-3">
+        <div class="flex flex-column">
+          <div class="flex">
+            <span class="flex align-items-center mr-2 text-sm">
+              <p-avatar
+                image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                shape="circle"
+              />
+            </span>
+            <div class="flex justify-content-between">
+              <div class="">{{ issueData.assignee }}</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="mt-5">
-        <div class="flex">
-          <div style="width: 200px">Duration</div>
-          <span class="ml-3">{{ issueData.assignee }}</span>
+      <div class="w-full">
+        <div class="text-md font-bold">Description</div>
+        <div>
+          {{ issueData.sprint }}
         </div>
       </div>
     </div>

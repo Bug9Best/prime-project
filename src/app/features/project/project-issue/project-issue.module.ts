@@ -9,6 +9,8 @@ import { PhantomTemplateModule } from '../../../template/phantom-template.module
 import { ProjectIssueCreate, } from './project-issue-create/project-issue-create.component';
 import { ProjectIssueList } from './project-issue-list/project-issue-list.component';
 import { ProjectIssueDetail,} from './project-issue-detail/project-issue-detail.component';
+import { TimelineModule } from 'primeng/timeline';
+import { DividerModule } from 'primeng/divider';
 
 const routes: Routes = [
   {
@@ -31,7 +33,9 @@ const routes: Routes = [
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
-    PhantomTemplateModule
+    PhantomTemplateModule,
+    TimelineModule,
+    DividerModule,
   ],
 })
 export class ProjectIssueModule { }
