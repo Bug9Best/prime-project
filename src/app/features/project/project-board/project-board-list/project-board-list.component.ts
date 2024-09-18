@@ -44,8 +44,6 @@ export class ProjectBoardList {
       }
       targetColumn.items.push(this.draggedItem);
       this.resetValues();
-
-      this.mockBoard.saveBoard();
     }
   }
 

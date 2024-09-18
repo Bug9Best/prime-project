@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PhantomTemplateModule } from '../../../template/phantom-template.module';
 import { ProjectIssueCreate, } from './project-issue-create/project-issue-create.component';
 import { ProjectIssueList } from './project-issue-list/project-issue-list.component';
-import { ProjectIssueDetail,} from './project-issue-detail/project-issue-detail.component';
 
 const routes: Routes = [
   {
@@ -22,7 +21,6 @@ const routes: Routes = [
     ProjectIssueComponent,
     ProjectIssueCreate,
     ProjectIssueList,
-    ProjectIssueDetail
   ],
   imports: [
     CommonModule,

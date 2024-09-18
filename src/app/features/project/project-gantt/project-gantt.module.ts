@@ -9,6 +9,7 @@ import { ThyButton, ThyButtonModule } from 'ngx-tethys/button';
 import { ThyLayoutModule } from 'ngx-tethys/layout';
 import { GanttConfigProvider } from '../../../config/gantt.config';
 import { PhantomTemplateModule } from '../../../template/phantom-template.module';
+import { ProjectIssueDetail } from '../project-issue/project-issue-detail/project-issue-detail.component';
 
 const routes: Routes = [
   {
@@ -30,7 +31,8 @@ const routes: Routes = [
     ThyButtonModule,
     ThyButton,
     ThyLayoutModule,
-    PhantomTemplateModule
+    PhantomTemplateModule,
+    ProjectIssueDetail
   ],
   providers: [GanttPrintService, GanttConfigProvider]
 

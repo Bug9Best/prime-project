@@ -1,40 +1,26 @@
 <div class="flex gap-3">
   <div *ngFor="let board of listBoard" class="h-full">
     <p-panel [header]="board.name" pDroppable (onDrop)="onDropItem(board)">
-      <div
-        *ngFor="let item of board.items"
-        pDraggable
-        (onDragEnd)="onDragEnd()"
+      <div *ngFor="let item of board.items" pDraggable (onDragEnd)="onDragEnd()"
         (onDragStart)="onDragStart(board, item)"
-        class="flex p-3 surface-overlay border-1 surface-border border-round mb-2 cursor-pointer align-content-center justify-content-between"
-      >
+        class="flex p-3 surface-overlay border-1 surface-border border-round mb-2 cursor-pointer align-content-center justify-content-between">
         <div>
-          <div class="p-card-header">{{ item.title }}</div>
-          <div class="p-card-body">{{ item.description }}</div>
+          <div class="p-card-header font-bold">{{ item.title }}</div>
+          <div class="p-card-body text-500 text-sm">{{ item.description }}</div>
+          <div class="p-card-body text-500 text-xs">{{ item.due_date }}</div>
         </div>
         <div>
-          <p-avatarGroup
-            class="flex align-items-center"
-            [pTooltip]="
+          <p-avatarGroup class="flex align-items-center" [pTooltip]="
               'Natthaphon D. Best' + '\n' + 'Phuriq' + '\n' + 'and 1 others'
-            "
-          >
-            <p-avatar
-              image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-              shape="circle"
-            />
+            ">
+            <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
           </p-avatarGroup>
         </div>
       </div>
 
       <ng-template pTemplate="footer" style="padding: 0">
-        <button
-          pButton
-          pRipple
-          icon="pi pi-plus"
-          label="Create Issue"
-          class="p-button-secondary p-button-outlined p-button-sm w-full"
-        ></button>
+        <button pButton pRipple icon="pi pi-plus" label="Create Issue"
+          class="p-button-secondary p-button-outlined p-button-sm w-full"></button>
       </ng-template>
     </p-panel>
   </div>

@@ -19,6 +19,7 @@ import {
   getUnixTime,
 } from '@worktile/gantt';
 import { of, delay, finalize, Subscription } from 'rxjs';
+import { ProjectIssueDetail } from '../project-issue/project-issue-detail/project-issue-detail.component';
 
 @Component({
   selector: 'app-project-gantt',
@@ -146,8 +147,10 @@ export class ProjectGanttComponent {
     this.items = [...this.items];
   }
 
+  @ViewChild(ProjectIssueDetail)
+  issueDetail!: ProjectIssueDetail;
   barClick(event: any) {
-    console.log('barClick', event);
+    this.issueDetail.showDialog(event.item);
   }
 
   print(name: string) {
