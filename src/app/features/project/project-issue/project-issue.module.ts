@@ -29,7 +29,7 @@ const routes: Routes = [
     TranslateModule,
     FormsModule,
     ReactiveFormsModule,
-    PhantomTemplateModule
+    PhantomTemplateModule,
   ],
 })
 export class ProjectIssueModule { }
