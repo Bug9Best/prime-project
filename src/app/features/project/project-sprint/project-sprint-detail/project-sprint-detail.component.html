@@ -1,13 +1,8 @@
-<phantom-dialog
-  [(visible)]="visible"
-  [showButton]="false"
-  [appendTo]="'body'"
-  [dialogstyle]="{ width: '50vw', 'min-height': '50vh' }"
-  [label]="'TITLE_DETAIL_SPRINT'"
->
+<phantom-dialog [(visible)]="visible" [showButton]="false" [appendTo]="'body'"
+  [dialogstyle]="{ width: '70vw', 'min-height': '50vh' }" [label]="'TITLE_DETAIL_SPRINT'">
   <div class="grid m-0 p-0">
     <div class="col-7">
-      <div class="p-4 mb-2">
+      <div class="mb-2">
         <div class="flex flex-column">
           <div class="text-2xl font-bold">
             {{ sprintData.sprint_name }}
@@ -18,48 +13,35 @@
         </div>
         <div class="flex align-content-center">
           <div>
-            <div class="mt-8">
-              <div class="flex">
-                <div style="width: 200px">Sprint owner</div>
-                <span class="ml-3">{{ sprintData.sprint_owner }}</span>
-              </div>
+            <div class="flex">
+              <div style="width: 200px">Sprint owner</div>
+              <span class="ml-3">{{ sprintData.sprint_owner }}</span>
             </div>
-            <div class="mt-5">
-              <div class="flex">
-                <div style="width: 200px">Duration</div>
-                <span class="ml-3">{{ sprintData.duration }}</span>
-              </div>
+            <div class="flex">
+              <div style="width: 200px">Duration</div>
+              <span class="ml-3">{{ sprintData.duration }}</span>
             </div>
-            <div class="mt-5">
-              <div class="flex">
-                <div style="width: 200px">Start date</div>
-                <span class="ml-3">{{ sprintData.start_date }}</span>
-              </div>
+            <div class="flex">
+              <div style="width: 200px">Start date</div>
+              <span class="ml-3">{{ sprintData.start_date }}</span>
             </div>
-            <div class="mt-5">
-              <div class="flex">
-                <div style="width: 200px">Due date</div>
-                <span class="ml-3">{{ sprintData.end_date }}</span>
-              </div>
+            <div class="flex">
+              <div style="width: 200px">Due date</div>
+              <span class="ml-3">{{ sprintData.end_date }}</span>
             </div>
           </div>
         </div>
       </div>
       <p-tabView>
         <p-tabPanel header="Task">
-          <p>Lorem ipsum dolor sit amet...</p>
-        </p-tabPanel>
-        <p-tabPanel header="Attachment">
-          <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium...
-          </p>
+          <phantom-empty>
+          </phantom-empty>
         </p-tabPanel>
         <p-tabPanel header="Comment">
-          <p>At vero eos et accusamus et iusto odio dignissimos...</p>
+          <phantom-empty>
+          </phantom-empty>
         </p-tabPanel>
       </p-tabView>
-
       <div class="h-10rem p-2"></div>
     </div>
     <p-divider layout="vertical" styleClass="m-0 p-0"></p-divider>
@@ -83,10 +65,7 @@
           <div class="flex flex-column">
             <div class="flex">
               <span class="flex align-items-center mr-2">
-                <p-avatar
-                  image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-                  shape="circle"
-                />
+                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
               </span>
               <div class="flex justify-content-between">
                 <div class="flex flex-row">
@@ -94,8 +73,7 @@
                     <div class="font-bold">
                       Phuri siripool
                       <span class="text-400">
-                        added Test{{ $index + 1 }}.JPG to Project Resource</span
-                      >
+                        added Test{{ $index + 1 }}.JPG to Project Resource</span>
                     </div>
                     <span class="text-sm text-400">Yesterday</span>
                   </div>
