@@ -22,7 +22,6 @@ export class ProjectIssueDetail {
   events: any[];
   value!: string;
 
-
   showDialog(data: any) {
     this.visible = true;
     this.innitializeData(data);
