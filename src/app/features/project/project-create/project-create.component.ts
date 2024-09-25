@@ -18,6 +18,6 @@ export class ProjectCreateComponent {
   }
 
   onCreateProject() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/project']);
   }
 }

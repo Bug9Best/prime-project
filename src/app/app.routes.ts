@@ -14,6 +14,14 @@ export const routes: Routes = [
         loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
     },
     {
+        path: 'createproject',
+        loadChildren: () => import('./features/project/project-create/project-create.module').then(m => m.ProjectCreateModule)
+    },
+    {
+        path: 'projectselector',
+        loadChildren: () => import('./features/project/project-selector/project-selector.module').then(m => m.ProjectSelectorModule)
+    },
+    {
         path: 'project',
         component: PhantomPage,
         children: [

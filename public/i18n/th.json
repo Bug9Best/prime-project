@@ -5,6 +5,12 @@
   "TITLE_PLANNING": "การวางแผนงาน",
   "MENU_DASHBOARD": "แดชบอร์ด",
   "TITLE_DASHBOARD": "แดชบอร์ด",
+  "DASHBOARD_PROJECT_TASK": "งานในโปรเจค",
+  "DASHBOARD_PROJECT_INFO": "ข้อมูลโปรเจค",
+  "DASHBOARD_PROJECT_ACTIVITY": "กิจกรรมล่าสุด",
+
+
+
 
   "MENU_GANTT": "แผนภูมิแกรนต์",
   "TITLE_GANTT": "แผนภูมิแกรนต์",
@@ -34,6 +40,7 @@
 
   "MENU_LIST": "รายการ",
   "TITLE_LIST": "รายการ",
+  "BUTTON_CREATE_LIST": "สร้างรายการใหม่",
   "PAGE_ISSUE_EMPTY": "ไม่มีงานที่ต้องทำในโปรเจคนี้ กรุณาสร้างงานที่ต้องทำใหม่",
 
   "MENU_BOARD": "กระดาน",

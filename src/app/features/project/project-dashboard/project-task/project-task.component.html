@@ -1,7 +1,7 @@
 <div class="flex flex-column border-1 surface-border border-round p-3">
   <div class="flex justify-content-between">
     <div class="font-bold mt-2">
-      Project Task
+      {{ 'DASHBOARD_PROJECT_TASK' | translate }}
     </div>
     <div [formGroup]="formGroup">
       <p-selectButton [options]="stateOptions" class="h-1rem" formControlName="value" optionLabel="label"

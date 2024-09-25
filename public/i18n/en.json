@@ -5,6 +5,10 @@
   "TITLE_PLANNING": "Planning",
   "MENU_DASHBOARD": "Dashboard",
   "TITLE_DASHBOARD": "Dashboard",
+  "DASHBOARD_PROJECT_TASK": "Project Task",
+  "DASHBOARD_PROJECT_INFO": "Project Info",
+  "DASHBOARD_PROJECT_ACTIVITY": "Recent Activity",
+
 
   "MENU_GANTT": "Gantt Chart",
   "TITLE_GANTT": "Gantt Chart",
@@ -34,6 +38,7 @@
 
   "MENU_LIST": "List",
   "TITLE_LIST": "List",
+  "BUTTON_CREATE_LIST": "Create new list",
   "PAGE_ISSUE_EMPTY": "No issue in this project. Please create a new issue.",
   
   "MENU_BOARD": "Board",

@@ -34,7 +34,7 @@ export class HomeComponent {
   }
 
   signInCredential() {
-    this.router.navigate(['/project']);
+    this.router.navigate(['/createproject']);
   }
 
   signInGoogle() {
