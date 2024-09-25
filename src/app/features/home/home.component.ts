@@ -34,7 +34,7 @@ export class HomeComponent {
   }
 
   signInCredential(value: any) {
-    this.router.navigate(['/createproject']);
+    this.router.navigate(['/create']);
     // this.authenService.SigninCredencial(value)
     //   .subscribe(
     //     {
@@ -61,7 +61,7 @@ export class HomeComponent {
   }
 
   signInSuccess(user: any) {
-    this.router.navigate(['/project']);
+    this.router.navigate(['/create']);
     localStorage.setItem('users', JSON.stringify(user));
     this.showMessage('success', 'Success', 'Sign in successfully');
   }

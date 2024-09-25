@@ -2,13 +2,13 @@
   <div class="w-full surface-overlay hidden lg:block flex-shrink-0 fixed lg:sticky left-0 top-0 z-1 border-right-1 surface-border select-none fadein animation-duration-150">
     <div class="p-3 cursor-pointer hover:surface-ground">
       <div class="flex align-items-center">
-        <span class="inline-flex justify-content-center align-items-center bg-orange-100"
+        <span class="inline-flex justify-content-center align-items-center" [ngClass]="getBgColor()"
           style="border-radius: 4px; width:40px; height: 40px">
-          <i class="pi pi-sync text-xl text-orange-600"></i>
+          <i class="pi text-xl" [ngClass]="getIcon()"></i>
         </span>
         <div class="flex flex-column justify-content-center ml-3">
-          <span class="text-900 font-medium">Scrum Project</span>
-          <p class="m-0 text-600 text-xs">Project Management System</p>
+          <span class="text-900 font-medium"> {{ title }} </span>
+          <p class="m-0 text-600 text-xs"> {{ subTitle }} </p>
         </div>
       </div>
     </div>

@@ -14,11 +14,11 @@ export const routes: Routes = [
         loadChildren: () => import('./features/home/home.module').then(m => m.HomeModule)
     },
     {
-        path: 'createproject',
+        path: 'create',
         loadChildren: () => import('./features/project/project-create/project-create.module').then(m => m.ProjectCreateModule)
     },
     {
-        path: 'projectselector',
+        path: 'workspace',
         loadChildren: () => import('./features/project/project-selector/project-selector.module').then(m => m.ProjectSelectorModule)
     },
     {
