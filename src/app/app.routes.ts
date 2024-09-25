@@ -22,7 +22,7 @@ export const routes: Routes = [
         loadChildren: () => import('./features/project/project-selector/project-selector.module').then(m => m.ProjectSelectorModule)
     },
     {
-        path: 'project',
+        path: 'project/:id',
         component: PhantomPage,
         children: [
             {
@@ -44,7 +44,7 @@ export const routes: Routes = [
                 loadChildren: () => import('./features/project/project-backlog/project-backlog.module').then(m => m.ProjectBacklogModule)
             },
             {
-                path: 'issue',
+                path: 'task',
                 loadChildren: () => import('./features/project/project-issue/project-issue.module').then(m => m.ProjectIssueModule)
             },
             {

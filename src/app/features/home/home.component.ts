@@ -34,20 +34,21 @@ export class HomeComponent {
   }
 
   signInCredential(value: any) {
-    this.authenService.SigninCredencial(value)
-      .subscribe(
-        {
-          next: (result) => {
-            if (result) {
-              this.signInSuccess(result);
-            } else {
-              this.signInFail();
-            }
-          },
-          error: (error) => {
-            this.signInFail();
-          }
-        });
+    this.router.navigate(['/createproject']);
+    // this.authenService.SigninCredencial(value)
+    //   .subscribe(
+    //     {
+    //       next: (result) => {
+    //         if (result) {
+    //           this.signInSuccess(result);
+    //         } else {
+    //           this.signInFail();
+    //         }
+    //       },
+    //       error: (error) => {
+    //         this.signInFail();
+    //       }
+    //     });
   }
 
   signInGoogle() {
