@@ -9,6 +9,7 @@ import { PrimeNGModule } from '../../../shared/modules/primeng.module';
 import { PhantomTopbarComponent } from '../../../template/phantom-page/phantom-topbar/phantom-topbar.component';
 import { PhantomFooterComponent } from '../../../template/phantom-page/phantom-footer/phantom-footer.component';
 import { ProjectCreateComponent } from './project-create.component';
+import { PhantomTemplateModule } from "../../../template/phantom-template.module";
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
     PrimeNGModule,
     PhantomTopbarComponent,
     PhantomFooterComponent,
-  ]
+    PhantomTemplateModule
+]
 })
 export class ProjectCreateModule { }

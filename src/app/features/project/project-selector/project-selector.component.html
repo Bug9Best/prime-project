@@ -1,1 +1,181 @@
-<p>project-selector works!</p>
+<phantom-topbar [isShowToggleSidebar]="false"> </phantom-topbar>
+<div class="p-4 mt-8">
+  <div
+    class="container flex align-items-center justify-content-center surface-ground"
+  >
+    <div class="" style="width: 70%">
+      <div class="surface-card p-4 shadow-2 border-round w-full">
+        <div>
+          <div class="flex justify-content-between">
+            <div>
+              <div class="text-3xl font-medium text-900 mb-2">
+                Project Dashboard
+              </div>
+            </div>
+          </div>
+          <div class="grid formgrid p-fluid -mb-3">
+            <div class="field col-12">
+              <label for="project_name" class="font-medium text-500"
+                >Recent Project</label
+              >
+              <div class="grid mt-1">
+                <div class="col-12">
+                  <button
+                    class="shadow-2 surface-card p-4 border-2 border-transparent cursor-pointer w-full"
+                    style="border-radius: 10px"
+                    [ngClass]="{
+                      'border-blue-500': template === 1,
+                      'hover:border-blue-200': template !== 1
+                    }"
+                    (click)="onSelectProject()"
+                  >
+                    <div class="flex align-items-center">
+                      <div class="mr-3">
+                        <span
+                          class="inline-flex justify-content-center align-items-center bg-orange-100"
+                          style="border-radius: 4px; width: 45px; height: 45px"
+                        >
+                          <i class="pi pi-spinner text-2xl text-orange-600"></i>
+                        </span>
+                      </div>
+
+                      <div class="w-full flex justify-content-between">
+                        <div class="text-left">
+                          <div class="flex justify-content-start">
+                            <p class="m-0 font-medium text-xl">Project-Kiw</p>
+                          </div>
+                          <div class="p-0 m-0 text-600 font-medium text-sm">
+                            Scrum Project
+                          </div>
+                        </div>
+
+                        <div class="flex flex-column">
+                          <div class="text-right text-500 text-xs">
+                            PROJECT OWNER
+                          </div>
+                          <div class="text-right text-lg">Phuri Siripool</div>
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p-divider></p-divider>
+          <label for="project_name" class="font-medium text-500"
+            >Project workspace</label
+          >
+          <div class="grid mt-2">
+            <div class="col-12">
+              <button
+                class="shadow-2 surface-card p-4 border-2 border-transparent cursor-pointer w-full"
+                style="border-radius: 10px"
+                [ngClass]="{
+                  'border-blue-500': template === 0,
+                  'hover:border-blue-200': template !== 0
+                }"
+                (click)="onSelectProject()"
+              >
+                <div class="flex align-items-center">
+                  <div class="mr-3">
+                    <span
+                      class="inline-flex justify-content-center align-items-center bg-orange-100"
+                      style="border-radius: 4px; width: 45px; height: 45px"
+                    >
+                      <i class="pi pi-spinner text-2xl text-orange-600"></i>
+                    </span>
+                  </div>
+                  <div class="w-full flex justify-content-between">
+                    <div class="text-left">
+                      <div class="flex justify-content-start">
+                        <p class="m-0 font-medium text-xl">Project-Kiw</p>
+                      </div>
+                      <div class="p-0 m-0 text-600 font-medium text-sm">
+                        Scrum Project
+                      </div>
+                    </div>
+
+                    <div class="flex flex-column">
+                      <div class="text-right text-500 text-xs">
+                        PROJECT OWNER
+                      </div>
+                      <div class="text-right text-lg">Phuri Siripool</div>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </div>
+            <div class="col-12">
+              <button
+                class="shadow-2 surface-card p-4 border-2 border-transparent cursor-pointer w-full"
+                style="border-radius: 10px"
+                [ngClass]="{
+                  'border-blue-500': template === 1,
+                  'hover:border-blue-200': template !== 1
+                }"
+                (click)="onSelectProject()"
+              >
+                <div class="flex align-items-center">
+                  <div class="mr-3">
+                    <span
+                      class="inline-flex justify-content-center align-items-center bg-blue-100"
+                      style="border-radius: 4px; width: 45px; height: 45px"
+                    >
+                      <i class="pi pi-clipboard text-2xl text-blue-600"></i>
+                    </span>
+                  </div>
+                  <div class="w-full flex justify-content-between">
+                    <div class="text-left">
+                      <div class="flex justify-content-start">
+                        <p class="m-0 font-medium text-xl">Project-Kiw</p>
+                      </div>
+                      <div class="p-0 m-0 text-600 font-medium text-sm">
+                        Scrum Project
+                      </div>
+                    </div>
+
+                    <div class="flex flex-column">
+                      <div class="text-right text-500 text-xs">
+                        PROJECT OWNER
+                      </div>
+                      <div class="text-right text-lg">
+                        Natthaphon Ditthaviboon
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </button>
+            </div>
+          </div>
+
+          <p-divider></p-divider>
+
+          <div class="flex justify-content-end">
+            <p-button
+              text="true"
+              size="small"
+              severity="secondary"
+              label="Cancel"
+              (onClick)="onCancel()"
+            >
+            </p-button>
+            <p-button
+              size="small"
+              icon="pi pi-plus"
+              iconPos="right"
+              label="Create More Project"
+              class="ml-2"
+              (onClick)="onCreateMoreProject()"
+            >
+            </p-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="surface-ground p-4">
+    <phantom-footer></phantom-footer>
+  </div>
+</div>

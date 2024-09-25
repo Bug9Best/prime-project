@@ -33,6 +33,7 @@ export class HomeComponent {
     });
   }
 
+<<<<<<< HEAD
   signInCredential(value: any) {
     this.authenService.SigninCredencial(value)
       .subscribe(
@@ -48,6 +49,10 @@ export class HomeComponent {
             this.signInFail();
           }
         });
+=======
+  signInCredential() {
+    this.router.navigate(['/createproject']);
+>>>>>>> 621898858922e592ccc85286114e787bff9443ca
   }
 
   signInGoogle() {

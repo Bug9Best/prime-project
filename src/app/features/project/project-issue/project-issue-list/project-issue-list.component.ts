@@ -14,7 +14,7 @@ export class ProjectIssueList {
   columns: PhantomTableColumn[] = [
     {
       type: 'string',
-      label: 'Task/Issue',
+      label: 'Task',
       field: 'title',
       style: {
         width: '40%',

@@ -5,6 +5,7 @@
   <div class="text-lg font-bold">
     {{ issueData.title }}
   </div>
+<<<<<<< HEAD
   <p-divider></p-divider>
   <div class="grid">
     <div class="col-8">
@@ -17,6 +18,32 @@
           @for (item of [1,2,3]; track $index) {
             <div class="border-1 surface-border border-round p-3 mb-2">
               Lorem ipsum dolor sit amet. 
+=======
+
+  <div class="grid m-0 p-0">
+    <p-tabView>
+      <p-tabPanel header="Comment">
+        <div class="col-9">
+          <div class="p-4 mb-2">
+            <div class="flex flex-column">
+              <div class="flex justify-content-start">
+                <div class="">
+                  <div class="flex justify-content-center mb-2 w-full">
+                    <textarea
+                      rows="5"
+                      cols="30"
+                      pInputTextarea
+                      [autoResize]="true"
+                    ></textarea>
+                  </div>
+                  <p-timeline [value]="events">
+                    <ng-template pTemplate="content" let-event>
+                      {{ event.status }}
+                    </ng-template>
+                  </p-timeline>
+                </div>
+              </div>
+>>>>>>> 621898858922e592ccc85286114e787bff9443ca
             </div>
           }
        
