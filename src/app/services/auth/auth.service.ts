@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BaseService } from '../base.service';
 import { BaseModel } from '../base.model';
 import { ProfileModel } from '../profile/profile.service';
+import { Observable } from 'rxjs';
 
 export interface AuthModel extends BaseModel {
   id: string;
@@ -14,7 +15,11 @@ export interface AuthModel extends BaseModel {
 }
 
 @Injectable({ providedIn: 'root' })
-export class AuthService extends BaseService<AuthModel> {
-  public override path: string = "users";
+export class AuthenService extends BaseService<AuthModel> {
+  public override path: string = "auth";
+
+  SigninCredencial(data: any): Observable<any> {
+    return this.http.post<any>(`${this.getBaseUrl}/${this.path}/signinCredencial`, data);
+  }
 }
 

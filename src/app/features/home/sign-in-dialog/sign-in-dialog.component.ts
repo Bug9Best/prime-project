@@ -1,4 +1,7 @@
-import { Component, output } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
+import { FormGroupSignin } from '../../../shared/form/from-signin';
+import { FormGroup } from '@angular/forms';
+import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'sign-in-dialog',
@@ -8,9 +11,33 @@ import { Component, output } from '@angular/core';
 export class SignInDialogComponent {
   visible: boolean = false;
 
+  formGroup: FormGroup = FormGroupSignin;
+  messageService = inject(MessageService);
+
+  validateForm() {
+    if (this.formGroup.invalid) {
+      this.formGroup.markAllAsTouched();
+      this.showMessage('warn', 'Error', 'Please fill in all required fields');
+      return false;
+    }
+    return true;
+  }
+
+  showMessage(severity: string, summary: string, detail: string) {
+    this.messageService.add({
+      key: 'app',
+      severity: severity,
+      summary: summary,
+      detail: detail,
+    });
+  }
+
   onSignInEvent = output();
   onSignin() {
-    this.onSignInEvent.emit();
+    let values = this.formGroup.value;
+    let state = this.validateForm();
+    if (!state) return;
+    this.onSignInEvent.emit(values);
   }
 
   onSignInGoogleEvent = output();

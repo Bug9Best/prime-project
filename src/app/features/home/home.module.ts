@@ -12,6 +12,7 @@ import { SectionGetstartedComponent } from './section-getstarted/section-getstar
 import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
 import { PhantomFooterHomeComponent } from "../../template/phantom-footer-home/phantom-footer-home.component";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -33,10 +34,12 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    FormsModule,
+    ReactiveFormsModule,
     PrimeNGModule,
     PhantomPage,
     TranslateModule,
-    PhantomFooterHomeComponent
+    PhantomFooterHomeComponent,
 ]
 })
 export class HomeModule { }

@@ -3,7 +3,7 @@ import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
 import { SignInDialogComponent } from './sign-in-dialog/sign-in-dialog.component';
 import { SignUpDialogComponent } from './sign-up-dialog/sign-up-dialog.component';
-import { AuthService } from '../../shared/service/auth/auth.service';
+import { AuthenService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -14,8 +14,8 @@ export class HomeComponent {
   constructor(
     private router: Router,
     private messageService: MessageService,
-    private authService: AuthService
-  ) {}
+    private authenService: AuthenService
+  ) { }
 
   onScrollToElementEvent(element: string) {
     const targetElement = document.getElementById(element);
@@ -33,8 +33,21 @@ export class HomeComponent {
     });
   }
 
-  signInCredential() {
-    this.router.navigate(['/project']);
+  signInCredential(value: any) {
+    this.authenService.SigninCredencial(value)
+      .subscribe(
+        {
+          next: (result) => {
+            if (result) {
+              this.signInSuccess(result);
+            } else {
+              this.signInFail();
+            }
+          },
+          error: (error) => {
+            this.signInFail();
+          }
+        });
   }
 
   signInGoogle() {
@@ -44,6 +57,16 @@ export class HomeComponent {
   onSignUp() {
     this.signUpDialog.visible = false;
     this.showMessage('success', 'Success', 'Sign up successfully');
+  }
+
+  signInSuccess(user: any) {
+    this.router.navigate(['/project']);
+    localStorage.setItem('users', JSON.stringify(user));
+    this.showMessage('success', 'Success', 'Sign in successfully');
+  }
+
+  signInFail() {
+    this.showMessage('error', 'Error', 'Sign in failed');
   }
 
   @ViewChild(SignInDialogComponent)
