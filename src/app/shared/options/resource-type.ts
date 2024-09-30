@@ -2,19 +2,19 @@ export var ResourceType = [
   {
     value: 1,
     title: 'Content',
-    description: 'Create a new content resource',
+    description: 'Create informative articles.',
     imageSrc: 'images/assets/blog-pencil.png',
   },
   {
     value: 2,
     title: 'External Link',
-    description: 'Create a new external link resource',
+    description: 'Provide links to resources or websites.',
     imageSrc: 'images/assets/web-link.png',
   },
   {
     value: 3,
     title: 'Attachments',
-    description: 'Create a new attachment resource',
+    description: 'Upload and share relevant files. ',
     imageSrc: 'images/assets/attached-file.png',
   },
 ];
