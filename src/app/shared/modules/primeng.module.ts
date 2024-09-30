@@ -69,6 +69,7 @@ import { ContextMenuModule } from 'primeng/contextmenu';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { MeterGroupModule } from 'primeng/metergroup';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { BadgeModule } from 'primeng/badge';
 
 let modules = [
   ButtonModule,
@@ -139,6 +140,7 @@ let modules = [
   ScrollPanelModule,
   MeterGroupModule,
   FloatLabelModule,
+  BadgeModule
 ]
 
 @NgModule({
