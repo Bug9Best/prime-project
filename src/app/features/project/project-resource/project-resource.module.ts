@@ -10,6 +10,7 @@ import { ProjectResourceCreate } from './project-resource-create/project-resourc
 import { ProjectResourceList } from './project-resource-list/project-resource-list.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThaiModule } from '../../../shared/pipes/thai.module';
+import { ProjectResourceSelectionComponent } from './project-resource-selection/project-resource-selection.component';
 
 const routes: Routes = [
   {
@@ -22,7 +23,8 @@ const routes: Routes = [
   declarations: [
     ProjectResourceComponent,
     ProjectResourceCreate,
-    ProjectResourceList
+    ProjectResourceList,
+    ProjectResourceSelectionComponent
   ],
   imports: [
     CommonModule,
