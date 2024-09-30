@@ -1,9 +1,12 @@
 <div class="p-4">
   <phantom-header [title]="'TITLE_RESOURCE'">
-    <project-resource-create 
-      (onAddResource)="addResource($event)">
-    </project-resource-create>
+    <project-resource-selection 
+      (onSelectTypeEvent)="onSelectType($event)">
+    </project-resource-selection>
   </phantom-header>
+  
+  <project-resource-create >
+  </project-resource-create>
 
   <phantom-content>
     <project-resource-list

@@ -5,54 +5,27 @@
   [dialogstyle]="{ width: '50vw' }"
   [showHeader]="false"
   [showClose]="false"
+  [showButton]="false"
   (visibleChange)="onCloseDialog($event)">
 
   <section class="flex flex-column w-full">
     <div class="flex w-full justify-content-between mb-4">
-      <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center bg-blue-100">
-        <i class="pi pi-file text-blue-700 text-4xl"></i>
+      <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center {{ typeValue == 1 ? 'bg-blue-100' : typeValue == 2 ? 'bg-orange-100' : 'bg-yellow-100' }}">
+        <i class="pi {{ typeValue == 1 ? 'pi-pencil text-blue-700' : typeValue == 2 ? 'pi-link text-orange-700' : 'pi-images text-yellow-700' }} text-4xl"></i>
       </span>
       <button pButton pRipple type="button" icon="pi pi-times"
         class="p-button-rounded p-button-secondary p-button-text align-self-start" (click)="visible = false">
       </button>
     </div>
-    <p class="font-semibold text-xl mt-0 mb-2 text-900">Add Resource</p>
-    <p class="font-normal text-base mt-0 mb-3 text-600">
-      Add a new resource to the project for the team to use.
-    </p>
+    <div class="text-900 font-medium text-2xl mb-1"> Add Resource </div>
+    <div class="text-700 line-height-3"> Add a new resource to your project. </div>
   </section>
 
-  <section [formGroup]="formGroup" class="mt-4">
-    <div class="mb-2">
-      <p-floatLabel>
-        <input pInputText id="username" class="p-inputtext-sm w-full" formControlName="topic" />
-        <label for="username">Topic</label>
-      </p-floatLabel>
-    </div>
-    <p-editor 
-      [style]="{ height: '320px' }" 
-      formControlName="content"/>
-      <ng-template pTemplate="header">
-        <span class="ql-formats">
-            <button type="button" class="ql-bold" aria-label="Bold"></button>
-            <button type="button" class="ql-italic" aria-label="Italic"></button>
-            <button type="button" class="ql-underline" aria-label="Underline"></button>
-            <button class="ql-list" value="ordered"></button>
-            <button class="ql-list" value="bullet"></button>
-        </span>
-    </ng-template>
+  <section class="mt-4">
+    <ng-container [ngSwitch]="typeValue">
+      <create-resource-content *ngSwitchCase="1" (onCancelEvent)="onCloseDialog($event)" (onCreateResourceEvent)="onCreateResource($event)"></create-resource-content>
+      <create-resource-link *ngSwitchCase="2"></create-resource-link>
+      <create-resource-attachments *ngSwitchCase="3"></create-resource-attachments>
+    </ng-container>
   </section>
-
-  <div class="pt-3 flex">
-    <button pButton pRipple  
-      label="Cancel" 
-      class="p-button-text p-button-danger p-button-sm flex-grow-1"
-      (click)="visible = false">
-    </button>
-    <button pButton pRipple 
-      label="Add Resource" 
-      class="p-button-sm flex-grow-1" 
-      (click)="validateForm()">
-    </button>
-  </div>
 </phantom-dialog>

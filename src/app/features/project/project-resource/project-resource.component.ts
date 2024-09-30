@@ -18,6 +18,9 @@ export class ProjectResourceComponent {
   @ViewChild(ProjectResourceCreate)
   projectResourceCreate!: ProjectResourceCreate;
   editResource(data: any) {
-    this.projectResourceCreate.editResource(data);
+  }
+
+  onSelectType(typeValue: any) {
+    this.projectResourceCreate.setType(typeValue);
   }
 }
