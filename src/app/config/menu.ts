@@ -36,7 +36,7 @@ export class ConfigMenu {
             ],
             waterfall: [
                 { label: 'MENU_GANTT', icon: 'pi-calendar-clock', routerLink: `/project/${this.projectId}/gantt` },
-                { label: 'MENU_LIST', icon: 'pi-list-check', routerLink: `/project/${this.projectId}/issue` },
+                { label: 'MENU_LIST', icon: 'pi-list-check', routerLink: `/project/${this.projectId}/task` },
             ],
             kanban: [
                 { label: 'MENU_BOARD', icon: 'pi-clipboard', routerLink: `/project/${this.projectId}/board` },
