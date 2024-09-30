@@ -55,7 +55,10 @@ export class ConfigMenu {
     }
 
     private getConfigItems(): MenuItem[] {
-        return [{ label: 'MENU_PROJECT_MEMBER', icon: 'pi-users', routerLink: `/project/${this.projectId}/member` }];
+        return [
+            { label: 'MENU_PROJECT_MEMBER', icon: 'pi-users', routerLink: `/project/${this.projectId}/member` },
+            { label: 'MENU_PROJECT_SETTING', icon: 'pi-cog', routerLink: `/project/${this.projectId}/setting` }
+        ];
     }
 
     private getMenu(menuType: 'scrum' | 'waterfall' | 'kanban') {
