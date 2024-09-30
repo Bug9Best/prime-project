@@ -1,11 +1,10 @@
-import { Component, inject, Renderer2, ViewChild } from '@angular/core';
+import { Component,  ViewChild } from '@angular/core';
 import { PhantomSidebarComponent } from './phantom-sidebar/phantom-sidebar.component';
 import { PhantomTopbarComponent } from './phantom-topbar/phantom-topbar.component';
 import { PhantomFooterComponent } from './phantom-footer/phantom-footer.component';
 import { Router, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { PhantomPageService } from './phantom-page.service';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'phantom-page',
