@@ -2,30 +2,34 @@
   [(visible)]="visible" 
   [icon]="'pi pi-file'" 
   [label]="'BUTTON_ADD_RESOURCE_LABEL'" 
-  [dialogstyle]="{ width: '50vw' }"
-  [showHeader]="false"
-  [showClose]="false"
-  [showButton]="false"
+  [dialogstyle]="{ width: '40vw','max-height': '80vh' }"
+  [showHeader]="true"
+  [showClose]="true"
   (visibleChange)="onCloseDialog($event)">
 
-  <section class="flex flex-column w-full">
-    <div class="flex w-full justify-content-between mb-4">
-      <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center {{ typeValue == 1 ? 'bg-blue-100' : typeValue == 2 ? 'bg-orange-100' : 'bg-yellow-100' }}">
-        <i class="pi {{ typeValue == 1 ? 'pi-pencil text-blue-700' : typeValue == 2 ? 'pi-link text-orange-700' : 'pi-images text-yellow-700' }} text-4xl"></i>
-      </span>
-      <button pButton pRipple type="button" icon="pi pi-times"
-        class="p-button-rounded p-button-secondary p-button-text align-self-start" (click)="visible = false">
-      </button>
-    </div>
-    <div class="text-900 font-medium text-2xl mb-1"> Add Resource </div>
-    <div class="text-700 line-height-3"> Add a new resource to your project. </div>
-  </section>
+  <ng-container [ngSwitch]="currentStep">
+    <section *ngSwitchCase="1">
+      <project-resource-selection
+        (onCancelCreateEvent)="onCloseDialog($event)"
+        (onSelectTypeEvent)="onSelectType($event)">
+      </project-resource-selection>
+    </section>
 
-  <section class="mt-4">
-    <ng-container [ngSwitch]="typeValue">
-      <create-resource-content *ngSwitchCase="1" (onCancelEvent)="onCloseDialog($event)" (onCreateResourceEvent)="onCreateResource($event)"></create-resource-content>
-      <create-resource-link *ngSwitchCase="2"></create-resource-link>
-      <create-resource-attachments *ngSwitchCase="3"></create-resource-attachments>
-    </ng-container>
-  </section>
+    <section *ngSwitchCase="2">
+      <ng-container [ngSwitch]="typeValue">
+        <create-resource-content *ngSwitchCase="1" 
+          (onBackPreviousStepEvent)="prevStep($event)" 
+          (onCreateResourceEvent)="onCreateResource($event)">
+        </create-resource-content>
+
+        <create-resource-link *ngSwitchCase="2"
+          (onBackPreviousStepEvent)="prevStep($event)">
+        </create-resource-link>
+
+        <create-resource-attachments *ngSwitchCase="3"
+          (onBackPreviousStepEvent)="prevStep($event)">
+        </create-resource-attachments>
+      </ng-container>
+    </section>
+  </ng-container>
 </phantom-dialog>
