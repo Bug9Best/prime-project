@@ -8,6 +8,13 @@
       formControlName="topic"/>
   </div>
 
+  <div class="p-fluid mb-2">
+    <label for="tag">Tag</label>
+    <p-chips 
+      [max]="3" 
+      formControlName="tag" />
+  </div>
+
   <p-editor [style]="{ height: '320px' }"
     formControlName="content">
     <ng-template pTemplate="header">
@@ -40,6 +47,7 @@
     </ng-template>
   </p-editor>
 </div>
+
 
 <div class="pt-3 flex">
   <button pButton pRipple  

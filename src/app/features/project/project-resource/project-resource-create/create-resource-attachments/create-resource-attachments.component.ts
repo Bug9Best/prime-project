@@ -20,6 +20,7 @@ export class CreateResourceAttachmentsComponent {
 
   formGroup: FormGroup = new FormGroup({
     topic: new FormControl(null, Validators.required),
+    tag: new FormControl(['Attachments'], Validators.required),
     resource_owner: new FormControl(null),
     create_date: new FormControl(null),
   });

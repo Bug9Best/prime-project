@@ -7,6 +7,13 @@
       class="p-inputtext-sm w-full" 
       formControlName="topic" />
   </div>
+
+  <div class="p-fluid mb-2">
+    <label for="tag">Tag</label>
+    <p-chips 
+      [max]="3" 
+      formControlName="tag" />
+  </div>
 </div>
 
 <p-fileUpload 
@@ -64,7 +71,7 @@
   <ng-template pTemplate="file"> </ng-template>
   <ng-template pTemplate="empty">
     <div class="flex align-items-center justify-content-center flex-column py-4">
-      <img src="images/assets/file.jpg" alt="upload" width="300">
+      <img src="images/assets/upload.png" alt="upload" width="300">
       <p class="mt-2 text-2xl text-gray-500">Drag and drop your files here</p>
       <p class="text-gray-400"> File supported : image, video, audio, pdf, doc, xls, ppt, txt, json</p>
       <p class="text-gray-400">Maximum size: 20MB</p>

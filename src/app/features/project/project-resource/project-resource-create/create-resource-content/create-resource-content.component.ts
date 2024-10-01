@@ -10,6 +10,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 export class CreateResourceContentComponent {
   formGroup: FormGroup = new FormGroup({
     topic: new FormControl(null, Validators.required),
+    tag: new FormControl(['Content'], Validators.required),
     content: new FormControl(null, Validators.required),
     resource_owner: new FormControl(null),
   });
@@ -64,6 +65,7 @@ export class CreateResourceContentComponent {
   onCreateResourceEvent = output<boolean>();
   onCreateResource() {
     let values = this.formGroup.value;
-    this.onCreateResourceEvent.emit(values);
+    console.log(values);
+    // this.onCreateResourceEvent.emit(values);
   }
 }

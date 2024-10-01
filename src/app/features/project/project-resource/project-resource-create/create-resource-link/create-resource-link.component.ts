@@ -10,6 +10,7 @@ import { ConfirmationService, MessageService } from 'primeng/api';
 export class CreateResourceLinkComponent {
   formGroup: FormGroup = new FormGroup({
     topic: new FormControl(null, Validators.required),
+    tag: new FormControl(['Link'], Validators.required),
     content: new FormControl(null, Validators.required),
     url_link: new FormArray([
       new FormGroup({ url_path: new FormControl(null) }),
