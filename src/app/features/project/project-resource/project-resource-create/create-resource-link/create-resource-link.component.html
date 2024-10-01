@@ -1,0 +1,50 @@
+<div [formGroup]="formGroup" class="-mt-4">
+  <div class="mb-2">
+    <label for="topic">Topic</label>
+    <input pInputText
+      id="topic"
+      placeholder="Enter topic"
+      class="p-inputtext-sm w-full" 
+      formControlName="topic"/>
+  </div>
+
+  <div class="mb-2">
+    <label for="content">Content</label>
+    <textarea pInputTextarea
+      id="content"
+      rows="5"
+      placeholder="Enter content"
+      [autoResize]="true"
+      class="w-full p-inputtext-sm"
+      formControlName="content">
+    </textarea>
+  </div>
+
+  <div formArrayName="url_link" class="mb-2">
+    <label for="url_link">URL Link</label>
+    <div *ngFor="let education of linkList.controls; let i=index" [formGroupName]="i" class="mb-2">
+      <p-inputGroup>
+        <p-inputGroupAddon>
+          <i class="pi pi-link"></i>
+        </p-inputGroupAddon>
+        <input pInputText
+          placeholder="Enter URL link"
+          class="p-inputtext-sm w-full" 
+          formControlName="url_path"/>
+      </p-inputGroup>
+    </div>
+  </div>
+</div>
+
+<div class="pt-3 flex">
+  <button pButton pRipple  
+    label="Back" 
+    class="p-button-text p-button-danger p-button-sm flex-grow-1"
+    (click)="onBackPreviousStep()">
+  </button>
+  <button pButton pRipple 
+    label="Add Resource" 
+    class="p-button-sm flex-grow-1 ml-4" 
+    (click)="onValidateForm()">
+  </button>
+</div>
