@@ -10,13 +10,7 @@ import { ResourceType } from '../../../../shared/options/resource-type';
 export class ProjectResourceSelectionComponent {
   
   selectedType: number = 0;
-  visible: boolean = false;
   listType: any[] = ResourceType;
-
-  onCloseDialog(visible: boolean) {
-    this.visible = visible;
-    this.resetSelection();
-  }
 
   resetSelection() {
     this.selectedType = 0;
@@ -32,10 +26,16 @@ export class ProjectResourceSelectionComponent {
     });
   }
 
+  onCancelCreateEvent = output<any>();
+  onCancelCreate() {
+    this.onCancelCreateEvent.emit(false);
+    this.resetSelection();
+  }
+
   onSelectTypeEvent = output<any>();
-  validateState() {
+  onSelectedType() {
     if (!this.selectedType) return;
     this.onSelectTypeEvent.emit(this.selectedType);
-    this.onCloseDialog(false);
+    this.resetSelection();
   }
 }
