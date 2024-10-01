@@ -19,8 +19,4 @@ export class ProjectResourceComponent {
   projectResourceCreate!: ProjectResourceCreate;
   editResource(data: any) {
   }
-
-  onSelectType(typeValue: any) {
-    this.projectResourceCreate.setType(typeValue);
-  }
 }

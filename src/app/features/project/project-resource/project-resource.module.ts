@@ -11,9 +11,11 @@ import { ProjectResourceList } from './project-resource-list/project-resource-li
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ThaiModule } from '../../../shared/pipes/thai.module';
 import { ProjectResourceSelectionComponent } from './project-resource-selection/project-resource-selection.component';
-import { CreateResourceContentComponent } from './create-resource-content/create-resource-content.component';
-import { CreateResourceLinkComponent } from './create-resource-link/create-resource-link.component';
-import { CreateResourceAttachmentsComponent } from './create-resource-attachments/create-resource-attachments.component';
+import { CreateResourceContentComponent } from './project-resource-create/create-resource-content/create-resource-content.component';
+import { CreateResourceLinkComponent } from './project-resource-create/create-resource-link/create-resource-link.component';
+import { CreateResourceAttachmentsComponent } from './project-resource-create/create-resource-attachments/create-resource-attachments.component';
+import { AttachmentsTag } from './attachments-tag/attachments-tag.component';
+import { AttachmentsItem } from './attachments-item/attachments-item.component';
 
 const routes: Routes = [
   {
@@ -30,7 +32,9 @@ const routes: Routes = [
     ProjectResourceSelectionComponent,
     CreateResourceContentComponent,
     CreateResourceLinkComponent,
-    CreateResourceAttachmentsComponent
+    CreateResourceAttachmentsComponent,
+    AttachmentsItem,
+    AttachmentsTag,
   ],
   imports: [
     CommonModule,
