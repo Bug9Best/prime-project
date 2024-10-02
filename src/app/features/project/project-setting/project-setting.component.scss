@@ -2,3 +2,14 @@
   height: 38.38px;
 }
 
+:host ::ng-deep .p-tabview .p-tabview-panels{
+  padding: 1.25rem 0;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: var(--primary-color) !important;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+  color: var(--text-color);
+}
