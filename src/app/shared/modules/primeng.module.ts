@@ -70,6 +70,7 @@ import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { MeterGroupModule } from 'primeng/metergroup';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { BadgeModule } from 'primeng/badge';
+import { FieldsetModule } from 'primeng/fieldset';
 
 let modules = [
   ButtonModule,
@@ -140,7 +141,8 @@ let modules = [
   ScrollPanelModule,
   MeterGroupModule,
   FloatLabelModule,
-  BadgeModule
+  BadgeModule,
+  FieldsetModule
 ]
 
 @NgModule({

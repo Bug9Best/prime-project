@@ -9,7 +9,98 @@ import { MenuItem } from 'primeng/api';
 })
 export class ProjectResourceList {
   selectedResource: any;
-  listResource: any[] = [];
+  listResource: any[] = [1, 2, 3];
+  listContent: any[] = [
+    {
+      topic: 'Title 1',
+      tag: ['Tag 1', 'Tag 2'],
+      content: 'Content 1',
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+    {
+      topic: 'Title 2',
+      tag: ['Tag 3', 'Tag 4'],
+      content: 'Content 2',
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+    {
+      topic: 'Title 3',
+      tag: ['Tag 5', 'Tag 6'],
+      content: 'Content 3',
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+  ];
+  listLink: any[] = [
+    {
+      topic: 'Item Link 1',
+      tag: ['Tag 1', 'Tag 2'],
+      content: 'Content 1',
+      link: ['https://www.youtube.com/watch?v=cJxo2ayP0bo'],
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+    {
+      topic: 'Item Link 2',
+      tag: ['Tag 3', 'Tag 4'],
+      content: 'Content 2',
+      link: ['https://primeng.org/'],
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+    {
+      topic: 'Title 3',
+      tag: ['Tag 5', 'Tag 6'],
+      content: 'Content 3',
+      link: ['https://www.youtube.com/watch?v=6JYIGclVQdw'],
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+  ];
+  listAttachment: any[] = [
+    {
+      topic: 'Item Attachments 1',
+      tag: ['Tag 1', 'Tag 2'],
+      content: 'Content 1',
+      attachments: [
+        {
+          name: 'video_1337525056961017.mp4',
+          url: 'https://storage.cloud.google.com/prime-project-1539.appspot.com/video_1337525056961017.mp4',
+        },
+      ],
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+    {
+      topic: 'Item Attachments 2',
+      tag: ['Tag 3', 'Tag 4'],
+      content: 'Content 2',
+      attachments: [
+        {
+          name: 'YBcapture00009.jpg',
+          url: 'https://storage.cloud.google.com/prime-project-1539.appspot.com/YBcapture00009.jpg',
+        },
+      ],
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+    {
+      topic: 'Item Attachments 3',
+      tag: ['Tag 5', 'Tag 6'],
+      content: 'Content 3',
+      attachments: [
+        {
+          name: 'YBcapture00003.jpg',
+          url: 'https://storage.cloud.google.com/prime-project-1539.appspot.com/YBcapture00003.jpg',
+        },
+      ],
+      resource_owner: 'Natthaphon Ditthaviboon',
+      create_date: '2021-09-01',
+    },
+  ];
+
   listMenu: MenuItem[] = [
     {
       label: 'Edit',

@@ -1,47 +1,138 @@
-@if (!listResource.length) {
-<phantom-empty [description]="'PAGE_RESOURCE_EMPTY'">
-</phantom-empty>
-}
-@else {
-  @for (item of listResource; track $index) {
-  <p-panel 
-    [toggleable]="true" 
-    [collapsed]="true" 
-    [expandIcon]="'pi pi-angle-up'"
-    [collapseIcon]="'pi pi-angle-down'"
-    styleClass="mb-4">
-    <ng-template pTemplate="header">
-      {{ item.topic || 'N/A' }}
-    </ng-template>
-    <ng-template pTemplate="footer">
-      <div class="flex flex-wrap align-items-center justify-content-between gap-3">
-        <span class="text-400 text-sm">
-          Add by {{ item.resource_owner || 'N/A' }}
-        </span>
-        <span class="text-400 text-sm">
-          {{ item.create_date || 'N/A' | date:'hh:mm:aa dd/MM/yyyy' }}
-        </span>
+<p-tabView>
+  <p-tabPanel header="Content">
+    @if (!listResource.length) {
+    <phantom-empty [description]="'PAGE_RESOURCE_EMPTY'">
+    </phantom-empty>
+    }
+    @else {
+    @for (item of listContent; track $index) {
+    <p-panel [toggleable]="true" [collapsed]="true" [expandIcon]="'pi pi-angle-up'" [collapseIcon]="'pi pi-angle-down'"
+      styleClass="mb-4">
+      <ng-template pTemplate="header">
+        <div class="text-lg font-bold">
+          {{ item.topic || 'N/A' }}
+        </div>
+        @for (item of item.tag; track $index) {
+        <p-tag [value]="item" severity="success" class="ml-2" />
+        }
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <div class="flex flex-wrap align-items-center justify-content-between gap-3">
+          <span class="text-400 text-sm">
+            Add by {{ item.resource_owner || 'N/A' }}
+          </span>
+          <span class="text-400 text-sm">
+            {{ item.create_date || 'N/A' | date:'hh:mm:aa dd/MM/yyyy' }}
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="icons">
+        <button class="p-panel-header-icon p-link mr-2" (click)="menu.toggle($event); selectedResource=item">
+          <span class="pi pi-cog"></span>
+        </button>
+        <p-menu #menu id="config_menu" [model]="listMenu" [popup]="true" />
+      </ng-template>
+      <p class="m-0" [innerHTML]="item.content"></p>
+    </p-panel>
+    }
+    }
+  </p-tabPanel>
+
+  <p-tabPanel header="Link">
+    @if (!listLink.length) {
+    <phantom-empty [description]="'PAGE_RESOURCE_EMPTY'">
+    </phantom-empty>
+    }
+    @else {
+    @for (item of listLink; track $index) {
+    <p-panel [toggleable]="true" [collapsed]="true" [expandIcon]="'pi pi-angle-up'" [collapseIcon]="'pi pi-angle-down'"
+      styleClass="mb-4">
+      <ng-template pTemplate="header">
+        <div class="text-lg font-bold">
+          {{ item.topic || 'N/A' }}
+        </div>
+        @for (item of item.tag; track $index) {
+        <p-tag [value]="item" severity="success" class="ml-2" />
+        }
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <div class="flex flex-wrap align-items-center justify-content-between gap-3">
+          <span class="text-400 text-sm">
+            Add by {{ item.resource_owner || 'N/A' }}
+          </span>
+          <span class="text-400 text-sm">
+            {{ item.create_date || 'N/A' | date:'hh:mm:aa dd/MM/yyyy' }}
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="icons">
+        <button class="p-panel-header-icon p-link mr-2" (click)="menu.toggle($event); selectedResource=item">
+          <span class="pi pi-cog"></span>
+        </button>
+        <p-menu #menu id="config_menu" [model]="listMenu" [popup]="true" />
+      </ng-template>
+      <p class="m-0" [innerHTML]="item.content"></p>
+      @for (item of item.link; track $index) {
+      <a [href]="item" target="_blank">{{ item }}</a>
+      }
+    </p-panel>
+    }
+    }
+  </p-tabPanel>
+
+  <p-tabPanel header="Attachments">
+    @if (!listAttachment.length) {
+    <phantom-empty [description]="'PAGE_RESOURCE_EMPTY'">
+    </phantom-empty>
+    }
+    @else {
+    @for (item of listAttachment; track $index) {
+    <p-panel [toggleable]="true" [collapsed]="true" [expandIcon]="'pi pi-angle-up'" [collapseIcon]="'pi pi-angle-down'"
+      styleClass="mb-4">
+      <ng-template pTemplate="header">
+        <div class="text-lg font-bold">
+          {{ item.topic || 'N/A' }}
+        </div>
+        @for (item of item.tag; track $index) {
+        <p-tag [value]="item" severity="success" class="ml-2" />
+        }
+      </ng-template>
+      <ng-template pTemplate="footer">
+        <div class="flex flex-wrap align-items-center justify-content-between gap-3">
+          <span class="text-400 text-sm">
+            Add by {{ item.resource_owner || 'N/A' }}
+          </span>
+          <span class="text-400 text-sm">
+            {{ item.create_date || 'N/A' | date:'hh:mm:aa dd/MM/yyyy' }}
+          </span>
+        </div>
+      </ng-template>
+      <ng-template pTemplate="icons">
+        <button class="p-panel-header-icon p-link mr-2" (click)="menu.toggle($event); selectedResource=item">
+          <span class="pi pi-cog"></span>
+        </button>
+        <p-menu #menu id="config_menu" [model]="listMenu" [popup]="true" />
+      </ng-template>
+      <p class="m-0" [innerHTML]="item.content"></p>
+      <p-divider></p-divider>
+      <div class="grid">
+        @for (item of item.attachments; track $index) {
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="flex justify-content-between">
+                <div class="flex align-items-center gap-3">
+                  <i class="pi pi-file p-mr-2"></i>
+                  <a [href]="item.url" target="_blank">{{ item.name }}</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        }
       </div>
-    </ng-template>
-
-    <ng-template pTemplate="icons">
-      <button 
-        class="p-panel-header-icon p-link mr-2" 
-        (click)="menu.toggle($event); selectedResource=item">
-        <span class="pi pi-cog"></span>
-      </button>
-      <p-menu #menu id="config_menu" [model]="listMenu" [popup]="true" />
-    </ng-template>
-
-    @if (!checkPath(item.content)) {
-    <p class="m-0" [innerHTML]="item.content"></p>
+    </p-panel>
     }
-
-    @if (checkPath(item.content)) {
-    <section class="flex justify-content-center">
-      <iframe width="560" height="315" [src]="getEmbedLink(item.content)" frameborder="0" allowfullscreen></iframe>
-    </section>
     }
-  </p-panel>
-  }
-}
+  </p-tabPanel>
+</p-tabView>
