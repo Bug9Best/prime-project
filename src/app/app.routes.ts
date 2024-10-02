@@ -22,6 +22,11 @@ export const routes: Routes = [
         loadChildren: () => import('./features/project/project-selector/project-selector.module').then(m => m.ProjectSelectorModule)
     },
     {
+        path: 'profile/:username',
+        component: PhantomPage,
+        loadChildren: () => import('./features/profile/profile.module').then(m => m.ProfileModule)
+    },
+    {
         path: 'project/:id',
         component: PhantomPage,
         children: [
