@@ -8,7 +8,7 @@
       <div class="shadow-1 border-round border-2 cursor-pointer surface-card p-4"
         [ngClass]="{'border-transparent': selectedType !== item.value, 'border-blue-300': selectedType === item.value, 'shadow-3': selectedType === item.value}"
         (click)="selectedType = item.value">
-        <img [src]="item.imageSrc" height="100" width="100" />
+        <img [src]="item.imageSrc" height="125" width="125" />
         <div class="p-3 flex flex-column align-items-center gap-3">
           <div class="text-900 text-xl font-medium"> {{ item.title }} </div>
           <p class="m-0"> {{ item.description }} </p>

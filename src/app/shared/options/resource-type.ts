@@ -3,7 +3,7 @@ export var ResourceType = [
     value: 1,
     title: 'Content',
     description: 'Create informative articles.',
-    imageSrc: 'images/assets/blog-pencil.png',
+    imageSrc: 'images/assets/Pencil.png',
   },
   {
     value: 2,
