@@ -29,14 +29,19 @@
       </div>
     </p-overlayPanel>
 
-    <button class="p-link layout-topbar-button">
-      <i class="pi pi-bell"></i>
-      <span>Notification</span>
-    </button>
-
-    <button class="p-link layout-topbar-button" [routerLink]="'/documentation'">
+    <button class="p-link layout-topbar-button"  (click)="user.toggle($event)">
       <i class="pi pi-user"></i>
       <span>User</span>
     </button>
+    <p-overlayPanel #user class="p-0">
+      <div class="flex flex-column gap-2 w-17rem">
+        <button pButton 
+          label="View Profile"
+          class="p-button-pridary p-button-sm">
+        </button>
+        <button pButton class="p-button-outlined p-button-danger  p-button-sm" label="Logout">
+        </button>
+      </div>
+    </p-overlayPanel>
   </div>
 </div>
