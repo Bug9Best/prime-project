@@ -1,4 +1,4 @@
-<div class="flex gap-3">
+<div class="flex gap-3 overflow-x-scroll">
   <div *ngFor="let board of listBoard" class="h-full">
     <p-panel [header]="board.name" pDroppable (onDrop)="onDropItem(board)">
       <div *ngFor="let item of board.items" pDraggable (onDragEnd)="onDragEnd()"
