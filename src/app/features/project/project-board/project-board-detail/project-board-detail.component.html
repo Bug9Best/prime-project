@@ -1,0 +1,211 @@
+<phantom-dialog
+  [(visible)]="visible"
+  [icon]="'pi pi-clipboard'"
+  [label]="'BUTTON_LABEL_BOARD_ADD'"
+  [dialogstyle]="{width: '70vw'}"
+  [showHeader]="false"
+  [showClose]="true">
+
+  <div class="flex w-full justify-content-between mb-4">
+    <div class="flex align-items-center">
+      <span class="w-3rem h-3rem border-circle flex justify-content-center align-items-center bg-blue-100">
+        <i class="pi pi-clipboard text-blue-700 text-2xl"></i>
+      </span>
+      <div class="text-xl ml-2"> Task 1 </div>
+    </div>
+    <button 
+      pButton pRipple 
+      type="button"
+      icon="pi pi-times"
+      class="p-button-rounded p-button-secondary p-button-text align-self-start"
+      (click)="visible = false">
+    </button>
+  </div>
+
+  <div class="grid">
+    <div class="col">
+      <div class="flex flex-column">
+        <div class="text-lg font-semibold"> Description </div>
+        <textarea  
+          rows="3"
+          pInputTextarea
+          [(ngModel)]="value"
+          placeholder="Add Description..."
+          class="border-none focus:border-none mt-2"
+          [autofocus]="true">
+        </textarea>
+        <div class="mt-2 text-lg font-semibold"> 
+          <div class="flex justify-content-between">
+            <span>Attachment</span>
+            <span>
+              <button 
+                pButton 
+                icon="pi pi-plus" 
+                class="pi-button-sm p-button-secondary p-button-rounded p-button-text">
+              </button>
+            </span>
+          </div>  
+          <div class="grid">
+            <div class="col-4">
+              <div class="border-1 surface-border cursor-pointer">
+                <img src="/images/cat.webp" alt="placeholder" class="w-full">
+                <div class="text-sm">Cat.jpg</div>
+                <div class="text-xs text-500">{{ startDate | date:'dd/MM/yyyy hh:mm aa'}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="mt-4 text-lg font-semibold"> Comment </div>
+        @for (item of listComment; track $index) {
+          <div class="mt-4 flex">
+            <span style="min-width: 42px; min-height: 42px;" class="border-circle flex justify-content-center align-items-center bg-blue-100">
+              <i class="pi pi-user text-blue-700 text-2xl"></i>
+            </span>
+            <div class="ml-2 w-full">
+              <div class="flex justify-content-between"> 
+                <span class="text-lg font-semibold"> Natthaphon Ditthaviboon </span>
+                <span class="text-sm text-500">{{ item.date | thdate }} </span>
+              </div>
+              <div class="text-sm text-500 flex justify-content-between "> 
+                <span>{{ item.value }}</span>
+                <span class="text-blue-300">Reply</span>
+              </div>
+            </div>
+          </div>
+        }
+  
+        <div class="mt-4 flex justify-content-between border-1 surface-border border-round">
+          <input type="text" pInputText 
+            placeholder="Add Comment..."
+            class="border-none focus:border-none w-full" 
+            [(ngModel)]="commentValue"
+            (keyup.enter)="addComment()"
+            [autofocus]="false">
+        </div>
+      </div>
+    </div>
+    <p-divider layout="vertical"></p-divider>
+    <div class="col">
+      <div class="flex flex-column">
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Assignee</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div>Natthaphon Ditthaviboon</div>
+            <div>
+              <button pButton icon="pi pi-cog" 
+                class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Priority</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div class="text-orange-500">Meduim</div>
+            <div>
+              <button pButton icon="pi pi-cog" 
+                class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Start Date</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div *ngIf="!isEditStartDate">{{ startDate | date:'dd/MM/yyyy'}} </div>
+            <div *ngIf="isEditStartDate">
+              <p-calendar class="p-inputtext-sm" [(ngModel)]="startDate"></p-calendar>
+            </div>
+            <div>
+              <button pButton icon="pi pi-cog" 
+                (click)="isEditStartDate = !isEditStartDate"
+                class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Due Date</div>
+          <div class="flex align-items-center justify-content-between w-full">
+              <div *ngIf="!isEditDueDate">{{ dueDate | date:'dd/MM/yyyy'}} </div>
+              <div *ngIf="isEditDueDate">
+                <p-calendar class="p-inputtext-sm" [(ngModel)]="dueDate"></p-calendar>
+              </div>
+              <div>
+              <button pButton icon="pi pi-cog" 
+                (click)="isEditDueDate = !isEditDueDate"
+                class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Estimate Time</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div *ngIf="!isEditEstimate">5h</div>
+            <div *ngIf="isEditEstimate"><input type="text" pInputText value="5h" class="p-inputtext-sm"></div>
+            <div>
+              <button pButton icon="pi pi-cog" 
+                (click)="isEditEstimate = !isEditEstimate"
+                class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Actual Time</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div *ngIf="!isEditActual">4h 30m</div>
+            <div *ngIf="isEditActual"><input type="text" pInputText value="4h 30m" class="p-inputtext-sm"></div>
+            <div>
+              <button pButton icon="pi pi-cog" 
+                (click)="isEditActual = !isEditActual"
+                class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <p-divider></p-divider>
+        <div class="mt text-lg font-semibold"> Activity </div>
+        <div class="mt-4 flex">
+          <span style="min-width: 42px; min-height: 42px;" class="border-circle flex justify-content-center align-items-center bg-blue-100">
+            <i class="pi pi-user text-blue-700 text-2xl"></i>
+          </span>
+          <div class="ml-2 w-full">
+            <div class="flex justify-content-between"> 
+              <span class="text-lg font-semibold"> Natthaphon Ditthaviboon </span>
+              <span class="text-sm text-500">10 mins ago </span>
+            </div>
+            <div class="text-sm text-500 flex"> 
+              <span class="font-bold">Upload :</span>
+              <span class="ml-2">Cat.jpg</span>
+             </div>
+          </div>
+        </div>
+
+        <div class="mt-4 flex">
+          <span style="min-width: 42px; min-height: 42px;" class="border-circle flex justify-content-center align-items-center bg-blue-100">
+            <i class="pi pi-user text-blue-700 text-2xl"></i>
+          </span>
+          <div class="ml-2 w-full">
+            <div class="flex justify-content-between"> 
+              <span class="text-lg font-semibold"> Natthaphon Ditthaviboon </span>
+              <span class="text-sm text-500">10 mins ago </span>
+            </div>
+            <div class="text-sm text-500 flex"> 
+              <span class="font-bold">Comment :</span>
+              <span class="ml-2">ตรวจดูความถูกต้องอีกรอบ</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</phantom-dialog>

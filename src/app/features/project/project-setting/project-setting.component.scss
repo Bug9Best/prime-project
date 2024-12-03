@@ -2,7 +2,7 @@
   height: 38.38px;
 }
 
-:host ::ng-deep .p-tabview .p-tabview-panels{
+:host ::ng-deep .p-tabview .p-tabview-panels {
   padding: 1.25rem 0;
 }
 
@@ -12,4 +12,12 @@
 
 :host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
   color: var(--text-color);
+}
+
+:host ::ng-deep .p-selectbutton .p-button {
+  height: 30px;
+}
+
+:host ::ng-deep .p-selectbutton .p-button:first-child {
+  background-color: none;
 }

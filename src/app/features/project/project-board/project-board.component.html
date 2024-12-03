@@ -6,7 +6,10 @@
   </phantom-header>
 
   <phantom-content>
-    <project-board-list>
+    <project-board-list 
+      (onViewDetail)="onViewDetail($event)">
+      <project-board-detail>
+      </project-board-detail>
     </project-board-list>
   </phantom-content>
 </div>

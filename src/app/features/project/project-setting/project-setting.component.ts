@@ -10,6 +10,13 @@ import { UploadEvent } from 'primeng/fileupload';
 export class ProjectSettingComponent {
   member: any[] = [];
 
+  value1: string = 'off';
+  value2: string = 'off';
+  stateOptions: any[] = [
+    { label: 'Off', value: 'off' },
+    { label: 'On', value: 'on' }
+];
+
   ngOnInit() {
     this.member = [{ name: 'Phuri siripool' }, { name: 'Natthapong D. Best' }];
   }

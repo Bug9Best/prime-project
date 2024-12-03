@@ -1,0 +1,47 @@
+<phantom-dialog
+  [(visible)]="visible"
+  [icon]="'pi pi-clipboard'"
+  [label]="'BUTTON_LABEL_BOARD_ADD'"
+  [dialogstyle]="{width: '40vw'}"
+  [showHeader]="false"
+  [showButton]="false"
+  [showClose]="false">
+
+  <section class="flex flex-column w-full">
+    <div class="flex w-full justify-content-between mb-4">
+      <span class="w-4rem h-4rem border-circle flex justify-content-center align-items-center bg-blue-100">
+        <i class="pi pi-clipboard text-blue-700 text-4xl"></i>
+      </span>
+      <button 
+        pButton pRipple 
+        type="button"
+        icon="pi pi-times"
+        class="p-button-rounded p-button-secondary p-button-text align-self-start"
+        (click)="visible = false">
+      </button>
+    </div>
+    <p class="font-semibold text-xl mt-0 mb-2 text-900">Add a new Task to your Board</p>
+    <p class="font-normal text-base mt-0 mb-3 text-600"> 
+      Add a new task to your board. You can assign it to a team member, set a due date, and more.
+    </p>
+    <div [formGroup]="formGroup">
+      <div class="flex align-items-center gap-3 mb-3">
+        <label for="broad" class="font-semibold w-6rem">Task Name</label>
+        <input pInputText id="broad" class="flex-auto p-inputtext-sm" autocomplete="off" formControlName="name" />
+      </div>
+    </div>
+  </section>
+
+  <div class="pt-3 flex">
+    <button pButton pRipple 
+      (click)="visible = false" 
+      label="Cancel" 
+      class="p-button-text p-button-danger flex-grow-1">
+    </button>
+    <button pButton pRipple 
+      label="Create Task" 
+      class="flex-grow-1"
+      (click)="validateForm()">
+    </button>
+  </div>
+</phantom-dialog>

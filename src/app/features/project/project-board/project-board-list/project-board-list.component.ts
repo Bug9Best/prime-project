@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, output, ViewChild } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import {
   MockBoard,
   KanbanBoard,
   KanbanBoardItem,
 } from '../../../../shared/data/board';
+import { MenuItem } from 'primeng/api';
+import { ProjectBoardCreate } from '../project-board-create/project-board-create.component';
+import { id } from 'date-fns/locale';
 
 @Component({
   selector: 'project-board-list',
@@ -14,6 +17,34 @@ import {
 export class ProjectBoardList {
   private mockBoard = new MockBoard();
 
+  items: MenuItem[] = [
+    {
+      items: [
+        {
+          label: 'Rename',
+          icon: 'pi pi-file-edit',
+          command: (event) => {
+          }
+        },
+        {
+          label: 'Hidden',
+          icon: 'pi pi-eye-slash',
+          command: (event) => {
+
+          }
+        },
+        {
+          label: 'Delete',
+          icon: 'pi pi-trash',
+          command: (event) => {
+
+          }
+        }
+      ]
+    }
+  ];
+
+  selectedBoard: KanbanBoard | undefined;
   listBoard: KanbanBoard[] = this.mockBoard.board;
   sourceBoard: KanbanBoard | undefined;
   draggedItem: KanbanBoardItem | undefined;
@@ -53,5 +84,28 @@ export class ProjectBoardList {
       name: data.name,
       items: [],
     } as KanbanBoard);
+  }
+
+  onViewDetail = output<any>();
+  viewDetail(board: KanbanBoard, item: KanbanBoardItem) {
+    this.onViewDetail.emit({ board, item });
+  }
+
+  @ViewChild(ProjectBoardCreate)
+  boardCreate!: ProjectBoardCreate;
+  onOpenCreate(board: any) {
+    this.boardCreate.visible = true;
+    this.selectedBoard = board;
+  }
+
+  onCreateTask(value: any) {
+    if (!this.selectedBoard) return
+    let values: KanbanBoardItem = {
+      id: this.selectedBoard?.items.length + 1,
+      title: value.name,
+      description: "",
+      due_date: "",
+    }
+    this.selectedBoard.items.push(values);
   }
 }
