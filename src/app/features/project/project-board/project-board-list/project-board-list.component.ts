@@ -30,7 +30,7 @@ export class ProjectBoardList {
           label: 'Hidden',
           icon: 'pi pi-eye-slash',
           command: (event) => {
-
+            this.onHiddenBoard();
           }
         },
         {
@@ -112,6 +112,22 @@ export class ProjectBoardList {
       due_date: "",
     }
     this.selectedBoard.items.push(values);
+  }
+
+  onHiddenBoard() {
+    this.listBoard.filter((x) => {
+      if (x.id === this.selectedBoard?.id) {
+        x.isHidden = true;
+      }
+    });
+  }
+
+  onToggleHidden(board: KanbanBoard) {
+    this.listBoard.filter((x) => {
+      if (x.id === board?.id) {
+        x.isHidden = false;
+      }
+    });
   }
 
   onDeleteBoard() {

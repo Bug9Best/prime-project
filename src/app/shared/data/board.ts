@@ -9,6 +9,7 @@ export interface KanbanBoard {
   id: number;
   name: string;
   items: KanbanBoardItem[];
+  isHidden?: boolean;
 }
 
 export class MockBoard {

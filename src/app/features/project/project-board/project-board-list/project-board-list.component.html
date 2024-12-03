@@ -1,25 +1,40 @@
 <div class="flex gap-3 overflow-x-scroll">
   <div *ngFor="let board of listBoard" class="h-full">
-    <p-panel pDroppable (onDrop)="onDropItem(board)">
+    <p-panel 
+      pDroppable 
+      (onDrop)="onDropItem(board)" >
       <ng-template pTemplate="header">
-        <div class="w-full flex align-items-center justify-content-between ">
+        <div [ngClass]="board.isHidden ? 'opacity-30' : ''"
+          class="w-full flex align-items-center justify-content-between ">
             <div class="font-bold">
               {{board.name}}
             </div>
-            <button 
-              pButton
-              icon="pi pi-cog" 
-              class="p-button-rounded p-button-text p-button-sm p-button-secondary border-none" 
-              (click)="menu.toggle($event); selectedBoard = board">
-            </button>
+            <div class="flex">
+              <ng-container *ngIf="board.isHidden">
+                <button 
+                  pButton 
+                  icon="pi pi-eye" 
+                  class="p-button-rounded p-button-text p-button-sm p-button-info border-none" 
+                  (click)="onToggleHidden(board)">
+                </button>
+              </ng-container>
+              <button 
+                pButton
+                icon="pi pi-cog" 
+                class="p-button-rounded p-button-text p-button-sm p-button-secondary border-none" 
+                (click)="menu.toggle($event); selectedBoard = board">
+              </button>
+            </div>
           </div>
           <p-menu #menu [model]="items" [popup]="true"/>
-    </ng-template>
+      </ng-template>
+
       <div *ngFor="let item of board.items" 
         pDraggable 
         (onDragEnd)="onDragEnd()"
         (onDragStart)="onDragStart(board, item)"
         (click)="viewDetail(board, item)"
+        [ngClass]="board.isHidden ? 'opacity-30' : ''"
         class="flex p-3 surface-overlay border-1 surface-border border-round mb-2 cursor-pointer align-content-center justify-content-between">
         <div>
           <div class="p-card-header font-bold">{{ item.title }}</div>
@@ -34,13 +49,15 @@
       </div>
 
       <ng-template pTemplate="footer" style="padding: 0">
-        <button pButton pRipple icon="pi pi-plus" label="Create Issue"
-          (click)="onOpenCreate(board)"
-          class="p-button-secondary p-button-outlined p-button-sm w-full">
-          <project-board-create 
-            (onCreateTaskEvent)="onCreateTask($event)">
-          </project-board-create>
-        </button>
+        <div [ngClass]="board.isHidden ? 'opacity-30' : ''">
+          <button pButton pRipple icon="pi pi-plus" label="Create Issue"
+            (click)="onOpenCreate(board)"
+            class="p-button-secondary p-button-outlined p-button-sm w-full">
+            <project-board-create 
+              (onCreateTaskEvent)="onCreateTask($event)">
+            </project-board-create>
+          </button>
+        </div>
       </ng-template>
     </p-panel>
   </div>
