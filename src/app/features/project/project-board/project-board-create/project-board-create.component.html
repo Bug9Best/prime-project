@@ -27,7 +27,11 @@
     <div [formGroup]="formGroup">
       <div class="flex align-items-center gap-3 mb-3">
         <label for="broad" class="font-semibold w-6rem">Task Name</label>
-        <input pInputText id="broad" class="flex-auto p-inputtext-sm" autocomplete="off" formControlName="name" />
+        <input pInputText id="broad" 
+          (keyup.enter)="validateForm()"
+          class="flex-auto p-inputtext-sm" 
+          autocomplete="off" 
+          formControlName="name" />
       </div>
     </div>
   </section>
