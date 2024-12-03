@@ -10,7 +10,7 @@
               pButton
               icon="pi pi-cog" 
               class="p-button-rounded p-button-text p-button-sm p-button-secondary border-none" 
-              (click)="menu.toggle($event)">
+              (click)="menu.toggle($event); selectedBoard = board">
             </button>
           </div>
           <p-menu #menu [model]="items" [popup]="true"/>

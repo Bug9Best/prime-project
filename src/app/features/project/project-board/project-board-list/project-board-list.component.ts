@@ -5,7 +5,7 @@ import {
   KanbanBoard,
   KanbanBoardItem,
 } from '../../../../shared/data/board';
-import { MenuItem } from 'primeng/api';
+import { ConfirmationService, MenuItem, MessageService } from 'primeng/api';
 import { ProjectBoardCreate } from '../project-board-create/project-board-create.component';
 import { id } from 'date-fns/locale';
 
@@ -37,7 +37,7 @@ export class ProjectBoardList {
           label: 'Delete',
           icon: 'pi pi-trash',
           command: (event) => {
-
+            this.onDeleteBoard();
           }
         }
       ]
@@ -52,6 +52,11 @@ export class ProjectBoardList {
   formGroup: FormGroup = new FormGroup({
     name: new FormControl('', Validators.required),
   });
+
+  constructor(
+    private messageService: MessageService,
+    private confirmationService: ConfirmationService,
+  ) { }
 
   resetValues() {
     this.draggedItem = undefined;
@@ -107,5 +112,36 @@ export class ProjectBoardList {
       due_date: "",
     }
     this.selectedBoard.items.push(values);
+  }
+
+  onDeleteBoard() {
+    if (!this.selectedBoard) return
+    this.confirmationService.confirm({
+      message: 'ต้องการลบบอร์ดนี้ใช่หรือไม่',
+      accept: () => {
+        this.deleteBoard();
+      },
+    });
+  }
+
+  deleteBoard() {
+    this.listBoard = this.listBoard.filter((x) => x.id !== this.selectedBoard?.id);
+    this.successMessage();
+  }
+
+  successMessage() {
+    this.messageService.add({
+      severity: 'success',
+      summary: 'Success',
+      detail: 'Board has been deleted successfully',
+    });
+  }
+
+  errorMessage() {
+    this.messageService.add({
+      severity: 'error',
+      summary: 'Error',
+      detail: 'Board has not been deleted',
+    });
   }
 }
