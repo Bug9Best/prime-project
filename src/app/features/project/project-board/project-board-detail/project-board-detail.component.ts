@@ -22,7 +22,23 @@ export class ProjectBoardDetail {
     {
       value: 'ตรวจดูความถูกต้องอีกรอบ',
       date: new Date(new Date().setDate(new Date().getDate() - 1))
-    }
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
   ];
 
   isEditAssignee: boolean = false;
