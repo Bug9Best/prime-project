@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
-import { listIssue } from '../../../../shared/data/issue';
 import { PhantomTemplateModule } from '../../../../template/phantom-template.module';
 import { CommonModule } from '@angular/common';
 import { PrimeNGModule } from '../../../../shared/modules/primeng.module';
-import { ConfirmationService } from 'primeng/api';
+import { ThaiModule } from '../../../../shared/pipes/thai.module';
 
 @Component({
   selector: 'project-issue-detail',
@@ -11,44 +10,68 @@ import { ConfirmationService } from 'primeng/api';
   imports: [
     CommonModule,
     PrimeNGModule,
-    PhantomTemplateModule
+    PhantomTemplateModule,
+    ThaiModule,
   ],
   templateUrl: './project-issue-detail.component.html',
   styleUrl: './project-issue-detail.component.scss'
 })
 export class ProjectIssueDetail {
 
-  issueData: any = listIssue;
   visible: boolean = false;
-  events: any[];
-  value!: string;
 
+  value: string | null = null;
+  commentValue: string = '';
+
+  startDate: Date = new Date();
+  dueDate: Date = new Date();
+
+  listComment: any[] = [
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+    {
+      value: 'ตรวจดูความถูกต้องอีกรอบ',
+      date: new Date(new Date().setDate(new Date().getDate() - 1))
+    },
+  ];
+
+  isEditAssignee: boolean = false;
+  isEditStartDate: boolean = false;
+  isEditDueDate: boolean = false;
+  isEditEstimate: boolean = false;
+  isEditActual: boolean = false;
 
   showDialog(data: any) {
     this.visible = true;
-    this.innitializeData(data);
   }
 
-  innitializeData(data: any = {}) {
-    this.issueData = data;
-  }
-  constructor(
-    private confirmationService: ConfirmationService
-  ) {
-    this.events = [
-      { status: 'Ordered', date: '15/10/2020 10:30', icon: 'pi pi-shopping-cart', color: '#9C27B0', image: 'game-controller.jpg' },
-      { status: 'Processing', date: '15/10/2020 14:00', icon: 'pi pi-cog', color: '#673AB7' },
-      { status: 'Shipped', date: '15/10/2020 16:15', icon: 'pi pi-shopping-cart', color: '#FF9800' },
-      { status: 'Delivered', date: '16/10/2020 10:00', icon: 'pi pi-check', color: '#607D8B' }
-    ];
+  openDetail(data: any) {
+    this.visible = true;
+    console.log(data);
   }
 
-  onDelete() {
-    this.confirmationService.confirm({
-      message: 'Are you sure that you want to delete this issue?',
-      accept: () => {
-      }
+  addComment() {
+    this.listComment.push({
+      value: this.commentValue,
+      date: new Date()
     });
+    this.commentValue = '';
+    console.log(this.listComment);
   }
+
 }
 
