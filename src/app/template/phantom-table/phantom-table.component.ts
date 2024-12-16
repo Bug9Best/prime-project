@@ -1,4 +1,6 @@
-import { Component, ContentChildren, Directive, Input, output, TemplateRef } from '@angular/core';
+import { Component, ContentChildren, Directive, Input, output, TemplateRef, ViewChild } from '@angular/core';
+import { SortEvent } from 'primeng/api';
+import { Table } from 'primeng/table';
 export type PhantomTableColumnType = "string" | "number" | "date" | "button" | "checked" | "control" | "citizen" | 'html' | 'image' | 'link' | 'tag' | 'process' | 'currency' | 'progress';
 
 export class PhantomTableColumn {
@@ -39,6 +41,7 @@ export type PhantomTableFieldTemplate = {
 export class PhantomTable {
 
   _selectedItems: any;
+  _tempValue: any = [];
 
   @Input() value: any = [];
   @Input() columns: any = [];
@@ -68,7 +71,7 @@ export class PhantomTable {
   public set selectedItems(value: any) {
     this._selectedItems = value;
   }
-  
+
   onSelectedItems = output<any>();
   viewIssue(selectedItems: any) {
     this.onSelectedItems.emit(selectedItems);
@@ -82,5 +85,13 @@ export class PhantomTable {
     this.templates.forEach(t => {
       this.template[t.getName()] = t.templateRef;
     })
+
+    if (!this.value) return;
+    this._tempValue = this.value;
+  }
+
+  onOpenDetailEvent = output<any>();
+  onOpenDetail(item: any) {
+    this.onOpenDetailEvent.emit(item);
   }
 }

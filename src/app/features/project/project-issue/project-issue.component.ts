@@ -20,6 +20,7 @@ export class ProjectIssueComponent {
   @ViewChild(ProjectIssueDetail)
   issueDetail!: ProjectIssueDetail;
   viewDetail(data : any) {
+    console.log(data);
     if (!data) return;
    this.issueDetail.showDialog(data);
   }
