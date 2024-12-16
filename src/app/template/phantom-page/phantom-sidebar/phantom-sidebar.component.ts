@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { ConfigMenu } from '../../../config/menu';
 
@@ -10,7 +10,6 @@ import { ConfigMenu } from '../../../config/menu';
   imports: [
     CommonModule,
     TranslateModule,
-    RouterOutlet,
     RouterModule,
   ],
   templateUrl: './phantom-sidebar.component.html',

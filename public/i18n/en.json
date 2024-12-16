@@ -36,10 +36,10 @@
   "MENU_TIMELINE": "Timeline",
   "TITLE_TIMELINE": "Timeline",
 
-  "MENU_LIST": "List",
-  "TITLE_LIST": "List",
-  "BUTTON_CREATE_LIST": "Create new list",
-  "PAGE_ISSUE_EMPTY": "No issue in this project. Please create a new issue.",
+  "MENU_LIST": "Task",
+  "TITLE_LIST": "Task",
+  "BUTTON_CREATE_LIST": "Create new Task",
+  "PAGE_ISSUE_EMPTY": "No issue in this project. Please create a new task.",
   
   "MENU_BOARD": "Board",
   "TITLE_BOARD": "Board",
