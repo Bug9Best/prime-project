@@ -10,6 +10,7 @@ import { ProjectSprintCreate } from './project-sprint-create/project-sprint-crea
 import { ProjectSprintList } from './project-sprint-list/project-sprint-list.component';
 import { ProjectSprintDetail } from './project-sprint-detail/project-sprint-detail.component';
 import { TabViewModule } from 'primeng/tabview';
+import { ThaiModule } from '../../../shared/pipes/thai.module';
 
 const routes: Routes = [
   {
@@ -32,7 +33,8 @@ const routes: Routes = [
     TranslateModule,
     ReactiveFormsModule,
     PhantomTemplateModule,
-    TabViewModule
+    TabViewModule,
+    ThaiModule
   ]
 })
 export class ProjectSprintModule { }

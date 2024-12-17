@@ -18,6 +18,7 @@ export class ProjectSprintComponent {
   sprintDetail!: ProjectSprintDetail;
   viewDetail(data: any) {
     if (!data) return;
+    console.log(data);
     this.sprintDetail.showDialog(data);
   }
 }

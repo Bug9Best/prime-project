@@ -3,7 +3,7 @@
 </phantom-empty>
 }
 @else {
-<phantom-table [value]="listSprint" [columns]="columns" (onSelectedItems)="onSelectedItems($event)">
+<phantom-table [value]="listSprint" [columns]="columns" (onOpenDetailEvent)="onSelectedItems($event)">
   <ng-template phantomTableField="sprint_owner" let-item>
     <div class="flex align-items-center">
       <p-avatar class="mt-1" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />

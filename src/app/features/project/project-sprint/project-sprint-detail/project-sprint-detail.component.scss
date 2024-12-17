@@ -1,0 +1,28 @@
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    color: #3B82F6 !important;
+}
+
+
+:host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    color: #6B7280 !important;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-panels {
+    padding: 0;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+    color: var(--primary-color) !important;
+}
+
+:host ::ng-deep .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+    color: var(--text-color);
+}
+
+:host ::ng-deep .p-selectbutton .p-button {
+    height: 30px;
+}
+
+:host ::ng-deep .p-selectbutton .p-button:first-child {
+    background-color: none;
+}

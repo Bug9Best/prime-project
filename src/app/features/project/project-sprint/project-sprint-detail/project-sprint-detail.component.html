@@ -1,104 +1,226 @@
-<phantom-dialog [(visible)]="visible" [showButton]="false" [appendTo]="'body'"
-  [dialogstyle]="{ width: '70vw', 'min-height': '50vh' }" [label]="'TITLE_DETAIL_SPRINT'">
-  <div class="grid m-0 p-0">
-    <div class="col-7">
-      <div class="mb-2">
-        <div class="flex flex-column">
-          <div class="text-2xl font-bold">
-            {{ sprintData.sprint_name }}
-          </div>
-          <div class="text-sm mt-2">
-            {{ sprintData.sprint_note }}
-          </div>
-        </div>
-        <div class="flex align-content-center">
-          <div>
-            <div class="flex">
-              <div style="width: 200px">Sprint owner</div>
-              <span class="ml-3">{{ sprintData.sprint_owner }}</span>
-            </div>
-            <div class="flex">
-              <div style="width: 200px">Duration</div>
-              <span class="ml-3">{{ sprintData.duration }}</span>
-            </div>
-            <div class="flex">
-              <div style="width: 200px">Start date</div>
-              <span class="ml-3">{{ sprintData.start_date }}</span>
-            </div>
-            <div class="flex">
-              <div style="width: 200px">Due date</div>
-              <span class="ml-3">{{ sprintData.end_date }}</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <p-tabView>
-        <p-tabPanel header="Task">
-          <phantom-empty>
-          </phantom-empty>
-        </p-tabPanel>
-        <p-tabPanel header="Comment">
-          @for (item of [1,2,3]; track $index) {
-          <div class="border-1 surface-border border-round p-3 mb-2">
-            Lorem ipsum dolor sit amet.
-          </div>
-          }
+<phantom-dialog [(visible)]="visible" [showButton]="false" [showHeader]="false" [appendTo]="'body'"
+  [dialogstyle]="{ width: '80vw', 'height': '90vh' }" [label]="'TITLE_DETAIL_SPRINT'">
 
-          <textarea pInputTextarea rows="5" class="w-full"></textarea>
-          <div class="flex justify-content-end">
-            <button pButton pRipple type="button" label="Comment" class="p-button-sm p-button-success">
-            </button>
-          </div>
-        </p-tabPanel>
-      </p-tabView>
+  <div class="flex w-full justify-content-between mb-4">
+    <div class="flex align-items-center">
+      <span class="w-3rem h-3rem border-circle flex justify-content-center align-items-center bg-blue-100">
+        <i class="pi pi-refresh text-blue-700 text-2xl"></i>
+      </span>
+      <div class="text-xl ml-2"> Sprint 1 </div>
     </div>
-    <p-divider layout="vertical" styleClass="m-0 p-0"></p-divider>
+    <button pButton pRipple type="button" icon="pi pi-times"
+      class="p-button-rounded p-button-secondary p-button-text align-self-start" (click)="visible = false">
+    </button>
+  </div>
 
-    <div class="col-5">
-      <div class="p-2">Project Status</div>
-      <div class="p-3 border-1 surface-border border-round">
-        <div class="p-2 mb-2 flex justify-content-between">
-          Progress
-          <span>{{ sprintData.process }}%</span>
+  <div class="grid">
+    <div class="col">
+      <div class="flex flex-column">
+        <div class="mt text-lg font-semibold mb-3"> Sprint Detail </div>
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Sprint Owner</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div>Natthaphon Ditthaviboon</div>
+            <div>
+              <button pButton icon="pi pi-cog" class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
         </div>
-        <p-progressBar [value]="[sprintData.process]">
-          <ng-template pTemplate="content" let-value> </ng-template>
-        </p-progressBar>
-      </div>
-      <p-divider></p-divider>
-      <div class="p-3">Activity</div>
-      @for (item of [1,2,3]; track $index) {
-      <div class="border-1 surface-border border-round cursor-pointer p-3 mb-2">
-        <div class="flex justify-content-between w-full">
-          <div class="flex flex-column">
-            <div class="flex">
-              <span class="flex align-items-center mr-2">
-                <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" />
-              </span>
-              <div class="flex justify-content-between">
-                <div class="flex flex-row">
-                  <div class="flex flex-column">
-                    <div class="font-bold">
-                      Phuri siripool
-                      <span class="text-400">
-                        added Test{{ $index + 1 }}.JPG to Project Resource</span>
-                    </div>
-                    <span class="text-sm text-400">Yesterday</span>
-                  </div>
-                </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Sprint Duration</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div> {{ startDate | date:'dd MMMM yyyy' }} - {{ endDate | date:'dd MMMM yyyy' }} </div>
+            <div>
+              <button pButton icon="pi pi-cog" class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Estimate Time</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div> 64H </div>
+            <div>
+              <button pButton icon="pi pi-cog" class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex align-items-center">
+          <div style="width: 150px;" class="font-semibold">Actual Time</div>
+          <div class="flex align-items-center justify-content-between w-full">
+            <div> 70H </div>
+            <div>
+              <button pButton icon="pi pi-cog" class="p-button-sm p-button-secondary p-button-text p-button-rounded">
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid mt-1">
+          <div class="col-4">
+            <div class="flex align-items-center">
+              <p-avatar icon="pi pi-list" styleClass="mr-2" [style]="{ 'background-color': '#3b82f6', color: '#fff' }"
+                shape="circle" />
+              <div class="flex flex-column">
+                <span class="font-bold">10 Tasks</span>
+                <span class="text-sm">To Do</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="flex align-items-center">
+              <p-avatar icon="pi pi-step-forward-alt" styleClass="mr-2"
+                [style]="{ 'background-color': '#eab308', color: '#fff' }" shape="circle" />
+              <div class="flex flex-column">
+                <span class="font-bold">10 Tasks</span>
+                <span class="text-sm">In progress</span>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="flex align-items-center">
+              <p-avatar icon="pi pi-check" styleClass="mr-2" [style]="{ 'background-color': '#22c55e', color: '#fff' }"
+                shape="circle" />
+              <div class="flex flex-column">
+                <span class="font-bold">10 Tasks</span>
+                <span class="text-sm">Done</span>
               </div>
             </div>
           </div>
         </div>
+
+        <div class="flex mt-2">
+          <div class="flex align-items-center">
+            <p-avatar icon="pi pi-hourglass" class="-mt-2" [style]="{ 'background-color': '#3b82f6', color: '#fff' }"
+              shape="circle" />
+          </div>
+          <div class="ml-2 w-full">
+            <p-progressBar [value]="50" />
+            <div class="text-sm mt-1">
+              <span class="font-bold">Project progress</span>
+              <span class="font-bold"> 50%</span> Completed
+            </div>
+          </div>
+        </div>
+
       </div>
-      }
-      <p-divider></p-divider>
-      <div>
-        <button pButton pRipple type="button" label="Remove Sprint"
-          class="p-button-outlined p-button-sm p-button-danger w-full"
-          (click)="onDelete()">
-        </button>
+    </div>
+
+    <!-- <div class="border-1 surface-border border-round-2xl p-3 -mx-2">
+            <div class="flex align-items-center">
+              <i class="pi pi-lightbulb text-white bg-orange-500 p-1 border-circle mr-2"></i>
+              <div class="font-semibold"> Task 1 </div>
+            </div>
+          </div> -->
+
+    <p-divider layout="vertical"></p-divider>
+    <div class="col">
+      <div class="mt text-lg font-semibold mb-3"> Sprint Description </div>
+      <div class="h-19rem overflow-scroll">
+        <div class="mt-2 overflow-scroll" style="text-indent: 1.5cm;">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit
+          voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
+          et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
+          aspernatur
+          aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque
+          porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
+          eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam,
+          quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?
+          Quis
+          autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum
+          qui
+          dolorem eum fugiat quo voluptas nulla pariatur? At vero eos et accusamus et iusto odio dignissimos ducimus
+          qui
+          blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint
+        </div>
       </div>
     </div>
   </div>
+
+  <p-divider></p-divider>
+  <p-tabView>
+    <p-tabPanel header="Requirement" (onChange)="onChangeTab($event)">
+      <ng-template pTemplate="body">
+        <div class="w-full h-18rem overflow-scroll">
+          @for (item of listTask; track $index) {
+          <div class="border-1 surface-border border-round-2xl px-3 py-2 mt-2">
+            <div class="flex align-items-center justify-content-between">
+              <div class="flex">
+                <i class="pi pi-lightbulb text-white bg-yellow-500 p-1 border-circle mr-2"></i>
+                <div class="font-semibold"> {{ item.name}} </div>
+              </div>
+              <div class="flex align-items-center gap-3">
+                <ng-container *ngIf="item.status === 'To Do'">
+                  <span
+                    class="flex align-items-center justify-content-center border-round border-blue-500 text-blue-500 border-1 h-2rem w-7rem px-3 py-0 text-sm">
+                    {{ item.status }}
+                  </span>
+                </ng-container>
+                <ng-container *ngIf="item.status === 'In Progress'">
+                  <span
+                    class="flex align-items-center justify-content-center border-round border-orange-500 text-orange-500 border-1 h-2rem w-7rem px-3 py-0 text-sm">
+                    {{ item.status }}
+                  </span>
+                </ng-container>
+                <ng-container *ngIf="item.status === 'Done'">
+                  <span
+                    class="flex align-items-center justify-content-center border-round border-green-500 text-green-500 border-1 h-2rem w-7rem px-3 py-0 text-sm">
+                    {{ item.status }}
+                  </span>
+                </ng-container>
+
+                <p-avatar class="mt-1" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                  shape="circle" />
+              </div>
+            </div>
+          </div>
+          }
+        </div>
+      </ng-template>
+    </p-tabPanel>
+    <p-tabPanel header="Bug">
+      <ng-template pTemplate="body">
+      <div class="w-full h-18rem overflow-scroll">
+        @for (item of listTask; track $index) {
+        <div class="border-1 surface-border border-round-2xl px-3 py-2 mt-2">
+          <div class="flex align-items-center justify-content-between">
+            <div class="flex">
+              <i class="pi pi-discord text-white bg-red-500 p-1 border-circle mr-2"></i>
+              <div class="font-semibold"> {{ item.name}} </div>
+            </div>
+            <div class="flex align-items-center gap-3">
+              <ng-container *ngIf="item.status === 'To Do'">
+                <span
+                  class="flex align-items-center justify-content-center border-round border-blue-500 text-blue-500 border-1 h-2rem w-7rem px-3 py-0 text-sm">
+                  {{ item.status }}
+                </span>
+              </ng-container>
+              <ng-container *ngIf="item.status === 'In Progress'">
+                <span
+                  class="flex align-items-center justify-content-center border-round border-orange-500 text-orange-500 border-1 h-2rem w-7rem px-3 py-0 text-sm">
+                  {{ item.status }}
+                </span>
+              </ng-container>
+              <ng-container *ngIf="item.status === 'Done'">
+                <span
+                  class="flex align-items-center justify-content-center border-round border-green-500 text-green-500 border-1 h-2rem w-7rem px-3 py-0 text-sm">
+                  {{ item.status }}
+                </span>
+              </ng-container>
+
+              <p-avatar class="mt-1" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+                shape="circle" />
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      </ng-template>
+    </p-tabPanel>
+  </p-tabView>
 </phantom-dialog>
