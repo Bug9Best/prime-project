@@ -1,3 +1,9 @@
 .custom-height {
   height: 38.38px;
 }
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

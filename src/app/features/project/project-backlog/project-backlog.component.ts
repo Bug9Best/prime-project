@@ -12,6 +12,9 @@ export class ProjectBacklogComponent {
   listSprint: any[] = []
   listIssue: any[] = []
 
+  startDate: Date = new Date();
+  endDate: Date = new Date();
+
   @ViewChild('inputIssue') inputIssue: ElementRef | undefined;
   @ViewChild('buttonIssue') buttonIssue: ElementRef | undefined;
 
@@ -152,4 +155,116 @@ export class ProjectBacklogComponent {
       assignee: 'daw',
     },
   ];
+
+  isCollapsed: boolean = false;
+
+  toggleCollapse() {
+    this.isCollapsed = !this.isCollapsed;
+  }
+
+  listTask: any = [
+    {
+      name: 'Task 1',
+      priority: 'High',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 2',
+      priority: 'Medium',
+      status: 'In Progress',
+    },
+    {
+      name: 'Task 3',
+      priority: 'Low',
+      status: 'In Progress',
+    },
+    {
+      name: 'Task 4',
+      priority: 'High',
+      status: 'In Progress',
+    },
+    {
+      name: 'Task 5',
+      priority: 'Medium',
+      status: 'In Progress',
+    },
+  ]
+
+  listTaskTodo: any = [
+    {
+      name: 'Task 1',
+      priority: 'High',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 2',
+      priority: 'Medium',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 3',
+      priority: 'Low',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 4',
+      priority: 'High',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 5',
+      priority: 'Medium',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 6',
+      priority: 'Low',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 7',
+      priority: 'High',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 8',
+      priority: 'Medium',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 9',
+      priority: 'Low',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 10',
+      priority: 'High',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 11',
+      priority: 'Medium',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 12',
+      priority: 'Low',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 13',
+      priority: 'High',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 14',
+      priority: 'Medium',
+      status: 'To Do',
+    },
+    {
+      name: 'Task 15',
+      priority: 'Low',
+      status: 'To Do',
+    },
+  ]
 }
